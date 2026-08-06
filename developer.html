@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomson Reserve Developer — UOL Group, Singapore Land Group & CapitaLand | D20</title>
+<meta name="description" content="Thomson Reserve is developed by UOL Group, Singapore Land Group and CapitaLand Development — three of Singapore's most established property developers. Learn about their track record and past projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1a2e1e;
+    --forest-deep: #0f1c12;
+    --forest-mid: #243328;
+    --gold: #c4a050;
+    --gold-light: #e8c882;
+    --gold-pale: #f5edd8;
+    --cream: #f9f5ee;
+    --cream-dark: #f0e9d8;
+    --text-dark: #1a1a18;
+    --text-mid: #3d3d38;
+    --text-light: #7a7a70;
+    --text-faint: #aaa89e;
+    --white: #ffffff;
+    --border: rgba(196,160,80,0.18);
+    --border-light: rgba(196,160,80,0.1);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text-dark); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
+  /* ── TOP BAR ── */
+  .topbar { background: var(--forest-deep); color: var(--gold-light); font-size: 11px; letter-spacing: 0.12em; font-weight: 500; padding: 9px 40px; display: flex; justify-content: space-between; align-items: center; text-transform: uppercase; }
+  .topbar a { color: var(--gold); text-decoration: none; }
+  .topbar-pulse { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #4caf6e; margin-right: 8px; animation: pulse 2s infinite; vertical-align: middle; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+
+    nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .logo-mark {
+    width: 40px; height: 40px;
+    background: var(--forest);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-mark span {
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .logo-text { line-height: 1.2; }
+  .logo-text-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--forest);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .logo-text-sub {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    flex-shrink: 0;
+  }
+  .nav-links li { position: relative; }
+  .nav-links li a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 13px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-decoration: none;
+    height: 72px;
+    white-space: nowrap;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 13px; right: 13px;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.2s;
+  }
+  .nav-links li a:hover { color: var(--forest); }
+  .nav-links li a:hover::after { transform: scaleX(1); }
+  .nav-links li a.active { color: var(--forest); }
+  .nav-links li a.active::after { transform: scaleX(1); }
+  .nav-links li.has-dropdown > a::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-right: 1.5px solid var(--gold);
+    border-bottom: 1.5px solid var(--gold);
+    transform: rotate(45deg);
+    margin-left: 4px;
+    margin-top: -3px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .nav-links li.has-dropdown > a::after { display: none; }
+  .nav-links li.has-dropdown:hover > a::before { transform: rotate(225deg); margin-top: 2px; }
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 72px; left: 0;
+    min-width: 220px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--gold);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    z-index: 200;
+  }
+  .nav-links li.has-dropdown:hover .dropdown { display: block; }
+  .dropdown a {
+    display: block !important;
+    height: auto !important;
+    padding: 13px 20px !important;
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+    color: var(--text-mid) !important;
+    border-bottom: 1px solid var(--border-light);
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s !important;
+  }
+  .dropdown a:last-child { border-bottom: none; }
+  .dropdown a:hover { background: var(--cream) !important; color: var(--forest) !important; }
+  .dropdown a::after { display: none !important; }
+  .nav-cta {
+    background: var(--forest);
+    color: var(--gold-light) !important;
+    padding: 10px 18px !important;
+    height: auto !important;
+    line-height: normal !important;
+    font-size: 11px !important;
+    letter-spacing: 0.12em !important;
+    border: 1px solid transparent;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--forest-deep) !important; }
+  .nav-cta::after { display: none !important; }
+
+  /* ── PAGE HERO ── */
+  .page-hero { background: linear-gradient(165deg, var(--forest-deep) 0%, #1a3a22 50%, #0f2a18 100%); padding: 80px 0 72px; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(196,160,80,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(196,160,80,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+  .page-hero-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 28px; }
+  .breadcrumb a { font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--gold); }
+  .breadcrumb-sep { font-size: 11px; color: rgba(255,255,255,0.2); }
+  .breadcrumb-current { font-size: 11px; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; }
+  .page-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .page-eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+  .page-eyebrow span { font-size: 10px; letter-spacing: 0.22em; color: var(--gold); font-weight: 500; text-transform: uppercase; }
+  .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 5vw, 68px); font-weight: 300; color: var(--white); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 20px; }
+  .page-hero h1 em { font-style: italic; color: var(--gold-light); }
+  .page-hero-desc { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.8; max-width: 640px; font-weight: 300; }
+
+  /* ── SHARED SECTION ── */
+  .section { padding: 88px 0; }
+  .section-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+  .section-label { font-size: 10px; letter-spacing: 0.28em; color: var(--gold); text-transform: uppercase; font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+  .section-label::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
+  .section-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.2vw, 44px); font-weight: 400; color: var(--forest); line-height: 1.15; margin-bottom: 18px; }
+  .section-h2 em { font-style: italic; color: var(--gold); }
+  .section-intro { font-size: 16px; color: var(--text-mid); line-height: 1.8; max-width: 760px; font-weight: 300; margin-bottom: 52px; }
+  .body-text { font-size: 15px; color: var(--text-mid); line-height: 1.85; font-weight: 300; margin-bottom: 16px; }
+  .h3-label { font-size: 9px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+  h3.sub-h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--forest); margin-bottom: 16px; line-height: 1.25; }
+
+  /* ── CONSORTIUM INTRO ── */
+  .consortium { background: var(--white); }
+  .consortium-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-bottom: 64px; }
+  .c-stat { background: var(--cream); padding: 28px 24px; }
+  .c-stat-n { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--forest); line-height: 1; margin-bottom: 6px; }
+  .c-stat-label { font-size: 11px; letter-spacing: 0.1em; color: var(--text-light); text-transform: uppercase; font-weight: 400; }
+
+  /* ── DEVELOPER PROFILES ── */
+  .dev-profile { margin-bottom: 80px; padding-bottom: 80px; border-bottom: 1px solid var(--border); }
+  .dev-profile:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .dev-profile-grid { display: grid; grid-template-columns: 320px 1fr; gap: 64px; align-items: start; }
+  .dev-profile-grid.reverse { grid-template-columns: 1fr 320px; }
+  .dev-profile-grid.reverse .dev-identity { order: 2; }
+  .dev-profile-grid.reverse .dev-content { order: 1; }
+  .dev-identity { position: sticky; top: 100px; }
+  .dev-logo-box { background: var(--forest); padding: 32px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; min-height: 100px; }
+  .dev-logo-box img { max-height: 48px; width: auto; }
+  .dev-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--forest); margin-bottom: 8px; }
+  .dev-tagline { font-size: 13px; color: var(--text-light); font-weight: 300; line-height: 1.6; margin-bottom: 20px; }
+  .dev-facts { list-style: none; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); }
+  .dev-fact { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: 1px solid var(--border-light); font-size: 13px; }
+  .dev-fact:last-child { border-bottom: none; }
+  .dev-fact-label { color: var(--text-light); font-weight: 300; }
+  .dev-fact-value { color: var(--text-dark); font-weight: 500; text-align: right; }
+  .dev-content {}
+  .dev-section-title { font-size: 9px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; font-weight: 600; margin-bottom: 8px; margin-top: 32px; }
+  .dev-section-title:first-child { margin-top: 0; }
+  .dev-past-projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 8px; }
+  .project-pill { background: var(--cream); border: 1px solid var(--border); padding: 14px 18px; }
+  .project-pill-name { font-size: 14px; font-weight: 500; color: var(--forest); margin-bottom: 4px; }
+  .project-pill-detail { font-size: 12px; color: var(--text-light); font-weight: 300; }
+  .highlight-box { background: var(--forest); padding: 24px 28px; margin-top: 24px; }
+  .highlight-box-text { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.75; font-weight: 300; font-style: italic; }
+  .highlight-box-text strong { color: var(--gold-light); font-weight: 500; font-style: normal; }
+
+  /* ── WHY CONSORTIUM ── */
+  .why-section { background: var(--forest-deep); }
+  .why-section .section-h2 { color: var(--white); }
+  .why-section .section-intro { color: rgba(255,255,255,0.55); }
+  .why-section .section-label { color: var(--gold); }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(196,160,80,0.12); }
+  .why-card { background: rgba(255,255,255,0.03); padding: 36px 28px; position: relative; }
+  .why-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
+  .why-card:hover::after { transform: scaleX(1); }
+  .why-number { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: rgba(196,160,80,0.15); line-height: 1; margin-bottom: 16px; }
+  .why-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: var(--white); margin-bottom: 12px; }
+  .why-text { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.75; font-weight: 300; }
+
+  /* ── CTA STRIP ── */
+  .cta-strip { background: var(--cream-dark); padding: 72px 0; }
+  .cta-strip-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+  .cta-strip-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3vw, 38px); font-weight: 400; color: var(--forest); margin-bottom: 10px; }
+  .cta-strip-text p { font-size: 15px; color: var(--text-light); font-weight: 300; }
+  .btn-primary { background: var(--gold); color: var(--forest-deep); padding: 15px 36px; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline-dark { border: 1px solid var(--border); color: var(--forest); padding: 14px 28px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: border-color 0.2s, background 0.2s; }
+  .btn-outline-dark:hover { background: var(--forest); color: var(--gold-light); }
+  .btn-group { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--forest-deep); padding: 64px 0 0; border-top: 1px solid rgba(196,160,80,0.12); }
+  .footer-grid { max-width: 1280px; margin: 0 auto; padding: 0 40px 48px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; border-bottom: 1px solid rgba(196,160,80,0.08); }
+  .footer-col-title { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(196,160,80,0.12); }
+  .footer-project-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--white); letter-spacing: 0.06em; margin-bottom: 16px; }
+  .footer-details { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-details li { font-size: 12.5px; color: rgba(255,255,255,0.35); font-weight: 300; }
+  .footer-details li strong { color: rgba(255,255,255,0.55); font-weight: 400; }
+  .footer-dev-badges { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+  .footer-dev-badge { display: flex; align-items: center; padding: 10px 0; background: transparent; border: none; min-height: 48px; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; font-weight: 300; transition: color 0.2s; letter-spacing: 0.04em; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-contact-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; font-size: 13px; color: rgba(255,255,255,0.4); font-weight: 300; }
+  .footer-bottom { max-width: 1280px; margin: 0 auto; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-bottom-text { font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; }
+  .footer-bottom-links { display: flex; gap: 20px; }
+  .footer-bottom-links a { font-size: 11px; color: rgba(255,255,255,0.25); text-decoration: none; letter-spacing: 0.06em; }
+  .footer-bottom-links a:hover { color: var(--gold); }
+
+  /* ── WHATSAPP FAB ── */
+  .whatsapp-fab { position: fixed; bottom: 28px; right: 28px; width: 54px; height: 54px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 24px rgba(37,211,102,0.35); z-index: 999; transition: transform 0.2s, box-shadow 0.2s; }
+  .whatsapp-fab:hover { transform: scale(1.08); box-shadow: 0 6px 32px rgba(37,211,102,0.45); }
+  .whatsapp-fab svg { width: 28px; height: 28px; fill: white; }
+
+  /* ── MOBILE STICKY BAR ── */
+  .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--forest-deep); border-top: 1px solid rgba(196,160,80,0.2); z-index: 200; grid-template-columns: repeat(4, 1fr); }
+  .mobile-sticky a { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; text-decoration: none; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 500; border-right: 1px solid rgba(196,160,80,0.1); gap: 5px; transition: color 0.2s; }
+  .mobile-sticky a:last-child { border-right: none; }
+  .mobile-sticky a:hover { color: var(--gold); }
+  .mobile-sticky a span.ms-icon { font-size: 16px; }
+
+  @media (max-width: 768px) {
+    .mobile-sticky { display: grid; }
+    .topbar { padding: 8px 20px; font-size: 9px; }
+    .nav-inner { padding: 0 20px; }
+    .nav-links { display: none; }
+    .page-hero { padding: 60px 0 52px; }
+    .page-hero-inner { padding: 0 20px; }
+    .section-inner { padding: 0 20px; }
+    .section { padding: 60px 0; }
+    .consortium-stats { grid-template-columns: repeat(2, 1fr); }
+    .dev-profile-grid, .dev-profile-grid.reverse { grid-template-columns: 1fr; gap: 36px; }
+    .dev-profile-grid.reverse .dev-identity, .dev-profile-grid.reverse .dev-content { order: unset; }
+    .dev-identity { position: static; }
+    .dev-past-projects { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .cta-strip-inner { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; padding: 0 20px 40px; }
+    body { padding-bottom: 60px; }
+  }
+
+  /* ── MOBILE RESPONSIVE TABLES & OVERFLOW FIXES ── */
+  .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .table-wrap table{min-width:540px;}
+  @media(max-width:768px){
+    table{font-size:12px !important;}
+    table td,table th{padding:10px 8px !important;}
+    .two-col,.info-grid,.investment-grid,.loc-grid,.info-cards,.reg-grid,.inv-grid,.enbloc-grid,.mrt-grid,.mrt-cards,.dev-profile-grid,.dev-profile-grid.reverse,.calc-row,.project-grid,.lifestyle-grid{grid-template-columns:1fr !important;gap:24px !important;}
+    .hero-stats{grid-template-columns:repeat(2,1fr) !important;}
+    .psf-hero{padding:24px !important;}
+    .psf-value{font-size:36px !important;}
+    .psf-tier{flex-direction:column;gap:4px;align-items:flex-start !important;}
+    .calc-wrap{padding:24px 16px !important;}
+    .comparison-table,.data-table,.breakeven-table,.school-table,.details-table,.travel-table,.hours-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;}
+    .section-h2{font-size:clamp(22px,5vw,36px) !important;}
+    .reg-h2{font-size:clamp(24px,5vw,38px) !important;}
+    .page-hero h1{font-size:clamp(30px,7vw,52px) !important;}
+    .enbloc-stat-number{font-size:28px !important;}
+    .footer-grid{grid-template-columns:1fr !important;}
+    .trust-grid{grid-template-columns:1fr 1fr !important;}
+    .sitemap-grid{grid-template-columns:1fr !important;}
+    .contact-grid{grid-template-columns:1fr !important;}
+    .cta-strip-inner{grid-template-columns:1fr !important;}
+    .dev-cards{grid-template-columns:1fr !important;}
+    .nature-grid{grid-template-columns:1fr !important;}
+    .mrt-grid,.mrt-cards{grid-template-columns:1fr !important;}
+    .consortium-stats{grid-template-columns:1fr 1fr !important;}
+    .quick-contact{flex-direction:column !important;}
+    .qc-pill{width:100% !important;}
+    .reg-grid{grid-template-columns:1fr !important;}
+    .milestone-strip{flex-direction:column !important;}
+    .ms-item{border-right:none !important;border-bottom:1px solid rgba(196,160,80,0.1);}
+    .hero-content{grid-template-columns:1fr !important;gap:32px !important;padding:48px 20px 32px !important;}
+    .section-inner,.page-hero-inner,.legal-inner,.policy-wrap,.reg-grid,.cta-strip-inner{padding-left:20px !important;padding-right:20px !important;}
+    .topbar{padding:8px 16px !important;font-size:9px !important;gap:8px;}
+    .topbar div:first-child{display:none;}
+    .nav-inner{padding:0 16px !important;}
+    .nav-links{display:none !important;}
+    body{padding-bottom:64px;}
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://thomson-reserves.sg/developer.html#webpage",
+      "url": "https://thomson-reserves.sg/developer.html",
+      "name": "Thomson Reserve Developer - UOL Group, Singapore Land Group and CapitaLand | D20",
+      "description": "Thomson Reserve is developed by UOL Group, Singapore Land Group and CapitaLand Development. Learn about their track record, past projects and why this consortium matters for buyers.",
+      "datePublished": "2026-04-14",
+      "dateModified": "2026-04-15",
+      "isPartOf": {
+        "@id": "https://thomson-reserves.sg/#website"
+      },
+      "about": {
+        "@id": "https://thomson-reserves.sg/#project"
+      },
+      "inLanguage": "en-SG",
+      "breadcrumb": {
+        "@id": "https://thomson-reserves.sg/developer.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thomson-reserves.sg/developer.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Thomson Reserve",
+          "item": "https://thomson-reserves.sg/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Developer",
+          "item": "https://thomson-reserves.sg/developer.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thomson-reserves.sg/developer.html">
+  <meta property="og:title" content="Thomson Reserve Developer — UOL Group, Singapore Land Group & CapitaLand | D20">
+  <meta property="og:description" content="Thomson Reserve is developed by UOL Group, Singapore Land Group and CapitaLand Development. Learn about their track record, past projects and why this consortium matters for buyers.">
+  <meta property="og:site_name" content="Thomson Reserve">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thomson Reserve Developer — UOL Group, Singapore Land Group & CapitaLand | D20">
+  <meta name="twitter:description" content="Thomson Reserve is developed by UOL Group, Singapore Land Group and CapitaLand Development. Learn about their track record, past projects and why this consortium matters for buyers.">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div><span class="topbar-pulse"></span>VVIP Preview Registration Open — Q3 2026</div>
+  <div>New Launch in D20 &nbsp;|&nbsp; <a href="tel:+6589623281">+65 8962 3281</a></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://thomson-reserves.sg/" class="nav-logo">
+      <div class="logo-mark"><span>TR</span></div>
+      <div class="logo-text">
+        <div class="logo-text-main">Thomson Reserve</div>
+        <div class="logo-text-sub">District 20 · Upper Thomson · Singapore</div>
+      </div>
+    </a>
+        <ul class="nav-links">
+      <li><a href="https://thomson-reserves.sg/">Home</a></li>
+      <li><a href="https://thomson-reserves.sg/developer.html" class="active">Developer</a></li>
+      <li><a href="https://thomson-reserves.sg/location-map.html">Location Map</a></li>
+      <li><a href="https://thomson-reserves.sg/site-plan.html">Site Plan</a></li>
+      <li><a href="https://thomson-reserves.sg/floor-plan.html">Floor Plan</a></li>
+      <li><a href="https://thomson-reserves.sg/pricing.html">Pricing</a></li>
+      <li class="has-dropdown">
+        <a href="https://thomson-reserves.sg/stamp-duty.html">Financing</a>
+        <div class="dropdown">
+          <a href="https://thomson-reserves.sg/stamp-duty.html">Stamp Duty</a>
+          <a href="https://thomson-reserves.sg/payment-scheme.html">Payment Scheme</a>
+          <a href="https://thomson-reserves.sg/housing-loan-information.html">Housing Loan Information</a>
+        </div>
+      </li>
+      <li><a href="https://thomson-reserves.sg/thomson-reserve-showflat.html" class="nav-cta">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="https://thomson-reserves.sg/">Thomson Reserve</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Developer</span>
+    </div>
+    <div class="page-eyebrow">
+      <div class="page-eyebrow-line"></div>
+      <span>The Developer Consortium</span>
+    </div>
+    <h1>UOL · SingLand · <em>CapitaLand</em></h1>
+    <p class="page-hero-desc">Thomson Reserve is jointly developed by three of Singapore's most established and respected property developers — a consortium that collectively committed $810 million to deliver one of the most anticipated new launch condominiums in the Rest of Central Region.</p>
+  </div>
+</section>
+
+<!-- CONSORTIUM INTRO -->
+<section class="section consortium">
+  <div class="section-inner">
+    <div class="section-label">The Consortium</div>
+    <h2 class="section-h2">Three Developers. <em>One Landmark Project.</em></h2>
+    <p class="section-intro">The decision by UOL Group, Singapore Land Group and CapitaLand Development to form a joint consortium for Thomson Reserve is itself a statement of conviction. Each developer brings a distinct capability — together they represent decades of experience, institutional financial strength, and a proven track record of delivering premium residential communities across Singapore.</p>
+
+    <div class="consortium-stats">
+      <div class="c-stat">
+        <div class="c-stat-n">$810M</div>
+        <div class="c-stat-label">Land acquisition — largest RCR en bloc since 2023</div>
+      </div>
+      <div class="c-stat">
+        <div class="c-stat-n">~1,240</div>
+        <div class="c-stat-label">Residential units across a 5-hectare masterplan</div>
+      </div>
+      <div class="c-stat">
+        <div class="c-stat-n">150+</div>
+        <div class="c-stat-label">Years of combined developer experience</div>
+      </div>
+      <div class="c-stat">
+        <div class="c-stat-n">3</div>
+        <div class="c-stat-label">SGX-listed developers in one consortium</div>
+      </div>
+    </div>
+
+    <!-- UOL GROUP -->
+    <div class="dev-profile" id="uol">
+      <div class="dev-profile-grid">
+        <div class="dev-identity">
+          <div class="dev-logo-box">
+            <img src="/uol-logo-v2.png" alt="UOL Group Limited">
+          </div>
+          <div class="dev-name">UOL Group Limited</div>
+          <div class="dev-tagline">Singapore's most recognised residential developer with over 50 years of excellence across residential, commercial and hospitality sectors.</div>
+          <ul class="dev-facts">
+            <li class="dev-fact"><span class="dev-fact-label">Founded</span><span class="dev-fact-value">1963</span></li>
+            <li class="dev-fact"><span class="dev-fact-label">Listed</span><span class="dev-fact-value">SGX Mainboard</span></li>
+            <li class="dev-fact"><span class="dev-fact-label">Experience</span><span class="dev-fact-value">60+ years</span></li>
+            <li class="dev-fact"><span class="dev-fact-label">Ownership</span><span class="dev-fact-value">Wee family-controlled</span></li>
+            <li class="dev-fact"><span class="dev-fact-label">Role in TR</span><span class="dev-fact-value">Lead developer</span></li>
+          </ul>
+        </div>
+        <div class="dev-content">
+          <div class="dev-section-title">About UOL Group</div>
+          <p class="body-text">UOL Group Limited is one of Singapore's most prominent property companies, with a diversified portfolio spanning residential, commercial, retail, hotel and serviced suite developments across Singapore and internationally. Listed on the Singapore Exchange since the 1960s, UOL has built a reputation for quality craftsmanship, thoughtful design and consistent delivery.</p>
+          <p class="body-text">UOL's residential developments are known for their meticulous attention to layout efficiency, material quality and long-term capital value. Their projects consistently attract strong buyer demand — AMO Residence, launched in 2022 at Ang Mo Kio Avenue 1, was 98% sold on its launch day, one of the strongest performances recorded for a District 20 new launch.</p>
+          <p class="body-text">In addition to AMO Residence, UOL's recent residential portfolio includes Pinetree Hill (District 21, joint venture with SingLand), The Watergardens at Canberra, and the award-winning Sky Vue. Across all projects, UOL maintains a consistent standard of finishing, communal facilities and landscape design that buyers have come to expect.</p>
+
+          <div class="dev-section-title">District 20 Track Record</div>
+          <p class="body-text">UOL's most relevant precedent for Thomson Reserve is AMO Residence — a 372-unit development on Ang Mo Kio Avenue 1 that launched in July 2022 at an average price of approximately $2,100 psf. The project achieved 98% sales on launch day, reflecting the deep demand for quality UOL product in the RCR. This same developer conviction and execution quality will underpin Thomson Reserve.</p>
+
+          <div class="dev-section-title">Selected Past Projects</div>
+          <div class="dev-past-projects">
+            <div class="project-pill">
+              <div class="project-pill-name">AMO Residence</div>
+              <div class="project-pill-detail">D20 · 372 units · 2022 · 98% sold on launch</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">Pinetree Hill</div>
+              <div class="project-pill-detail">D21 · 520 units · 2023 · Joint venture with SingLand</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">The Watergardens at Canberra</div>
+              <div class="project-pill-detail">D27 · 448 units · 2021</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">Sky Vue</div>
+              <div class="project-pill-detail">D20 · 694 units · 2013 · Bishan</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">1 Moulmein Rise</div>
+              <div class="project-pill-detail">D11 · Luxury freehold · Award-winning design</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">V on Shenton</div>
+              <div class="project-pill-detail">D1 · 510 units · CBD mixed-use tower</div>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <div class="highlight-box-text">"AMO Residence demonstrated that <strong>UOL understands the District 20 buyer</strong> better than most. 98% sold on launch day at above-market pricing is not luck — it is the result of a developer who knows how to calibrate product, price and timing for this specific market."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SINGAPORE LAND GROUP -->
+    <div class="dev-profile" id="singland">
+      <div class="dev-profile-grid reverse">
+        <div class="dev-identity">
+          <div class="dev-logo-box">
+            <img src="/singapore-land-logo-v2.png" alt="Singapore Land Group">
+          </div>
+          <div class="dev-name">Singapore Land Group</div>
+          <div class="dev-tagline">A cornerstone of Singapore's built environment, known for landmark large-scale mixed-use developments that define city precincts.</div>
+          <ul class="dev-facts">
+            <li class="dev-fact"><span class="dev-fact-label">Listed</span><span class="dev-fact-value">SGX Mainboard</span></li>
+            <li class="dev-fact"><span class="dev-fact-label">Ownership</span><span class="dev-fact-value">Wee family-controlled</span></li>
+            <li class="dev-fact"><span class="dev-fact-label">Relationship</span><span class="dev-fact-value">UOL subsidiary</span></li>
+            <li class="dev-fact"><span class="dev-fact-label">Speciality</span><span class="dev-fact-value">Large-scale mixed-use</span></li>
+            <li class="dev-fact"><span class="dev-fact-label">Role in TR</span><span class="dev-fact-value">Co-developer</span></li>
+          </ul>
+        </div>
+        <div class="dev-content">
+          <div class="dev-section-title">About Singapore Land Group</div>
+          <p class="body-text">Singapore Land Group (SingLand) is a leading property developer and investor in Singapore, operating under the same Wee family ownership as UOL Group. Their long-standing collaboration with UOL means Thomson Reserve benefits from a deeply aligned partnership — not two companies working across different priorities, but a single family of companies executing a shared vision.</p>
+          <p class="body-text">SingLand's development portfolio is anchored by some of Singapore's most recognised commercial landmarks. Marina Bay Financial Centre, developed jointly with other partners, stands as one of Singapore's most prestigious business addresses. The Sail @ Marina Bay, one of Singapore's first integrated waterfront residential-commercial developments, demonstrated SingLand's ability to execute complex large-format projects with lasting appeal.</p>
+          <p class="body-text">In the residential segment, SingLand has collaborated closely with UOL on multiple projects. Their most recent joint residential project, Pinetree Hill in District 21, launched in 2023 and has achieved strong sales performance — confirming the partnership's continued relevance to Singapore's discerning homebuyer base.</p>
+
+          <div class="dev-section-title">Why SingLand Matters for Thomson Reserve</div>
+          <p class="body-text">Thomson Reserve is one of the largest residential undertakings in the RCR — approximately 1,240 units on 5 hectares. A project of this scale requires not just design capability, but construction oversight, financial management and project delivery expertise at an institutional level. SingLand brings exactly this infrastructure, ensuring that Thomson Reserve is delivered on time and to specification.</p>
+
+          <div class="dev-section-title">Selected Past Projects</div>
+          <div class="dev-past-projects">
+            <div class="project-pill">
+              <div class="project-pill-name">Pinetree Hill</div>
+              <div class="project-pill-detail">D21 · 520 units · 2023 · Joint with UOL</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">Marina Bay Financial Centre</div>
+              <div class="project-pill-detail">D1 · Singapore's premier business address</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">The Sail @ Marina Bay</div>
+              <div class="project-pill-detail">D1 · 1,111 units · Iconic waterfront living</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">V on Shenton</div>
+              <div class="project-pill-detail">D1 · 510 units · CBD mixed-use</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">One Raffles Place</div>
+              <div class="project-pill-detail">D1 · Landmark commercial tower</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">St Regis Residences</div>
+              <div class="project-pill-detail">D10 · Luxury freehold · Tanglin</div>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <div class="highlight-box-text">"SingLand's involvement signals more than just capital — it signals <strong>institutional confidence in the long-term value of the Bright Hill Drive location</strong>. You do not commit to a $810M en bloc without a clear conviction in where the market is heading."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAPITALAND DEVELOPMENT -->
+    <div class="dev-profile" id="capitaland">
+      <div class="dev-profile-grid">
+        <div class="dev-identity">
+          <div class="dev-logo-box">
+            <img src="/capitaland-logo-v2.png" alt="CapitaLand Development">
+          </div>
+          <div class="dev-name">CapitaLand Development</div>
+          <div class="dev-tagline">The development arm of CapitaLand Group — Asia's largest diversified real estate group, known for innovative master planning and design at scale.</div>
+          <ul class="dev-facts">
+            <li class="dev-fact"><span class="dev-fact-label">Parent</span><span class="dev-fact-value">CapitaLand Group</span></li>
+            <li class="dev-fact"><span class="dev-fact-label">Presence</span><span class="dev-fact-value">40+ countries</span></li>
+            <li class="dev-fact"><span class="dev-fact-label">Speciality</span><span class="dev-fact-value">Master-planned estates</span></li>
+            <li class="dev-fact"><span class="dev-fact-label">Known for</span><span class="dev-fact-value">Sustainability & design</span></li>
+            <li class="dev-fact"><span class="dev-fact-label">Role in TR</span><span class="dev-fact-value">Co-developer</span></li>
+          </ul>
+        </div>
+        <div class="dev-content">
+          <div class="dev-section-title">About CapitaLand Development</div>
+          <p class="body-text">CapitaLand Development is the development arm of CapitaLand Group, one of Asia's largest diversified real estate companies with a presence spanning more than 40 countries. Their involvement in Thomson Reserve brings an additional layer of design ambition and sustainability thinking that elevates the project beyond a standard residential launch.</p>
+          <p class="body-text">CapitaLand's most recognised residential projects in Singapore are notable precisely for their scale and innovation. d'Leedon — a 1,715-unit development in District 10 designed by Zaha Hadid — demonstrated CapitaLand's willingness to invest in world-class architectural ambition for their flagship developments. Sky Habitat in Bishan, designed by Moshe Safdie, set a new benchmark for large-scale residential architecture in Singapore's RCR. The Interlace, another Safdie-designed project in District 4, won the World Building of the Year award.</p>
+          <p class="body-text">For Thomson Reserve, CapitaLand's contribution is expected to manifest in the masterplan's landscaping philosophy, facility design, and the sustainability features embedded across the development — all areas where CapitaLand has a demonstrated competitive advantage over developers focused purely on unit sales.</p>
+
+          <div class="dev-section-title">Design & Sustainability Philosophy</div>
+          <p class="body-text">CapitaLand is one of Singapore's most sustainability-focused developers, having committed to net-zero carbon by 2050 and consistently achieving Green Mark certifications across their developments. Thomson Reserve buyers can expect green building features, energy-efficient systems, and landscape design that integrates naturally with the adjacent Central Catchment Nature Reserve — a rare and permanent natural asset on the doorstep of the development.</p>
+
+          <div class="dev-section-title">Selected Past Projects</div>
+          <div class="dev-past-projects">
+            <div class="project-pill">
+              <div class="project-pill-name">d'Leedon</div>
+              <div class="project-pill-detail">D10 · 1,715 units · Designed by Zaha Hadid</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">Sky Habitat</div>
+              <div class="project-pill-detail">D20 · 509 units · Bishan · Moshe Safdie design</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">The Interlace</div>
+              <div class="project-pill-detail">D4 · 1,040 units · World Building of the Year</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">Cairnhill Nine</div>
+              <div class="project-pill-detail">D9 · 268 units · Luxury freehold · Orchard</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">The Nassim</div>
+              <div class="project-pill-detail">D10 · 55 units · Ultra-luxury · Nassim Road</div>
+            </div>
+            <div class="project-pill">
+              <div class="project-pill-name">Westgate Tower</div>
+              <div class="project-pill-detail">D22 · Integrated development · Jurong</div>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <div class="highlight-box-text">"When CapitaLand designs at scale — Sky Habitat, d'Leedon, The Interlace — the results consistently <strong>set benchmarks rather than follow them</strong>. Their presence in the Thomson Reserve consortium signals that this will not be an ordinary 1,240-unit development."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY THIS CONSORTIUM -->
+<section class="section why-section">
+  <div class="section-inner">
+    <div class="section-label">Why It Matters</div>
+    <h2 class="section-h2">What the Consortium Means <em>for Buyers</em></h2>
+    <p class="section-intro">Three SGX-listed developers committing $810 million to a single residential site is not a routine transaction. It is a considered, long-term bet on the value of District 20 — and it carries direct implications for buyers considering Thomson Reserve.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-number">01</div>
+        <div class="why-title">Financial Certainty</div>
+        <div class="why-text">Three public-listed developers means audited financials, SGX disclosure obligations and institutional accountability. Thomson Reserve will be built. There is no developer risk — only construction timeline risk, which is standard for any new launch purchase.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-number">02</div>
+        <div class="why-title">Quality Assurance</div>
+        <div class="why-text">UOL, SingLand and CapitaLand each have public reputations to protect. None of them can afford to cut corners on a flagship project of this scale and visibility. Buyers can expect construction quality, finishing standards and facility delivery that reflects their combined heritage.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-number">03</div>
+        <div class="why-title">Market Conviction</div>
+        <div class="why-text">A land price of $1,178 psf ppr reflects deep conviction in District 20's trajectory. Developers at this level do not overpay for land — they price it on future demand models. Their willingness to pay this figure is itself a bullish signal for the Upper Thomson market.</div>
+      </div>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:24px;flex-wrap:wrap;">
+        <a href="https://thomson-reserves.sg/thomson-reserve-vs-amo-residence.html" style="font-size:13px;color:var(--forest);font-weight:500;text-decoration:none;border-bottom:1px solid var(--gold);">Compare with AMO Residence (also by UOL) &rarr;</a>
+        <a href="https://thomson-reserves.sg/pricing.html" style="font-size:13px;color:var(--forest);font-weight:500;text-decoration:none;border-bottom:1px solid var(--gold);">How developer quality shapes pricing &rarr;</a>
+        <a href="https://thomson-reserves.sg/thomson-reserve-faq.html" style="font-size:13px;color:var(--forest);font-weight:500;text-decoration:none;border-bottom:1px solid var(--gold);">Developer &amp; project FAQ &rarr;</a>
+      </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <div class="cta-strip-text">
+      <h2>Register for Thomson Reserve VVIP Early Access</h2>
+      <p>Be first to receive floor plans, pricing and showflat preview dates. Direct developer price — no commission payable.</p>
+    </div>
+    <div class="btn-group">
+      <a href="https://thomson-reserves.sg/#register" class="btn-primary">Register Now</a>
+      <a href="https://thomson-reserves.sg/" class="btn-outline-dark">Back to Overview</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-col-title">Thomson Reserve</div>
+      <div class="footer-project-name">Thomson Reserve</div>
+      <ul class="footer-details">
+        <li><strong>Developer:</strong> UOL Group · Singapore Land Group · CapitaLand Development</li>
+        <li><strong>Tenure:</strong> 99-Year Leasehold</li>
+        <li><strong>Type:</strong> Private Condominium</li>
+        <li><strong>Total Units:</strong> Approx. 1,240</li>
+        <li><strong>Expected Preview:</strong> Q3 2026</li>
+        <li><strong>Expected TOP:</strong> 2032 (estimated)</li>
+      </ul>
+    </div>
+    <div>
+            <div class="footer-col-title">Proudly Developed By</div>
+      <div class="footer-dev-badges">
+        <div class="footer-dev-badge">
+          <img src="/uol-logo-v2.png" alt="UOL Group Limited" style="height:40px;width:auto;display:block;">
+        </div>
+        <div class="footer-dev-badge">
+          <img src="/singapore-land-logo-v2.png" alt="Singapore Land Group" style="height:32px;width:auto;display:block;">
+        </div>
+        <div class="footer-dev-badge">
+          <img src="/capitaland-logo-v2.png" alt="CapitaLand Development" style="height:38px;width:auto;display:block;">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Site Links</div>
+      <ul class="footer-links">
+        <li><a href="https://thomson-reserves.sg/">Home</a></li>
+        <li><a href="https://thomson-reserves.sg/developer.html">Developer</a></li>
+        <li><a href="https://thomson-reserves.sg/location-map.html">Location Map</a></li>
+        <li><a href="https://thomson-reserves.sg/site-plan.html">Site Plan</a></li>
+        <li><a href="https://thomson-reserves.sg/floor-plan.html">Floor Plan</a></li>
+        <li><a href="https://thomson-reserves.sg/pricing.html">Pricing</a></li>
+        <li><a href="https://thomson-reserves.sg/thomson-reserve-showflat.html">Showflat</a></li>
+        <li><a href="https://thomson-reserves.sg/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact Us</div>
+      <div class="footer-contact-item">Thomson Reserve @ Bright Hill Drive</div>
+      <div class="footer-contact-item">Mon–Sun: 10am–7pm</div>
+      <div class="footer-contact-item"><a href="tel:+6589623281" style="color:var(--gold);text-decoration:none;">+65 8962 3281</a></div>
+      <div class="footer-contact-item"><a href="mailto:sales@thomson-reserves.sg" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;">sales@thomson-reserves.sg</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">Copyright © 2026 Thomson Reserve · PropNex Realty Pte Ltd · L3008022J · +65 8962 3281</div>
+    <div class="footer-bottom-links">
+      <a href="https://thomson-reserves.sg/sitemap.html">Sitemap</a>
+      <a href="https://thomson-reserves.sg/disclaimer.html">Disclaimer</a>
+      <a href="https://thomson-reserves.sg/privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FAB -->
+<a href="https://wa.me/6589623281?text=Hi%2C%20I%27m%20interested%20in%20Thomson%20Reserve" class="whatsapp-fab" target="_blank">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- MOBILE STICKY BAR -->
+<div class="mobile-sticky">
+  <a href="https://thomson-reserves.sg/floor-plan.html"><span class="ms-icon">📐</span>Floor Plans</a>
+  <a href="https://thomson-reserves.sg/pricing.html"><span class="ms-icon">💰</span>Price List</a>
+  <a href="https://thomson-reserves.sg/#inventory"><span class="ms-icon">📊</span>Units</a>
+  <a href="https://wa.me/6589623281" style="background:rgba(37,211,102,0.1);color:#4caf6e;"><span class="ms-icon">💬</span>WhatsApp</a>
+</div>
+
+</body>
+</html>

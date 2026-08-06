@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Thomson Reserve — thomson-reserves.sg</title>
+<meta name="description" content="Privacy Policy for thomson-reserves.sg. How we collect, use and protect your personal data under Singapore's Personal Data Protection Act (PDPA).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--forest:#1a2e1e;--forest-deep:#0f1c12;--gold:#c4a050;--gold-light:#e8c882;--cream:#f9f5ee;--cream-dark:#f0e9d8;--text-dark:#1a1a18;--text-mid:#3d3d38;--text-light:#7a7a70;--text-faint:#aaa89e;--white:#ffffff;--border:rgba(196,160,80,0.18);--border-light:rgba(196,160,80,0.1);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text-dark);font-size:16px;line-height:1.7;overflow-x:hidden;}
+  .topbar{background:var(--forest-deep);color:var(--gold-light);font-size:11px;letter-spacing:0.12em;font-weight:500;padding:9px 40px;display:flex;justify-content:space-between;align-items:center;text-transform:uppercase;}
+  .topbar a{color:var(--gold);text-decoration:none;}
+  .topbar-pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4caf6e;margin-right:8px;animation:pulse 2s infinite;vertical-align:middle;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+  nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,0.06);}
+  .nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+  .logo-mark{width:40px;height:40px;background:var(--forest);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .logo-mark span{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;letter-spacing:1px;}
+  .logo-text{line-height:1.2;}
+  .logo-text-main{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;letter-spacing:0.12em;color:var(--forest);text-transform:uppercase;white-space:nowrap;}
+  .logo-text-sub{font-size:9px;letter-spacing:0.18em;color:var(--text-faint);text-transform:uppercase;white-space:nowrap;}
+  .nav-links{display:flex;align-items:center;gap:0;list-style:none;flex-shrink:0;}
+  .nav-links li{position:relative;}
+  .nav-links li a{display:flex;align-items:center;gap:5px;padding:0 13px;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;height:72px;white-space:nowrap;transition:color 0.2s;position:relative;}
+  .nav-links li a::after{content:'';position:absolute;bottom:0;left:13px;right:13px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.2s;}
+  .nav-links li a:hover{color:var(--forest);}
+  .nav-links li a:hover::after{transform:scaleX(1);}
+  .nav-links li.has-dropdown>a::before{content:'';display:inline-block;width:6px;height:6px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);margin-left:4px;margin-top:-3px;flex-shrink:0;transition:transform 0.2s;}
+  .nav-links li.has-dropdown>a::after{display:none;}
+  .nav-links li.has-dropdown:hover>a::before{transform:rotate(225deg);margin-top:2px;}
+  .dropdown{display:none;position:absolute;top:72px;left:0;min-width:220px;background:var(--white);border:1px solid var(--border);border-top:2px solid var(--gold);box-shadow:0 8px 32px rgba(0,0,0,0.1);z-index:200;}
+  .nav-links li.has-dropdown:hover .dropdown{display:block;}
+  .dropdown a{display:block!important;height:auto!important;padding:13px 20px!important;font-size:11px!important;letter-spacing:0.08em!important;color:var(--text-mid)!important;border-bottom:1px solid var(--border-light);white-space:nowrap;transition:background 0.15s,color 0.15s!important;}
+  .dropdown a:last-child{border-bottom:none;}
+  .dropdown a:hover{background:var(--cream)!important;color:var(--forest)!important;}
+  .dropdown a::after{display:none!important;}
+  .nav-cta{background:var(--forest);color:var(--gold-light)!important;padding:10px 18px!important;height:auto!important;line-height:normal!important;font-size:11px!important;letter-spacing:0.12em!important;border:1px solid transparent;transition:background 0.2s!important;}
+  .nav-cta:hover{background:var(--forest-deep)!important;}
+  .nav-cta::after{display:none!important;}
+
+  .page-hero{background:linear-gradient(165deg,var(--forest-deep) 0%,#1a3a22 50%,#0f2a18 100%);padding:64px 0 56px;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(196,160,80,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(196,160,80,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+  .page-hero-inner{max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:2;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:20px;}
+  .breadcrumb a{font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-decoration:none;text-transform:uppercase;}
+  .breadcrumb a:hover{color:var(--gold);}
+  .breadcrumb-sep{font-size:11px;color:rgba(255,255,255,0.2);}
+  .breadcrumb-current{font-size:11px;letter-spacing:0.1em;color:var(--gold);text-transform:uppercase;}
+  .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:10px;}
+  .page-hero h1 em{font-style:italic;color:var(--gold-light);}
+  .page-hero-meta{font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;}
+  .legal-inner{max-width:860px;margin:0 auto;padding:0 40px;}
+  .legal-body{padding:64px 0 96px;}
+  .legal-section{margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border-light);}
+  .legal-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .legal-num{font-size:9px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+  .legal-num::before{content:'';display:block;width:20px;height:1px;background:var(--gold);}
+  .legal-h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--forest);margin-bottom:16px;line-height:1.2;}
+  .legal-p{font-size:14.5px;color:var(--text-mid);line-height:1.85;font-weight:300;margin-bottom:12px;}
+  .legal-p:last-child{margin-bottom:0;}
+  .legal-list{list-style:none;margin:8px 0 14px;display:flex;flex-direction:column;gap:8px;}
+  .legal-list li{font-size:14px;color:var(--text-mid);line-height:1.75;font-weight:300;padding-left:16px;position:relative;}
+  .legal-list li::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:12px;}
+  .legal-highlight{background:var(--white);border-left:3px solid var(--gold);padding:14px 20px;margin:16px 0;font-size:14px;color:var(--text-mid);line-height:1.75;font-weight:300;}
+  .legal-contact{background:var(--forest);padding:24px 28px;margin-top:20px;}
+  .legal-contact-title{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px;}
+  .legal-contact p{font-size:13.5px;color:rgba(255,255,255,0.6);line-height:1.75;font-weight:300;margin-bottom:6px;}
+  .legal-contact a{color:var(--gold-light);text-decoration:none;}
+
+  footer{background:var(--forest-deep);padding:64px 0 0;border-top:1px solid rgba(196,160,80,0.12);}
+  .footer-grid{max-width:1280px;margin:0 auto;padding:0 40px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;border-bottom:1px solid rgba(196,160,80,0.08);}
+  .footer-col-title{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(196,160,80,0.12);}
+  .footer-project-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--white);letter-spacing:0.06em;margin-bottom:16px;}
+  .footer-details{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .footer-details li{font-size:12.5px;color:rgba(255,255,255,0.35);font-weight:300;}
+  .footer-details li strong{color:rgba(255,255,255,0.55);font-weight:400;}
+  .footer-dev-badges{display:flex;flex-direction:column;gap:10px;margin-top:4px;}
+  .footer-dev-badge{display:flex;align-items:center;padding:10px 0;background:transparent;border:none;min-height:48px;}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-links a{font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;font-weight:300;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--gold);}
+  .footer-contact-item{font-size:13px;color:rgba(255,255,255,0.4);font-weight:300;margin-bottom:8px;}
+  .footer-bottom{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-bottom-text{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.06em;}
+  .footer-bottom-links{display:flex;gap:20px;}
+  .footer-bottom-links a{font-size:11px;color:rgba(255,255,255,0.25);text-decoration:none;}
+  .footer-bottom-links a:hover{color:var(--gold);}
+  .whatsapp-fab{position:fixed;bottom:28px;right:28px;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 24px rgba(37,211,102,0.35);z-index:999;transition:transform 0.2s;}
+  .whatsapp-fab:hover{transform:scale(1.08);}
+  .whatsapp-fab svg{width:28px;height:28px;fill:white;}
+
+  @media(max-width:768px){
+    .topbar{padding:8px 20px;font-size:9px;}
+    .nav-inner{padding:0 20px;}
+    .nav-links{display:none;}
+    .page-hero{padding:56px 0 48px;}
+    .page-hero-inner,.section-inner,.legal-inner{padding:0 20px;}
+    .section{padding:56px 0;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:32px;padding:0 20px 40px;}
+    body{padding-bottom:60px;}
+  }
+
+  /* ── MOBILE RESPONSIVE TABLES & OVERFLOW FIXES ── */
+  .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .table-wrap table{min-width:540px;}
+  @media(max-width:768px){
+    table{font-size:12px !important;}
+    table td,table th{padding:10px 8px !important;}
+    .two-col,.info-grid,.investment-grid,.loc-grid,.info-cards,.reg-grid,.inv-grid,.enbloc-grid,.mrt-grid,.mrt-cards,.dev-profile-grid,.dev-profile-grid.reverse,.calc-row,.project-grid,.lifestyle-grid{grid-template-columns:1fr !important;gap:24px !important;}
+    .hero-stats{grid-template-columns:repeat(2,1fr) !important;}
+    .psf-hero{padding:24px !important;}
+    .psf-value{font-size:36px !important;}
+    .psf-tier{flex-direction:column;gap:4px;align-items:flex-start !important;}
+    .calc-wrap{padding:24px 16px !important;}
+    .comparison-table,.data-table,.breakeven-table,.school-table,.details-table,.travel-table,.hours-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;}
+    .section-h2{font-size:clamp(22px,5vw,36px) !important;}
+    .reg-h2{font-size:clamp(24px,5vw,38px) !important;}
+    .page-hero h1{font-size:clamp(30px,7vw,52px) !important;}
+    .enbloc-stat-number{font-size:28px !important;}
+    .footer-grid{grid-template-columns:1fr !important;}
+    .trust-grid{grid-template-columns:1fr 1fr !important;}
+    .sitemap-grid{grid-template-columns:1fr !important;}
+    .contact-grid{grid-template-columns:1fr !important;}
+    .cta-strip-inner{grid-template-columns:1fr !important;}
+    .dev-cards{grid-template-columns:1fr !important;}
+    .nature-grid{grid-template-columns:1fr !important;}
+    .mrt-grid,.mrt-cards{grid-template-columns:1fr !important;}
+    .consortium-stats{grid-template-columns:1fr 1fr !important;}
+    .quick-contact{flex-direction:column !important;}
+    .qc-pill{width:100% !important;}
+    .reg-grid{grid-template-columns:1fr !important;}
+    .milestone-strip{flex-direction:column !important;}
+    .ms-item{border-right:none !important;border-bottom:1px solid rgba(196,160,80,0.1);}
+    .hero-content{grid-template-columns:1fr !important;gap:32px !important;padding:48px 20px 32px !important;}
+    .section-inner,.page-hero-inner,.legal-inner,.policy-wrap,.reg-grid,.cta-strip-inner{padding-left:20px !important;padding-right:20px !important;}
+    .topbar{padding:8px 16px !important;font-size:9px !important;gap:8px;}
+    .topbar div:first-child{display:none;}
+    .nav-inner{padding:0 16px !important;}
+    .nav-links{display:none !important;}
+    body{padding-bottom:64px;}
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://thomson-reserves.sg/privacy-policy.html#webpage",
+      "url": "https://thomson-reserves.sg/privacy-policy.html",
+      "name": "Privacy Policy | Thomson Reserve - thomson-reserves.sg",
+      "description": "Privacy Policy for thomson-reserves.sg. How we collect, use and protect your personal data under Singapore's PDPA.",
+      "datePublished": "2026-04-14",
+      "dateModified": "2026-04-15",
+      "isPartOf": {
+        "@id": "https://thomson-reserves.sg/#website"
+      },
+      "about": {
+        "@id": "https://thomson-reserves.sg/#project"
+      },
+      "inLanguage": "en-SG",
+      "breadcrumb": {
+        "@id": "https://thomson-reserves.sg/privacy-policy.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thomson-reserves.sg/privacy-policy.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Thomson Reserve",
+          "item": "https://thomson-reserves.sg/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Privacy Policy",
+          "item": "https://thomson-reserves.sg/privacy-policy.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thomson-reserves.sg/privacy-policy.html">
+  <meta property="og:title" content="Privacy Policy | Thomson Reserve — thomson-reserves.sg">
+  <meta property="og:description" content="Privacy Policy for thomson-reserves.sg. How we collect, use and protect your personal data under Singapore's PDPA.">
+  <meta property="og:site_name" content="Thomson Reserve">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy | Thomson Reserve — thomson-reserves.sg">
+  <meta name="twitter:description" content="Privacy Policy for thomson-reserves.sg. How we collect, use and protect your personal data under Singapore's PDPA.">
+</head>
+<body>
+<div class="topbar">
+  <div><span class="topbar-pulse"></span>VVIP Preview Registration Open &mdash; Q3 2026</div>
+  <div>New Launch in D20 &nbsp;|&nbsp; <a href="tel:+6589623281">+65 8962 3281</a></div>
+</div>
+<nav>
+  <div class="nav-inner">
+    <a href="https://thomson-reserves.sg/" class="nav-logo">
+      <div class="logo-mark"><span>TR</span></div>
+      <div class="logo-text">
+        <div class="logo-text-main">Thomson Reserve</div>
+        <div class="logo-text-sub">District 20 &middot; Upper Thomson &middot; Singapore</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://thomson-reserves.sg/">Home</a></li>
+      <li><a href="https://thomson-reserves.sg/developer.html">Developer</a></li>
+      <li><a href="https://thomson-reserves.sg/location-map.html">Location Map</a></li>
+      <li><a href="https://thomson-reserves.sg/site-plan.html">Site Plan</a></li>
+      <li><a href="https://thomson-reserves.sg/floor-plan.html">Floor Plan</a></li>
+      <li><a href="https://thomson-reserves.sg/pricing.html">Pricing</a></li>
+      <li class="has-dropdown">
+        <a href="https://thomson-reserves.sg/stamp-duty.html">Financing</a>
+        <div class="dropdown">
+          <a href="https://thomson-reserves.sg/stamp-duty.html">Stamp Duty</a>
+          <a href="https://thomson-reserves.sg/payment-scheme.html">Payment Scheme</a>
+          <a href="https://thomson-reserves.sg/housing-loan-information.html">Housing Loan Information</a>
+        </div>
+      </li>
+      <li><a href="https://thomson-reserves.sg/thomson-reserve-showflat.html" class="nav-cta">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="https://thomson-reserves.sg/">Thomson Reserve</a>
+      <span class="breadcrumb-sep">&#8250;</span>
+      <span class="breadcrumb-current">Privacy Policy</span>
+    </div>
+    <h1>Privacy <em>Policy</em></h1>
+    <div class="page-hero-meta">Last updated: 14 April 2026 &nbsp;&middot;&nbsp; thomson-reserves.sg</div>
+  </div>
+</section>
+
+<div class="legal-inner">
+  <div class="legal-body">
+
+    <div class="legal-section">
+      <div class="legal-num">01</div>
+      <h2 class="legal-h2">Introduction</h2>
+      <p class="legal-p">This Privacy Policy describes how thomson-reserves.sg (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) collects, uses, discloses and protects the personal data of individuals who interact with our website in connection with Thomson Reserve, a residential development at Bright Hill Drive, District 20, Singapore.</p>
+      <p class="legal-p">We are committed to protecting your personal data in accordance with the Personal Data Protection Act 2012 of Singapore (&ldquo;PDPA&rdquo;). By submitting any enquiry or registration form on this website, you acknowledge that you have read and agree to the collection, use and disclosure of your personal data as described in this Privacy Policy.</p>
+      <div class="legal-highlight">This website is operated by PropNex Realty Pte Ltd (CEA Licence No. L3008022J) as official developer sales team for Thomson Reserve, developed by UOL Group, Singapore Land Group and CapitaLand Development.</div>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-num">02</div>
+      <h2 class="legal-h2">Personal Data We Collect</h2>
+      <p class="legal-p">We collect personal data you voluntarily provide when submitting a registration or enquiry form. This includes:</p>
+      <ul class="legal-list">
+        <li><strong>Identity data:</strong> Full name</li>
+        <li><strong>Contact data:</strong> Mobile number, email address</li>
+        <li><strong>Enquiry data:</strong> Nature of enquiry, appointment preference, message content, unit type preference</li>
+        <li><strong>Technical data:</strong> IP address, browser type, time zone, device information</li>
+        <li><strong>Usage data:</strong> Pages visited, time spent, referring URLs</li>
+      </ul>
+      <p class="legal-p">We do not collect sensitive personal data such as NRIC/FIN numbers, financial account details, health information, or biometric data through this website.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-num">03</div>
+      <h2 class="legal-h2">How We Use Your Personal Data</h2>
+      <ul class="legal-list">
+        <li>To respond to your enquiry and provide requested information (floor plans, pricing, site plan, e-brochure)</li>
+        <li>To schedule and confirm your showflat appointment</li>
+        <li>To send you updates on Thomson Reserve including preview dates, price releases, and booking day information</li>
+        <li>To provide direct developer pricing and VVIP preview access</li>
+        <li>To comply with legal and regulatory obligations</li>
+        <li>To improve our website and communications</li>
+      </ul>
+      <div class="legal-highlight"><strong>No spam.</strong> You will only receive communications directly relevant to Thomson Reserve. You may withdraw consent at any time by contacting <a href="mailto:sales@thomson-reserves.sg" style="color:var(--gold);">sales@thomson-reserves.sg</a>.</div>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-num">04</div>
+      <h2 class="legal-h2">Disclosure of Personal Data</h2>
+      <p class="legal-p">We may share your personal data with the following recipients for purposes described in this policy:</p>
+      <ul class="legal-list">
+        <li><strong>Developer consortium:</strong> UOL Group Limited, Singapore Land Group and CapitaLand Development — for processing your interest and booking</li>
+        <li><strong>PropNex Realty Pte Ltd:</strong> The licensed real estate agency managing sales for Thomson Reserve</li>
+        <li><strong>Technology service providers:</strong> Website hosting, CRM, email and analytics providers under appropriate data processing agreements</li>
+        <li><strong>Regulatory authorities:</strong> Where required by law or court order in Singapore</li>
+      </ul>
+      <p class="legal-p">We do not sell, rent, or trade your personal data to any third party for marketing purposes.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-num">05</div>
+      <h2 class="legal-h2">Data Retention</h2>
+      <p class="legal-p">We retain your personal data for as long as necessary to fulfil the purposes for which it was collected. For Thomson Reserve enquiries and registrations, we will generally retain data for up to 7 years following completion of the development or last interaction, whichever is later — consistent with standard property industry practice and applicable limitation periods under Singapore law.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-num">06</div>
+      <h2 class="legal-h2">Your Rights Under the PDPA</h2>
+      <ul class="legal-list">
+        <li><strong>Right of access:</strong> Request access to the personal data we hold about you</li>
+        <li><strong>Right of correction:</strong> Request correction of any inaccuracy in your personal data</li>
+        <li><strong>Right to withdraw consent:</strong> Withdraw consent to our use of your personal data at any time with reasonable notice</li>
+        <li><strong>Right to data portability:</strong> Request transmission of your data to another organisation where applicable</li>
+      </ul>
+      <p class="legal-p">To exercise any right, contact our Data Protection Officer (Section 10). We will respond within 30 days.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-num">07</div>
+      <h2 class="legal-h2">Cookies &amp; Tracking Technologies</h2>
+      <p class="legal-p">Our website uses cookies to enhance your browsing experience and understand site usage. We use strictly necessary cookies (required for site function), analytics cookies (Google Analytics — aggregated, anonymised), functional cookies (preferences), and marketing cookies (Facebook Pixel, Google Ads — with consent only).</p>
+      <p class="legal-p">You can control or disable cookies through your browser settings at any time. Disabling certain cookies may affect website functionality.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-num">08</div>
+      <h2 class="legal-h2">Security</h2>
+      <p class="legal-p">We implement appropriate technical and organisational measures to protect your personal data, including HTTPS encryption, access controls, and regular review of data practices. In the event of a data breach likely to result in significant harm, we will notify the PDPC and affected individuals in accordance with our obligations under the PDPA Notification Obligation.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-num">09</div>
+      <h2 class="legal-h2">Changes to This Policy</h2>
+      <p class="legal-p">We may update this Privacy Policy from time to time. When we make material changes, we will update the &ldquo;Last updated&rdquo; date at the top of this page. Your continued use of this website after changes have been posted constitutes acceptance of the revised policy.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-num">10</div>
+      <h2 class="legal-h2">Contact Our Data Protection Officer</h2>
+      <div class="legal-contact">
+        <div class="legal-contact-title">Data Protection Officer &mdash; Thomson Reserve</div>
+        <p><strong style="color:rgba(255,255,255,0.75);">PropNex Realty Pte Ltd</strong> &nbsp;&middot;&nbsp; CEA Licence No. L3008022J</p>
+        <p>Email: <a href="mailto:sales@thomson-reserves.sg">sales@thomson-reserves.sg</a></p>
+        <p>Phone: <a href="tel:+6589623281">+65 8962 3281</a></p>
+        <p>Hours: Monday &ndash; Sunday, 10:00am &ndash; 7:00pm</p>
+        <p style="margin-top:12px;font-size:12px;color:rgba(255,255,255,0.3);">You may also lodge a complaint with the Personal Data Protection Commission (PDPC) at <a href="https://www.pdpc.gov.sg" target="_blank" style="color:rgba(196,160,80,0.5);">www.pdpc.gov.sg</a>.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-col-title">Thomson Reserve</div>
+      <div class="footer-project-name">Thomson Reserve</div>
+      <ul class="footer-details">
+        <li><strong>Developer:</strong> UOL Group · Singapore Land Group · CapitaLand Development</li>
+        <li><strong>Tenure:</strong> 99-Year Leasehold</li>
+        <li><strong>Type:</strong> Private Condominium</li>
+        <li><strong>Total Units:</strong> Approx. 1,240</li>
+        <li><strong>Expected Preview:</strong> Q3 2026</li>
+        <li><strong>Expected TOP:</strong> 2032 (estimated)</li>
+      </ul>
+    </div>
+    <div>
+            <div class="footer-col-title">Proudly Developed By</div>
+      <div class="footer-dev-badges">
+        <div class="footer-dev-badge">
+          <img src="/uol-logo-v2.png" alt="UOL Group Limited" style="height:40px;width:auto;display:block;">
+        </div>
+        <div class="footer-dev-badge">
+          <img src="/singapore-land-logo-v2.png" alt="Singapore Land Group" style="height:32px;width:auto;display:block;">
+        </div>
+        <div class="footer-dev-badge">
+          <img src="/capitaland-logo-v2.png" alt="CapitaLand Development" style="height:38px;width:auto;display:block;">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Site Links</div>
+      <ul class="footer-links">
+        <li><a href="https://thomson-reserves.sg/">Home</a></li>
+        <li><a href="https://thomson-reserves.sg/developer.html">Developer</a></li>
+        <li><a href="https://thomson-reserves.sg/location-map.html">Location Map</a></li>
+        <li><a href="https://thomson-reserves.sg/site-plan.html">Site Plan</a></li>
+        <li><a href="https://thomson-reserves.sg/floor-plan.html">Floor Plan</a></li>
+        <li><a href="https://thomson-reserves.sg/pricing.html">Pricing</a></li>
+        <li><a href="https://thomson-reserves.sg/thomson-reserve-showflat.html">Showflat</a></li>
+        <li><a href="https://thomson-reserves.sg/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact Us</div>
+      <div class="footer-contact-item">Thomson Reserve @ Bright Hill Drive</div>
+      <div class="footer-contact-item">Mon–Sun: 10am–7pm</div>
+      <div class="footer-contact-item"><a href="tel:+6589623281" style="color:var(--gold);text-decoration:none;">+65 8962 3281</a></div>
+      <div class="footer-contact-item"><a href="mailto:sales@thomson-reserves.sg" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;">sales@thomson-reserves.sg</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">Copyright © 2026 Thomson Reserve · PropNex Realty Pte Ltd · L3008022J · +65 8962 3281</div>
+    <div class="footer-bottom-links">
+      <a href="https://thomson-reserves.sg/sitemap.html">Sitemap</a>
+      <a href="https://thomson-reserves.sg/disclaimer.html">Disclaimer</a>
+      <a href="https://thomson-reserves.sg/privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/6589623281?text=Hi%2C%20I%27m%20interested%20in%20Thomson%20Reserve" class="whatsapp-fab" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+</body>
+</html>

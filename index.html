@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomson Reserve | Official Project Information & Resource Hub | District 20</title>
+<meta name="description" content="Thomson Reserve is a new launch condo at Bright Hill Drive, District 20. 1,240 units by UOL, SingLand & CapitaLand. Estimated preview Q3 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1a2e1e;
+    --forest-deep: #0f1c12;
+    --forest-mid: #243328;
+    --gold: #c4a050;
+    --gold-light: #e8c882;
+    --gold-pale: #f5edd8;
+    --cream: #f9f5ee;
+    --cream-dark: #f0e9d8;
+    --text-dark: #1a1a18;
+    --text-mid: #3d3d38;
+    --text-light: #7a7a70;
+    --text-faint: #aaa89e;
+    --white: #ffffff;
+    --border: rgba(196,160,80,0.18);
+    --border-light: rgba(196,160,80,0.1);
+    --shadow: 0 4px 32px rgba(15,28,18,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--forest-deep);
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    padding: 9px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  .topbar a { color: var(--gold); text-decoration: none; }
+  .topbar-pulse { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #4caf6e; margin-right: 8px; animation: pulse 2s infinite; vertical-align: middle; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .logo-mark {
+    width: 40px; height: 40px;
+    background: var(--forest);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-mark span {
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .logo-text { line-height: 1.2; }
+  .logo-text-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--forest);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .logo-text-sub {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    flex-shrink: 0;
+  }
+  .nav-links li {
+    position: relative;
+  }
+  .nav-links li a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 13px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-decoration: none;
+    height: 72px;
+    white-space: nowrap;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 13px; right: 13px;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.2s;
+  }
+  .nav-links li a:hover { color: var(--forest); }
+  .nav-links li a:hover::after { transform: scaleX(1); }
+  /* Dropdown arrow */
+  .nav-links li.has-dropdown > a::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-right: 1.5px solid var(--gold);
+    border-bottom: 1.5px solid var(--gold);
+    transform: rotate(45deg);
+    margin-left: 4px;
+    margin-top: -3px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .nav-links li.has-dropdown > a::after { display: none; }
+  .nav-links li.has-dropdown:hover > a::before { transform: rotate(225deg); margin-top: 2px; }
+  /* Dropdown menu */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    min-width: 220px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--gold);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    z-index: 200;
+  }
+  .nav-links li.has-dropdown:hover .dropdown { display: block; }
+  .dropdown a {
+    display: block !important;
+    height: auto !important;
+    padding: 13px 20px !important;
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+    color: var(--text-mid) !important;
+    border-bottom: 1px solid var(--border-light);
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s !important;
+  }
+  .dropdown a:last-child { border-bottom: none; }
+  .dropdown a:hover { background: var(--cream) !important; color: var(--forest) !important; }
+  .dropdown a::after { display: none !important; }
+  .nav-cta {
+    background: var(--forest);
+    color: var(--gold-light) !important;
+    padding: 10px 18px !important;
+    height: auto !important;
+    line-height: normal !important;
+    font-size: 11px !important;
+    letter-spacing: 0.12em !important;
+    border: 1px solid transparent;
+    transition: background 0.2s !important;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--forest-deep) !important; }
+  .nav-cta::after { display: none !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 92vh;
+    background: linear-gradient(165deg, var(--forest-deep) 0%, #1a3a22 40%, #0f2a18 70%, #08180e 100%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 65% 40%, rgba(196,160,80,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 80% at 15% 70%, rgba(26,58,34,0.4) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid-lines {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(196,160,80,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(196,160,80,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 80px;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-left {}
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+  .hero-eyebrow span {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(58px, 7vw, 96px);
+    font-weight: 300;
+    line-height: 0.9;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+    display: block;
+  }
+  .hero-subhead {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    font-weight: 500;
+  }
+  .hero-divider { width: 60px; height: 1px; background: var(--gold); margin-bottom: 28px; }
+  .hero-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(196,160,80,0.15);
+    border: 1px solid rgba(196,160,80,0.15);
+    margin-bottom: 40px;
+  }
+  .hero-stat {
+    background: rgba(15,28,18,0.6);
+    padding: 18px 20px;
+    backdrop-filter: blur(8px);
+  }
+  .hero-stat-label {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .hero-stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: var(--white);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .hero-cta-group { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--forest-deep);
+    padding: 15px 32px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    border: 1px solid rgba(196,160,80,0.4);
+    color: rgba(255,255,255,0.7);
+    padding: 14px 28px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-updated {
+    margin-top: 28px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.08em;
+  }
+  .hero-updated strong { color: rgba(196,160,80,0.6); }
+
+  /* Hero right — updates card */
+  .hero-updates-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(196,160,80,0.18);
+    backdrop-filter: blur(12px);
+    padding: 32px;
+  }
+  .updates-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(196,160,80,0.12);
+  }
+  .updates-title {
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .updates-live {
+    font-size: 9px;
+    color: #4caf6e;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .update-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .update-item:last-child { border-bottom: none; }
+  .update-date {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    padding-top: 2px;
+    font-weight: 500;
+    min-width: 75px;
+  }
+  .update-text {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+  .updates-view-all {
+    margin-top: 20px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .updates-view-all:hover { color: var(--gold-light); }
+
+  /* ── SECTION SHARED ── */
+  .section { padding: 100px 0; }
+  .section-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
+  .section-h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 400;
+    color: var(--forest);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .section-h2 em { font-style: italic; color: var(--gold); }
+  .section-intro {
+    font-size: 16px;
+    color: var(--text-mid);
+    line-height: 1.8;
+    max-width: 720px;
+    font-weight: 300;
+    margin-bottom: 48px;
+  }
+
+  /* ── SILO 1 — PROJECT CORE ── */
+  .silo-1 { background: var(--white); }
+  .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 60px; }
+  .h3-label {
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  h3.section-h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--forest);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .body-text { font-size: 15px; color: var(--text-mid); line-height: 1.85; font-weight: 300; margin-bottom: 14px; }
+  .dev-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }
+  .dev-card {
+    border: 1px solid var(--border);
+    padding: 24px;
+    background: var(--cream);
+    position: relative;
+  }
+  .dev-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+  }
+  .dev-card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 8px;
+    letter-spacing: 0.03em;
+  }
+  .dev-card-text { font-size: 13px; color: var(--text-light); line-height: 1.7; font-weight: 300; }
+
+  /* Timeline */
+  .timeline { margin-top: 40px; }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-light);
+    align-items: start;
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date { font-size: 13px; color: var(--text-light); font-weight: 400; }
+  .timeline-event { font-size: 14px; color: var(--text-mid); font-weight: 400; }
+  .status-done { color: #2d7a45; font-weight: 500; }
+  .status-progress { color: var(--gold); font-weight: 500; }
+  .status-upcoming { color: var(--text-faint); }
+  .status-tag {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    padding: 3px 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 10px;
+  }
+  .tag-done { background: rgba(45,122,69,0.1); color: #2d7a45; }
+  .tag-progress { background: rgba(196,160,80,0.12); color: var(--gold); }
+  .tag-upcoming { background: rgba(122,122,112,0.08); color: var(--text-faint); }
+
+  /* Project Details Table */
+  .project-details-wrap { margin-top: 60px; }
+  .project-details-title {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .project-details-title::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+  .details-table { width: 100%; border-collapse: collapse; }
+  .details-table tr { border-bottom: 1px solid var(--border-light); }
+  .details-table tr:hover td { background: var(--cream); }
+  .details-table td { padding: 14px 16px; font-size: 14px; }
+  .details-table td:first-child { color: var(--text-light); font-weight: 400; width: 38%; font-size: 13px; letter-spacing: 0.04em; }
+  .details-table td:last-child { color: var(--text-dark); font-weight: 500; }
+
+  /* ── SILO 2 — CONNECTIVITY ── */
+  .silo-2 { background: var(--forest-deep); color: var(--white); }
+  .silo-2 .section-h2 { color: var(--white); }
+  .silo-2 .section-intro { color: rgba(255,255,255,0.6); }
+  .silo-2 .section-label { color: var(--gold); }
+  .mrt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(196,160,80,0.12); margin-bottom: 56px; }
+  .mrt-card {
+    background: rgba(255,255,255,0.03);
+    padding: 36px 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  .mrt-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s;
+  }
+  .mrt-card:hover::before { transform: scaleX(1); }
+  .mrt-line-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+  .badge-tel { background: rgba(180,0,0,0.2); color: #ff8a80; border: 1px solid rgba(180,0,0,0.3); }
+  .badge-crl { background: rgba(0,130,65,0.2); color: #69e08a; border: 1px solid rgba(0,130,65,0.3); }
+  .badge-nsc { background: rgba(196,160,80,0.15); color: var(--gold-light); border: 1px solid rgba(196,160,80,0.25); }
+  .mrt-h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1.25;
+  }
+  .mrt-body { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.75; font-weight: 300; }
+  .mrt-highlight {
+    margin-top: 20px;
+    padding: 14px 18px;
+    border-left: 2px solid var(--gold);
+    background: rgba(196,160,80,0.06);
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    font-style: italic;
+  }
+
+  /* TEL Travel table */
+  .travel-table-wrap { margin-top: 48px; }
+  .travel-table-head {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .travel-table { width: 100%; border-collapse: collapse; }
+  .travel-table thead tr { border-bottom: 1px solid rgba(196,160,80,0.2); }
+  .travel-table thead th { padding: 10px 16px; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); text-align: left; font-weight: 500; }
+  .travel-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .travel-table tbody tr:hover td { background: rgba(255,255,255,0.03); }
+  .travel-table tbody td { padding: 14px 16px; font-size: 14px; color: rgba(255,255,255,0.7); }
+  .travel-table tbody td:last-child { color: var(--gold); font-weight: 500; }
+
+  /* ── SILO 3 — INVESTMENT ── */
+  .silo-3 { background: var(--cream); }
+  .investment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+  .breakeven-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  .breakeven-table tr { border-bottom: 1px solid var(--border-light); }
+  .breakeven-table td { padding: 13px 0; font-size: 14px; }
+  .breakeven-table td:first-child { color: var(--text-light); font-weight: 300; font-size: 13px; }
+  .breakeven-table td:last-child { text-align: right; color: var(--text-dark); font-weight: 500; }
+  .breakeven-table tr.total td { border-top: 2px solid var(--gold); border-bottom: none; padding-top: 16px; color: var(--forest); font-weight: 600; }
+  .psf-range-card {
+    background: var(--forest);
+    padding: 36px;
+    color: var(--white);
+    margin-top: 28px;
+  }
+  .psf-range-label { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 12px; }
+  .psf-range-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .psf-range-sub { font-size: 13px; color: rgba(255,255,255,0.4); font-weight: 300; }
+  .psf-tiers { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .psf-tier {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.04);
+    border-left: 2px solid rgba(196,160,80,0.3);
+    font-size: 13px;
+  }
+  .psf-tier-label { color: rgba(255,255,255,0.55); font-weight: 300; }
+  .psf-tier-price { color: var(--gold); font-weight: 500; letter-spacing: 0.04em; }
+
+  /* Comparison table */
+  .comparison-table { width: 100%; border-collapse: collapse; margin-top: 28px; }
+  .comparison-table thead { background: var(--forest); }
+  .comparison-table thead th { padding: 14px 16px; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-align: left; font-weight: 600; }
+  .comparison-table tbody tr { border-bottom: 1px solid var(--border-light); }
+  .comparison-table tbody tr:hover td { background: rgba(196,160,80,0.04); }
+  .comparison-table tbody td { padding: 16px; font-size: 14px; color: var(--text-mid); }
+  .comparison-table tbody tr.highlight td { background: rgba(196,160,80,0.07); color: var(--forest); font-weight: 600; }
+  .comparison-table tbody tr.highlight td:first-child::before { content: '→ '; color: var(--gold); }
+
+  /* ── SILO 4 — FAMILY & LIFESTYLE ── */
+  .silo-4 { background: var(--white); }
+  .lifestyle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .school-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  .school-table thead tr { border-bottom: 2px solid var(--gold); }
+  .school-table thead th { padding: 10px 14px; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); text-align: left; font-weight: 600; }
+  .school-table tbody tr { border-bottom: 1px solid var(--border-light); transition: background 0.15s; }
+  .school-table tbody tr:hover td { background: var(--cream); }
+  .school-table tbody td { padding: 14px; font-size: 13.5px; color: var(--text-mid); }
+  .school-table tbody td:first-child { font-weight: 500; color: var(--text-dark); }
+  .badge-1km {
+    display: inline-block;
+    background: rgba(45,122,69,0.1);
+    color: #2d7a45;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 2px;
+    border: 1px solid rgba(45,122,69,0.2);
+  }
+  .nature-list { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 0; }
+  .nature-list li {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-light);
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 14px;
+    align-items: start;
+  }
+  .nature-list li:last-child { border-bottom: none; }
+  .nature-icon { color: var(--gold); font-size: 14px; margin-top: 3px; }
+  .nature-item-name { font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; }
+  .nature-item-desc { font-size: 13px; color: var(--text-light); line-height: 1.6; font-weight: 300; }
+
+  /* ── REGISTRATION SECTION ── */
+  .registration { background: var(--forest-deep); padding: 100px 0; }
+  .reg-grid { display: grid; grid-template-columns: 1fr 480px; gap: 80px; align-items: start; }
+  .reg-left {}
+  .reg-h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+  .reg-h2 em { font-style: italic; color: var(--gold-light); }
+  .reg-desc { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.8; font-weight: 300; margin-bottom: 36px; }
+  .reg-benefits { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+  .reg-benefits li { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; color: rgba(255,255,255,0.65); font-weight: 300; }
+  .reg-benefits li::before { content: '✓'; color: var(--gold); font-weight: 700; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+  .reg-trust { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(196,160,80,0.12); }
+  .trust-badge {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .trust-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+
+  /* Form */
+  .reg-form-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(196,160,80,0.2);
+    padding: 40px;
+    backdrop-filter: blur(10px);
+  }
+  .form-title {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(196,160,80,0.15);
+  }
+  .form-group { margin-bottom: 18px; }
+  .form-label { display: block; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; font-weight: 500; }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(196,160,80,0.2);
+    color: var(--white);
+    padding: 13px 16px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
+  .form-input::placeholder { color: rgba(255,255,255,0.2); }
+  .form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23c4a050' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+  .form-select option { background: var(--forest-deep); color: var(--white); }
+  .form-textarea { resize: vertical; min-height: 88px; }
+  .form-checkbox-group { display: flex; align-items: flex-start; gap: 12px; }
+  .form-checkbox { width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0; accent-color: var(--gold); }
+  .form-checkbox-label { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.5; }
+  .form-checkbox-label a { color: var(--gold); text-decoration: none; }
+  .form-submit {
+    width: 100%;
+    background: var(--gold);
+    color: var(--forest-deep);
+    border: none;
+    padding: 16px;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--gold-light); }
+  .form-note { font-size: 10px; color: rgba(255,255,255,0.2); text-align: center; margin-top: 12px; letter-spacing: 0.06em; }
+
+  /* ── INVENTORY MONITOR ── */
+  .inventory { background: #0a1a0d; padding: 80px 0; border-top: 1px solid rgba(196,160,80,0.08); border-bottom: 1px solid rgba(196,160,80,0.08); }
+  .inv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .inv-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(196,160,80,0.1); }
+  .inv-stat { background: rgba(255,255,255,0.02); padding: 28px 24px; text-align: center; }
+  .inv-stat-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .inv-stat-label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); font-weight: 500; }
+  .milestones { margin-top: 0; display: flex; flex-direction: column; gap: 0; }
+  .milestone-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 13.5px;
+  }
+  .milestone-item:last-child { border-bottom: none; }
+  .milestone-dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 9px;
+  }
+  .m-done { background: rgba(45,122,69,0.2); color: #4caf6e; border: 1px solid rgba(45,122,69,0.3); }
+  .m-active { background: rgba(196,160,80,0.2); color: var(--gold); border: 1px solid rgba(196,160,80,0.4); animation: pulse 2s infinite; }
+  .m-pending { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.06); }
+  .milestone-text { color: rgba(255,255,255,0.55); font-weight: 300; }
+  .milestone-text.m-text-done { color: rgba(255,255,255,0.7); }
+  .milestone-text.m-text-active { color: var(--gold-light); font-weight: 500; }
+
+  /* ── EN BLOC SECTION ── */
+  .enbloc { background: var(--cream-dark); padding: 100px 0; }
+  .enbloc-grid { display: grid; grid-template-columns: 1fr 380px; gap: 80px; }
+  .enbloc-stat-column { display: flex; flex-direction: column; gap: 20px; }
+  .enbloc-stat-card {
+    background: var(--forest);
+    padding: 28px 32px;
+    color: var(--white);
+  }
+  .enbloc-stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .enbloc-stat-desc { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; font-weight: 300; }
+  .enbloc-timeline-mini { display: flex; flex-direction: column; gap: 0; background: var(--white); border: 1px solid var(--border); padding: 28px; }
+  .enbloc-t-item { display: flex; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--border-light); font-size: 13px; align-items: flex-start; }
+  .enbloc-t-item:last-child { border-bottom: none; }
+  .enbloc-t-year { color: var(--gold); font-weight: 600; font-size: 12px; letter-spacing: 0.06em; min-width: 44px; }
+  .enbloc-t-event { color: var(--text-light); font-weight: 300; line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--forest-deep);
+    padding: 64px 0 0;
+    border-top: 1px solid rgba(196,160,80,0.12);
+  }
+  .footer-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px 48px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
+    border-bottom: 1px solid rgba(196,160,80,0.08);
+  }
+  .footer-col-title {
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(196,160,80,0.12);
+  }
+  .footer-project-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+  .footer-details { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-details li { font-size: 12.5px; color: rgba(255,255,255,0.35); font-weight: 300; }
+  .footer-details li strong { color: rgba(255,255,255,0.55); font-weight: 400; }
+  .footer-dev-badges { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+  .footer-dev-badge {
+    display: block;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; font-weight: 300; transition: color 0.2s; letter-spacing: 0.04em; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-contact-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; font-size: 13px; color: rgba(255,255,255,0.4); font-weight: 300; }
+  .footer-bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-bottom-text { font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; }
+  .footer-bottom-links { display: flex; gap: 20px; }
+  .footer-bottom-links a { font-size: 11px; color: rgba(255,255,255,0.25); text-decoration: none; letter-spacing: 0.06em; }
+  .footer-bottom-links a:hover { color: var(--gold); }
+
+  /* ── WHATSAPP FAB ── */
+  .whatsapp-fab {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 54px; height: 54px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(37,211,102,0.35);
+    z-index: 999;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .whatsapp-fab:hover { transform: scale(1.08); box-shadow: 0 6px 32px rgba(37,211,102,0.45); }
+  .whatsapp-fab svg { width: 28px; height: 28px; fill: white; }
+
+  /* ── MOBILE STICKY BAR ── */
+  .mobile-sticky {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--forest-deep);
+    border-top: 1px solid rgba(196,160,80,0.2);
+    z-index: 200;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .mobile-sticky a {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 10px 6px;
+    text-decoration: none;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+    border-right: 1px solid rgba(196,160,80,0.1);
+    gap: 5px;
+    transition: color 0.2s;
+  }
+  .mobile-sticky a:last-child { border-right: none; }
+  .mobile-sticky a:hover { color: var(--gold); }
+  .mobile-sticky a span.ms-icon { font-size: 16px; }
+
+  @media (max-width: 768px) {
+    .mobile-sticky { display: grid; }
+    .topbar { padding: 8px 20px; font-size: 9px; }
+    .nav-inner { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero-content { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px 40px; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .section-inner { padding: 0 20px; }
+    .project-grid, .investment-grid, .lifestyle-grid, .reg-grid, .inv-grid, .enbloc-grid, .mrt-grid { grid-template-columns: 1fr; gap: 40px; }
+    .dev-cards { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; padding: 0 20px 40px; }
+    body { padding-bottom: 60px; }
+  }
+
+  /* ── MOBILE RESPONSIVE TABLES & OVERFLOW FIXES ── */
+  .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .table-wrap table{min-width:540px;}
+  @media(max-width:768px){
+    table{font-size:12px !important;}
+    table td,table th{padding:10px 8px !important;}
+    .two-col,.info-grid,.investment-grid,.loc-grid,.info-cards,.reg-grid,.inv-grid,.enbloc-grid,.mrt-grid,.mrt-cards,.dev-profile-grid,.dev-profile-grid.reverse,.calc-row,.project-grid,.lifestyle-grid{grid-template-columns:1fr !important;gap:24px !important;}
+    .hero-stats{grid-template-columns:repeat(2,1fr) !important;}
+    .psf-hero{padding:24px !important;}
+    .psf-value{font-size:36px !important;}
+    .psf-tier{flex-direction:column;gap:4px;align-items:flex-start !important;}
+    .calc-wrap{padding:24px 16px !important;}
+    .comparison-table,.data-table,.breakeven-table,.school-table,.details-table,.travel-table,.hours-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;}
+    .section-h2{font-size:clamp(22px,5vw,36px) !important;}
+    .reg-h2{font-size:clamp(24px,5vw,38px) !important;}
+    .page-hero h1{font-size:clamp(30px,7vw,52px) !important;}
+    .enbloc-stat-number{font-size:28px !important;}
+    .footer-grid{grid-template-columns:1fr !important;}
+    .trust-grid{grid-template-columns:1fr 1fr !important;}
+    .sitemap-grid{grid-template-columns:1fr !important;}
+    .contact-grid{grid-template-columns:1fr !important;}
+    .cta-strip-inner{grid-template-columns:1fr !important;}
+    .dev-cards{grid-template-columns:1fr !important;}
+    .nature-grid{grid-template-columns:1fr !important;}
+    .mrt-grid,.mrt-cards{grid-template-columns:1fr !important;}
+    .consortium-stats{grid-template-columns:1fr 1fr !important;}
+    .quick-contact{flex-direction:column !important;}
+    .qc-pill{width:100% !important;}
+    .reg-grid{grid-template-columns:1fr !important;}
+    .milestone-strip{flex-direction:column !important;}
+    .ms-item{border-right:none !important;border-bottom:1px solid rgba(196,160,80,0.1);}
+    .hero-content{grid-template-columns:1fr !important;gap:32px !important;padding:48px 20px 32px !important;}
+    .section-inner,.page-hero-inner,.legal-inner,.policy-wrap,.reg-grid,.cta-strip-inner{padding-left:20px !important;padding-right:20px !important;}
+    .topbar{padding:8px 16px !important;font-size:9px !important;gap:8px;}
+    .topbar div:first-child{display:none;}
+    .nav-inner{padding:0 16px !important;}
+    .nav-links{display:none !important;}
+    body{padding-bottom:64px;}
+  }
+</style>
+<!-- SCHEMA MARKUP -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://thomson-reserves.sg/#website",
+      "name": "Thomson Reserve",
+      "url": "https://thomson-reserves.sg",
+      "description": "Official project information and resource hub for Thomson Reserve, a new launch condominium at Bright Hill Drive, District 20, Singapore.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://thomson-reserves.sg/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "ApartmentComplex",
+      "@id": "https://thomson-reserves.sg/#project",
+      "name": "Thomson Reserve",
+      "description": "Thomson Reserve is a new launch condominium located at Bright Hill Drive, District 20, Upper Thomson, Singapore. Approximately 1,240 units developed by UOL Group, Singapore Land Group and CapitaLand Development. Expected preview Q3 2026.",
+      "url": "https://thomson-reserves.sg",
+      "numberOfAccommodationUnits": 1240,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bright Hill Drive",
+        "addressLocality": "Upper Thomson",
+        "addressRegion": "Singapore",
+        "addressCountry": "SG",
+        "postalCode": "574117"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 1.3575,
+        "longitude": 103.832
+      },
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Swimming Pool",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Gymnasium",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Clubhouse",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "BBQ Pavilion",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Landscaped Gardens",
+          "value": true
+        }
+      ],
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "District 20, Singapore"
+      },
+      "telephone": "+6589623281",
+      "openingHours": "Mo-Su 10:00-19:00",
+      "sameAs": [
+        "https://maps.app.goo.gl/a7m4BU7KZpE1rjK16",
+        "https://www.propnex.com"
+      ],
+      "priceRange": "$$$$",
+      "developer": [
+        {
+          "@type": "Organization",
+          "name": "UOL Group Limited",
+          "url": "https://www.uol.com.sg"
+        },
+        {
+          "@type": "Organization",
+          "name": "Singapore Land Group",
+          "url": "https://www.singaporeland.com"
+        },
+        {
+          "@type": "Organization",
+          "name": "CapitaLand Development",
+          "url": "https://www.capitaland.com"
+        }
+      ]
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://thomson-reserves.sg/#aboutpage",
+      "url": "https://thomson-reserves.sg",
+      "name": "Thomson Reserve - Official Project Information and Resource Hub",
+      "about": {
+        "@id": "https://thomson-reserves.sg/#project"
+      },
+      "isPartOf": {
+        "@id": "https://thomson-reserves.sg/#website"
+      },
+      "description": "The definitive online resource for Thomson Reserve at Bright Hill Drive, District 20. Covers pricing analysis, MRT connectivity, school proximity, floor plans, and VVIP preview registration.",
+      "datePublished": "2026-04-14",
+      "dateModified": "2026-04-15"
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://thomson-reserves.sg/#localbusiness",
+      "name": "Thomson Reserve Showflat and Sales Gallery",
+      "url": "https://thomson-reserves.sg",
+      "telephone": "+6589623281",
+      "email": "sales@thomson-reserves.sg",
+      "openingHours": "Mo-Su 10:00-19:00",
+      "sameAs": [
+        "https://www.propnex.com",
+        "https://www.uol.com.sg",
+        "https://www.singaporeland.com",
+        "https://www.capitaland.com"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bright Hill Drive",
+        "addressLocality": "Upper Thomson",
+        "addressRegion": "Singapore",
+        "addressCountry": "SG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 1.3575,
+        "longitude": 103.832
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Thomson Reserve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Thomson Reserve is an upcoming new launch condominium at Bright Hill Drive, District 20, Upper Thomson, Singapore. The project is jointly developed by UOL Group, Singapore Land Group and CapitaLand Development and is expected to comprise approximately 1,240 residential units. VVIP preview is expected in Q3 2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is the developer of Thomson Reserve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Thomson Reserve is jointly developed by three SGX-listed developers: UOL Group Limited, Singapore Land Group (SingLand), and CapitaLand Development. The consortium paid $810 million for the former Thomson View Condominium site in October 2024."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the price of Thomson Reserve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Thomson Reserve has not been officially priced. Based on the land cost of $1,178 psf ppr, analysts estimate launch pricing in the range of $2,300 to $2,600 psf, depending on unit type, floor level, and facing. Register at thomson-reserves.sg to receive the official price list upon release."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Thomson Reserve within 1km of Ai Tong School?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Thomson Reserve at Bright Hill Drive is within the 1km priority registration zone for Ai Tong School, one of Singapore's most sought-after SAP primary schools. This gives buyers residing at Thomson Reserve Phase 2C priority registration access for their children."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What MRT stations are near Thomson Reserve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Thomson Reserve at Bright Hill Drive is within walking distance of Upper Thomson MRT (TEL, TE8). Bright Hill Station will become a full interchange between the TEL and the Cross Island Line (CRL) in 2030, providing three-line access to residents."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is the Thomson Reserve showflat opening?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Thomson Reserve showflat preview is expected in Q3 2026. Register at thomson-reserves.sg to receive your VVIP preview invitation, floor plans and e-brochure the moment they are released."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the former Thomson View Condominium?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Thomson View Condominium was a 255-unit development at Bright Hill Drive that was sold via collective sale (en bloc) for $810 million in 2024. The High Court granted the sale order on 1 July 2025. The site is now being redeveloped as Thomson Reserve by UOL, SingLand and CapitaLand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the expected TOP for Thomson Reserve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Thomson Reserve is expected to receive its Temporary Occupation Permit (TOP) in 2032, subject to construction timelines and regulatory approvals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many units does Thomson Reserve have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Thomson Reserve is expected to comprise approximately 1,240 residential units, making it one of the largest new launch condominium developments in the Rest of Central Region (RCR) for 2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the land price of Thomson Reserve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Thomson Reserve site was acquired for $810 million through the collective sale of the former Thomson View Condominium. This translates to a land cost of $1,178 per square foot per plot ratio (psf ppr)."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thomson-reserves.sg/">
+  <meta property="og:title" content="Thomson Reserve | Official Project Information & Resource Hub | District 20">
+  <meta property="og:description" content="Thomson Reserve — 1,240 units by UOL, SingLand & CapitaLand at Bright Hill Drive, District 20. Estimated preview Q3 2026. Floor plans, pricing, site plan & VVIP registration.">
+  <meta property="og:site_name" content="Thomson Reserve">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thomson Reserve | Official Project Information & Resource Hub | District 20">
+  <meta name="twitter:description" content="Thomson Reserve — 1,240 units by UOL, SingLand & CapitaLand at Bright Hill Drive, District 20. Estimated preview Q3 2026. Floor plans, pricing, site plan & VVIP registration.">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div><span class="topbar-pulse"></span>VVIP Preview Registration Open — Q3 2026</div>
+  <div>New Launch in D20 &nbsp;|&nbsp; <a href="tel:+6589623281">+65 8962 3281</a></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://thomson-reserves.sg/" class="nav-logo">
+      <div class="logo-mark"><span>TR</span></div>
+      <div class="logo-text">
+        <div class="logo-text-main">Thomson Reserve</div>
+        <div class="logo-text-sub">District 20 · Upper Thomson · Singapore</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://thomson-reserves.sg/">Home</a></li>
+      <li><a href="https://thomson-reserves.sg/developer.html">Developer</a></li>
+      <li><a href="https://thomson-reserves.sg/location-map.html">Location Map</a></li>
+      <li><a href="https://thomson-reserves.sg/site-plan.html">Site Plan</a></li>
+      <li><a href="https://thomson-reserves.sg/floor-plan.html">Floor Plan</a></li>
+      <li><a href="https://thomson-reserves.sg/pricing.html">Pricing</a></li>
+      <li class="has-dropdown">
+        <a href="https://thomson-reserves.sg/stamp-duty.html">Financing</a>
+        <div class="dropdown">
+          <a href="https://thomson-reserves.sg/stamp-duty.html">Stamp Duty</a>
+          <a href="https://thomson-reserves.sg/payment-scheme.html">Payment Scheme</a>
+          <a href="https://thomson-reserves.sg/housing-loan-information.html">Housing Loan Information</a>
+        </div>
+      </li>
+      <li><a href="https://thomson-reserves.sg/thomson-reserve-showflat.html" class="nav-cta">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span>Official Project Information & Resource Hub</span>
+      </div>
+      <h1>Thomson<em>Reserve</em></h1>
+      <div class="hero-subhead">Bright Hill Drive · District 20 · Upper Thomson · Singapore</div>
+      <div class="hero-divider"></div>
+      <p class="hero-desc">A landmark 1,240-unit residential estate on Singapore's largest private development site in the Rest of Central Region — jointly developed by UOL Group, Singapore Land Group and CapitaLand Development.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-label">Developer</div>
+          <div class="hero-stat-value">UOL · SingLand · CapitaLand</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">Land Price</div>
+          <div class="hero-stat-value">$1,178 PSF PPR</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">Nearest MRT</div>
+          <div class="hero-stat-value">Upper Thomson (TEL)</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">1km School</div>
+          <div class="hero-stat-value">Ai Tong Primary</div>
+        </div>
+      </div>
+      <div class="hero-cta-group">
+        <a href="https://thomson-reserves.sg/thomson-reserve-showflat.html" class="btn-primary">Book Thomson Reserve Showflat Appointment</a>
+        <a href="#silo1" class="btn-outline">View Project Details</a>
+      </div>
+      <div class="hero-updated">Last Updated: <strong id="last-updated-date"></strong> &nbsp;·&nbsp; Preview expected Q3 2026 — register now for VVIP access.
+      <script>
+        (function(){
+          var d = new Date();
+          var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+          document.getElementById("last-updated-date").textContent = d.getDate() + " " + months[d.getMonth()] + " " + d.getFullYear();
+        })();
+      </script></div>
+    </div>
+
+    <div class="hero-updates-card">
+      <div class="updates-header">
+        <div class="updates-title">Latest Updates</div>
+        <div class="updates-live"><span class="topbar-pulse" style="margin:0"></span>Live</div>
+      </div>
+      <div class="update-item">
+        <div class="update-date">26 May 2026</div>
+        <div class="update-text">New neighbourhood guides live — Thomson Reserve vs Jadescape, vs AMO Residence, and full project review published.</div>
+      </div>
+      <div class="update-item">
+        <div class="update-date">13 Apr 2026</div>
+        <div class="update-text">Register now to secure VVIP preview access ahead of the Q3 2026 showflat opening.</div>
+      </div>
+      <div class="update-item">
+        <div class="update-date">26 Mar 2026</div>
+        <div class="update-text">Thomson Reserve officially named — formerly known as Thomson View Enbloc.</div>
+      </div>
+      <div class="update-item">
+        <div class="update-date">02 Oct 2025</div>
+        <div class="update-text">Site acquisition completed. UOL, SingLand & CapitaLand take formal possession of Bright Hill Drive.</div>
+      </div>
+      <div class="update-item">
+        <div class="update-date">01 Jul 2025</div>
+        <div class="update-text">High Court grants $810M en bloc sale order — largest approved since Chuan Park (2023).</div>
+      </div>
+      <div class="update-item">
+        <div class="update-date">Oct 2024</div>
+        <div class="update-text">UOL, SingLand & CapitaLand secure Thomson View for $810M. Over 80% owner consent achieved.</div>
+      </div>
+      <a href="latest-updates.html" class="updates-view-all">View all Thomson Reserve updates →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SILO 1 — PROJECT CORE -->
+<section class="section silo-1" id="silo1">
+  <div class="section-inner">
+    <div class="section-label">Project Core</div>
+    <h2 class="section-h2">Thomson Reserve — Development Overview<em> & Project Factsheet</em></h2>
+    <p class="section-intro">Thomson Reserve is a forthcoming private residential development located at Bright Hill Drive in District 20, Upper Thomson. The project is jointly developed by UOL Group Limited, Singapore Land Group (SingLand), and CapitaLand Development — a consortium that collectively committed $810 million to secure the 5-hectare site through Singapore's largest approved residential en bloc transaction since 2023.</p>
+
+    <!-- Developer Cards -->
+    <div class="h3-label">The Developer Partnership</div>
+    <h3 class="section-h3">UOL, SingLand & CapitaLand</h3>
+    <p class="body-text">Thomson Reserve is the product of a uniquely powerful developer consortium. Each of the three co-developers brings a distinct and complementary strength to what will become one of the most significant residential launches in District 20's history.</p>
+    <div class="dev-cards">
+      <div class="dev-card">
+        <div class="dev-card-name">UOL Group Limited</div>
+        <div class="dev-card-text">Over 50 years of residential, commercial and hospitality experience. District 20 track record includes AMO Residence (2022), 98% sold on launch day. Recent collaborations with SingLand include Pinetree Hill and V on Shenton.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-card-name">Singapore Land Group</div>
+        <div class="dev-card-text">Wee family-controlled, with deep expertise in large-scale mixed-use developments. Portfolio anchors include Marina Bay Financial Centre and The Sail @ Marina Bay. Thomson Reserve is their most ambitious joint RCR undertaking.</div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-card-name">CapitaLand Development</div>
+        <div class="dev-card-text">Institutional scale and global perspective. Notable for innovative master planning at scale — d'Leedon, Sky Habitat and The Interlace. Brings design sophistication to the 1,240-unit, 5-hectare masterplan.</div>
+      </div>
+    </div>
+    <p style="margin-top:24px;"><a href="https://thomson-reserves.sg/developer.html" style="font-size:13px;color:var(--gold);text-decoration:none;font-weight:500;letter-spacing:0.04em;">View Thomson Reserve developer profiles &amp; track record →</a></p>
+
+    <div style="margin-top: 64px;">
+      <div class="project-grid">
+        <!-- Architectural Vision -->
+        <div>
+          <div class="h3-label">Architectural Vision</div>
+          <h3 class="section-h3">Site Elevation — A 5-Hectare Masterplan</h3>
+          <p class="body-text">Thomson Reserve occupies one of the largest single residential plots available for private development in District 20 — approximately 540,000 sq ft (5 hectares). This scale enables meaningful separation between towers and the kind of landscaped communal facilities that define a true residential estate.</p>
+          <p class="body-text">The site's elevated terrain along Bright Hill Drive contributes to a natural stack differentiation, with higher floors commanding unobstructed views across the Central Catchment Nature Reserve and MacRitchie Reservoir. Thomson Reserve is expected to rise to approximately 24 storeys across multiple towers.</p>
+          <div class="mrt-highlight" style="background:rgba(196,160,80,0.06);border-left:2px solid var(--gold);padding:14px 18px;margin-top:20px;font-size:13.5px;color:var(--text-mid);font-style:italic;line-height:1.7;">North-facing and reservoir-facing stacks are expected to command a facing premium at launch — a pattern consistent with Jadescape (2018), the closest large-scale RCR precedent for this site.</div>
+          <p style="margin-top:16px;"><a href="https://thomson-reserves.sg/site-plan.html" style="font-size:13px;color:var(--gold);text-decoration:none;font-weight:500;letter-spacing:0.04em;">View Thomson Reserve site plan &amp; stack analysis →</a></p>
+        </div>
+        <!-- Timeline -->
+        <div>
+          <div class="h3-label">Timeline to Launch</div>
+          <h3 class="section-h3">Preview & Booking Dates (Q3 2026)</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">November 2024</div>
+              <div class="timeline-event">Thomson View en bloc — 80% owner consent <span class="status-tag tag-done">Completed</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">October 2024</div>
+              <div class="timeline-event">UOL / SingLand / CapitaLand consortium formed <span class="status-tag tag-done">Completed</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">1 July 2025</div>
+              <div class="timeline-event">High Court sale order granted ($810M) <span class="status-tag tag-done">Completed</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2 October 2025</div>
+              <div class="timeline-event">Site acquisition completed <span class="status-tag tag-done">Completed</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">26 March 2026</div>
+              <div class="timeline-event">Project officially named Thomson Reserve <span class="status-tag tag-done">Completed</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">TBC 2026</div>
+              <div class="timeline-event">Showflat construction / Sales Gallery <span class="status-tag tag-progress">In Progress</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">Q3 2026</div>
+              <div class="timeline-event">VVIP Preview (estimated) <span class="status-tag tag-upcoming">Upcoming</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">Q3–Q4 2026</div>
+              <div class="timeline-event">Official Booking Day (OTP) <span class="status-tag tag-upcoming">Upcoming</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2032</div>
+              <div class="timeline-event">Estimated TOP <span class="status-tag tag-upcoming">Projected</span></div>
+            </div>
+          </div>
+          <p style="margin-top:16px;"><a href="https://thomson-reserves.sg/floor-plan.html" style="font-size:13px;color:var(--gold);text-decoration:none;font-weight:500;letter-spacing:0.04em;">Download Thomson Reserve floor plans upon release →</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Details Table -->
+    <div class="project-details-wrap">
+      <div class="project-details-title">Thomson Reserve Project Details</div>
+      <table class="details-table">
+        <tbody>
+          <tr><td>Project Name</td><td>Thomson Reserve</td></tr>
+          <tr><td>Former Site</td><td>Thomson View Condominium</td></tr>
+          <tr><td>Developer</td><td>UOL Group · Singapore Land Group · CapitaLand Development</td></tr>
+          <tr><td>Address</td><td>Bright Hill Drive, Upper Thomson, Singapore</td></tr>
+          <tr><td>District / Planning Area</td><td>District 20 · Rest of Central Region (RCR)</td></tr>
+          <tr><td>Tenure</td><td>99-Year Leasehold</td></tr>
+          <tr><td>Total Units</td><td>Approximately 1,240</td></tr>
+          <tr><td>Site Area</td><td>Approx. 540,000 sq ft (50,170 sqm)</td></tr>
+          <tr><td>Land Price</td><td>$810,000,000 ($1,178 psf ppr)</td></tr>
+          <tr><td>Plot Ratio</td><td>Approx. 2.8</td></tr>
+          <tr><td>Expected Preview</td><td>Q3 2026</td></tr>
+          <tr><td>Expected TOP</td><td>2032 (estimated)</td></tr>
+          <tr><td>Sales Hotline</td><td>+65 8962 3281</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SILO 2 — CONNECTIVITY -->
+<section class="section silo-2" id="silo2">
+  <div class="section-inner">
+    <div class="section-label">Connectivity & Transit</div>
+    <h2 class="section-h2">Unmatched Connectivity at <em>Bright Hill Drive</em></h2>
+    <p class="section-intro">Thomson Reserve's most structurally compelling attribute — one that directly underpins both liveability and long-term investment value — is its access to three distinct MRT lines within a short walking radius. This is precisely why UOL, SingLand and CapitaLand were willing to pay $810 million for this site.</p>
+
+    <div class="mrt-grid">
+      <div class="mrt-card">
+        <div class="mrt-line-badge badge-tel">TEL · Thomson-East Coast Line</div>
+        <div class="mrt-h3">Doorstep to Upper Thomson MRT (TE8)</div>
+        <div class="mrt-body">Upper Thomson MRT connects residents directly to the CBD (Marina Bay, ~22 mins), Orchard Road (~14 mins) and Gardens by the Bay — all without a transfer. Walk from Thomson Reserve estimated at 5–8 minutes.</div>
+        <div class="mrt-highlight">Walk-to-MRT specification materially affects rental yield and resale capital appreciation.</div>
+      </div>
+      <div class="mrt-card">
+        <div class="mrt-line-badge badge-crl">CRL · Cross Island Line (2030)</div>
+        <div class="mrt-h3">The Bright Hill Interchange — 2030 Connectivity Multiplier</div>
+        <div class="mrt-body">Bright Hill Station will become a full TEL × CRL interchange in 2030 — Singapore's eighth MRT line. Direct access to Ang Mo Kio, Jurong Lake District (second CBD) and Changi Airport without transfer.</div>
+        <div class="mrt-highlight">Properties at upcoming MRT interchanges have historically appreciated ahead of opening. Buyers entering at 2026 launch pricing position for this structural premium.</div>
+      </div>
+      <div class="mrt-card">
+        <div class="mrt-line-badge badge-nsc">NSC · North-South Corridor (2027)</div>
+        <div class="mrt-h3">North-South Corridor — Reducing CBD Drive Time</div>
+        <div class="mrt-body">Singapore's longest transit priority corridor (21.5 km) opens from 2027, running Woodlands–CBD via Ang Mo Kio and Bishan. LTA estimates suggest ~15-minute reduction in peak-hour CBD drive time from Upper Thomson.</div>
+        <div class="mrt-highlight">A structural valuation tailwind not yet fully priced into the District 20 market.</div>
+      </div>
+    </div>
+
+    <div class="travel-table-wrap">
+      <div class="travel-table-head">TEL Key Stops from Upper Thomson (TE8)</div>
+      <table class="travel-table">
+        <thead>
+          <tr><th>Destination</th><th>Station</th><th>Line</th><th>Est. Travel Time</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Orchard Road</td><td>TE14</td><td>TEL</td><td>~14 mins</td></tr>
+          <tr><td>Marina Bay (CBD)</td><td>TE20</td><td>TEL</td><td>~22 mins</td></tr>
+          <tr><td>Woodlands (North)</td><td>TE2</td><td>TEL</td><td>~18 mins</td></tr>
+          <tr><td>Bayshore (East Coast)</td><td>TE31</td><td>TEL</td><td>~38 mins</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:16px;"><a href="https://thomson-reserves.sg/location-map.html" style="font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;font-weight:400;letter-spacing:0.04em;border-bottom:1px solid rgba(196,160,80,0.3);padding-bottom:2px;">View Thomson Reserve location map, MRT &amp; schools →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- SILO 3 — INVESTMENT -->
+<section class="section silo-3" id="silo3">
+  <div class="section-inner">
+    <div class="section-label">Investment Thesis</div>
+    <h2 class="section-h2">Thomson Reserve Price Guide <em>& Market Analysis</em></h2>
+    <p class="section-intro">Pricing has not been officially released. This section presents a data-driven analysis of the land cost basis, comparable transaction benchmarks, and estimated launch price range. <em style="font-size:13px;color:var(--text-light)">All estimates are analyst projections based on publicly available URA and market data. Official pricing subject to developer announcement.</em></p>
+
+    <div class="investment-grid">
+      <div>
+        <div class="h3-label">The $810 Million En Bloc Record</div>
+        <h3 class="section-h3">Understanding the Land Cost Basis</h3>
+        <p class="body-text">The $810 million paid for the Thomson View site translates to a land cost of $1,178 psf per plot ratio (psf ppr) — the single most important number for understanding Thomson Reserve's launch pricing floor. Developer pricing is structurally anchored to land cost, with typical margins of 20–30% above all-in development cost.</p>
+        <table class="breakeven-table">
+          <tbody>
+            <tr><td>Land cost (psf ppr)</td><td>~$1,178</td></tr>
+            <tr><td>Construction & M&E</td><td>~$380</td></tr>
+            <tr><td>Professional fees, financing, marketing</td><td>~$150</td></tr>
+            <tr class="total"><td>Estimated all-in cost</td><td>~$1,708 psf</td></tr>
+            <tr><td>Developer margin (20–25%)</td><td>~$340–$427</td></tr>
+          </tbody>
+        </table>
+        <div class="psf-range-card">
+          <div class="psf-range-label">Indicative Launch PSF Range</div>
+          <div class="psf-range-value">$2,300 – $2,600</div>
+          <div class="psf-range-sub">per square foot · subject to official release</div>
+          <div class="psf-tiers">
+            <div class="psf-tier"><span class="psf-tier-label">Lower floors (1BR+S, 2BR)</span><span class="psf-tier-price">From ~$2,300 psf</span></div>
+            <div class="psf-tier"><span class="psf-tier-label">Mid floors (3BR, 4BR)</span><span class="psf-tier-price">$2,350–$2,500 psf</span></div>
+            <div class="psf-tier"><span class="psf-tier-label">High floors, reservoir-facing</span><span class="psf-tier-price">$2,450–$2,600 psf</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="h3-label">Comparative Analysis</div>
+        <h3 class="section-h3">Thomson Reserve vs. Jadescape & AMO Residence</h3>
+        <p class="body-text">To contextualise Thomson Reserve's expected pricing, benchmarking against the two most comparable District 20 RCR new launches of the recent cycle provides essential context for investors.</p>
+        <table class="comparison-table">
+          <thead>
+            <tr><th>Project</th><th>Year</th><th>Launch PSF</th><th>Resale PSF</th><th>Gain</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Jadescape</td><td>2018</td><td>~$1,700</td><td>~$2,200</td><td>+30%</td></tr>
+            <tr><td>AMO Residence</td><td>2022</td><td>~$2,100</td><td>~$2,280</td><td>+11%</td></tr>
+            <tr class="highlight"><td>Thomson Reserve (est.)</td><td>2026</td><td>~$2,300+</td><td>—</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:12.5px;color:var(--text-light);margin-top:16px;line-height:1.7;font-style:italic;">Thomson Reserve combines the scale of Jadescape (1,206 units, D20) with the developer pedigree of AMO Residence (UOL), plus the CRL interchange upgrade that neither comparable had at launch.</p>
+        <div style="margin-top:32px;padding:24px;background:var(--cream-dark);border-left:3px solid var(--gold);">
+          <div class="h3-label" style="margin-bottom:8px;">Register for Official Price List</div>
+          <p style="font-size:13.5px;color:var(--text-mid);margin-bottom:16px;font-weight:300;">Be first to receive the official Thomson Reserve price list upon release. No commission payable.</p>
+          <a href="https://thomson-reserves.sg/pricing.html" class="btn-primary" style="font-size:10px;padding:12px 24px;">View Thomson Reserve PSF analysis &amp; price guide →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SILO 4 — FAMILY & LIFESTYLE -->
+<section class="section silo-4" id="silo4">
+  <div class="section-inner">
+    <div class="section-label">Family & Lifestyle</div>
+    <h2 class="section-h2">Education & Lifestyle in the <em>Upper Thomson Corridor</em></h2>
+    <p class="section-intro">District 20 has long been one of Singapore's most sought-after family residential addresses. The Upper Thomson corridor combines the school network of the Bishan–Ang Mo Kio belt with the greenery of the Thomson Road corridor. Few RCR new launches in 2026 match this combination.</p>
+
+    <div class="lifestyle-grid">
+      <div>
+        <div class="h3-label">Within 1km of Ai Tong School</div>
+        <h3 class="section-h3">Priority Registration for Thomson Reserve Buyers</h3>
+        <p class="body-text">Ai Tong School is one of Singapore's most academically sought-after SAP (Special Assistance Plan) primary schools. The Thomson Reserve site at Bright Hill Drive places residents within the 1km priority registration zone — giving families Phase 2C(S) priority, the decisive factor for competitive school enrolment.</p>
+        <p class="body-text">This is one of the most actively searched specifications among District 20 family buyers, and directly supports both purchase demand and long-term rental demand.</p>
+
+        <div class="h3-label" style="margin-top:36px;">Proximity to Prestigious Institutions</div>
+        <h3 class="section-h3">The Full School Network</h3>
+        <table class="school-table">
+          <thead><tr><th>School</th><th>Level</th><th>Distance</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Ai Tong School <span class="badge-1km">1KM</span></td>
+              <td>Primary</td>
+              <td>Within 1km</td>
+            </tr>
+            <tr><td>Catholic High School</td><td>Pri + Sec</td><td>~1–2km</td></tr>
+            <tr><td>CHIJ St Nicholas Girls'</td><td>Pri + Sec</td><td>~1–2km</td></tr>
+            <tr><td>Raffles Institution</td><td>Sec + JC</td><td>~2km</td></tr>
+            <tr><td>Raffles Girls' School</td><td>Secondary</td><td>~2–3km</td></tr>
+            <tr><td>Bishan Park Secondary</td><td>Secondary</td><td>~1km</td></tr>
+            <tr><td>Marymount Convent</td><td>Primary</td><td>~1km</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div class="h3-label">Nature Living</div>
+        <h3 class="section-h3">Gateway to MacRitchie & the Central Green Corridor</h3>
+        <p class="body-text">Thomson Reserve's adjacency to the Central Catchment Nature Reserve is a structural scarcity premium. The reserve is a protected ecological zone — no future development can encroach upon it. Nature-facing stacks are permanently unobstructable, a rarity in Singapore's dense urban landscape.</p>
+        <ul class="nature-list">
+          <li>
+            <div class="nature-icon">◆</div>
+            <div>
+              <div class="nature-item-name">MacRitchie Reservoir Park</div>
+              <div class="nature-item-desc">Singapore's most popular nature trail. 10km+ of boardwalk and forest paths including the iconic TreeTop Walk. 10-minute drive or future connector paths.</div>
+            </div>
+          </li>
+          <li>
+            <div class="nature-icon">◆</div>
+            <div>
+              <div class="nature-item-name">Windsor Nature Park</div>
+              <div class="nature-item-desc">55 hectares of secondary rainforest adjacent to the Upper Thomson corridor. Walking access from Bright Hill Drive.</div>
+            </div>
+          </li>
+          <li>
+            <div class="nature-icon">◆</div>
+            <div>
+              <div class="nature-item-name">Thomson Nature Park</div>
+              <div class="nature-item-desc">Opened 2019. Preserves the heritage of a Hainan Village and ancient Tembusu trees. 5-minute walk from Upper Thomson Road.</div>
+            </div>
+          </li>
+          <li>
+            <div class="nature-icon">◆</div>
+            <div>
+              <div class="nature-item-name">Lower Peirce Reservoir</div>
+              <div class="nature-item-desc">Bird-watching and kayaking. 10-minute drive via Upper Thomson Road.</div>
+            </div>
+          </li>
+          <li>
+            <div class="nature-icon">◆</div>
+            <div>
+              <div class="nature-item-name">The Rail Corridor</div>
+              <div class="nature-item-desc">24km green corridor, Woodlands to Tanjong Pagar. Entry point accessible from Upper Thomson.</div>
+            </div>
+          </li>
+        </ul>
+        <p style="margin-top:20px;"><a href="https://thomson-reserves.sg/location-map.html" style="font-size:13px;color:var(--gold);text-decoration:none;font-weight:500;letter-spacing:0.04em;">View Thomson Reserve location map &amp; school proximity →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVENTORY MONITOR -->
+<section class="inventory" id="inventory">
+  <div class="section-inner">
+    <div class="inv-grid">
+      <div>
+        <div class="section-label" style="color:var(--gold)">Live Inventory Monitor</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,40px);font-weight:300;color:var(--white);margin-bottom:12px;line-height:1.15;">Pre-Launch Phase</h2>
+        <p style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:300;margin-bottom:32px;line-height:1.7;">Public booking has not commenced. ROI is open for the Q3 2026 VVIP Preview. Register to receive the live inventory link on Launch Day.</p>
+        <div class="inv-stats">
+          <div class="inv-stat">
+            <div class="inv-stat-n">~1,240</div>
+            <div class="inv-stat-label">Total Units</div>
+          </div>
+          <div class="inv-stat">
+            <div class="inv-stat-n">0</div>
+            <div class="inv-stat-label">Released</div>
+          </div>
+          <div class="inv-stat">
+            <div class="inv-stat-n">Q3</div>
+            <div class="inv-stat-label">Preview 2026</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label" style="color:var(--gold)">Project Milestones</div>
+        <div class="milestones">
+          <div class="milestone-item"><div class="milestone-dot m-done">✓</div><div class="milestone-text m-text-done">Land Awarded — $810M en bloc ($1,178 psf ppr)</div></div>
+          <div class="milestone-item"><div class="milestone-dot m-done">✓</div><div class="milestone-text m-text-done">High Court Sale Order Granted (1 Jul 2025)</div></div>
+          <div class="milestone-item"><div class="milestone-dot m-done">✓</div><div class="milestone-text m-text-done">Site Acquisition Completed (2 Oct 2025)</div></div>
+          <div class="milestone-item"><div class="milestone-dot m-done">✓</div><div class="milestone-text m-text-done">Project Named Thomson Reserve (26 Mar 2026)</div></div>
+          <div class="milestone-item"><div class="milestone-dot m-active">→</div><div class="milestone-text m-text-active">VVIP Preview Registration — Active Now</div></div>
+          <div class="milestone-item"><div class="milestone-dot m-pending">○</div><div class="milestone-text">Official E-Brochure & Floor Plan Release</div></div>
+          <div class="milestone-item"><div class="milestone-dot m-pending">○</div><div class="milestone-text">Showflat Opening (Q3 2026 est.)</div></div>
+          <div class="milestone-item"><div class="milestone-dot m-pending">○</div><div class="milestone-text">Booking Day & Official Price Release</div></div>
+        </div>
+        <p style="margin-top:16px;"><a href="https://thomson-reserves.sg/balance-units-chart.html" style="font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;font-weight:400;letter-spacing:0.04em;border-bottom:1px solid rgba(196,160,80,0.2);padding-bottom:2px;">Get Thomson Reserve balance units &amp; Launch Day access →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATION FORM -->
+<section class="registration" id="register">
+  <div class="section-inner">
+    <div class="reg-grid">
+      <div class="reg-left">
+        <div class="section-label">VVIP Preview Registration</div>
+        <h2 class="reg-h2">Secure Your<em> Thomson Reserve</em> VVIP Preview Appointment</h2>
+        <p class="reg-desc">Thomson Reserve showflat is expected to open for VVIP preview in Q3 2026. The showflat address will be confirmed to registered visitors only. Register through this official resource hub to receive priority access.</p>
+        <ul class="reg-benefits">
+          <li>First to receive the official e-brochure, floor plans, and site plan upon release</li>
+          <li>Invited to the VVIP preview ahead of the general public</li>
+          <li>Guaranteed direct developer price — no commission payable by buyers</li>
+          <li>Contacted by our sales team within one hour of registration</li>
+          <li>All balance units allocated on a first-come, first-served basis</li>
+        </ul>
+        <div class="reg-trust">
+          <div class="trust-badge">Direct Developer Price</div>
+          <div class="trust-badge">No Commission Payable</div>
+          <div class="trust-badge">Strictly No Spam</div>
+        </div>
+      </div>
+
+      <div class="reg-form-card">
+        <div class="form-title">Register Your Interest — Thomson Reserve</div>
+
+        <!-- SUCCESS STATE -->
+        <div id="form-success" style="display:none;padding:32px 24px;text-align:center;">
+          <div style="font-size:44px;margin-bottom:14px;color:#4caf6e;">&#10003;</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--forest);margin-bottom:10px;">Registration Received</div>
+          <div style="font-size:14px;color:var(--text-mid);font-weight:300;line-height:1.75;">Thank you — our team will be in touch within the hour.<br>You will be among the first to receive floor plans and the VVIP preview invitation.</div>
+        </div>
+
+        <!-- ERROR STATE -->
+        <div id="form-error" style="display:none;padding:14px 18px;background:rgba(200,40,40,0.07);border:1px solid rgba(200,40,40,0.18);margin-bottom:16px;font-size:13px;color:#a02020;line-height:1.6;">
+          Something went wrong. Please try again or call us at <a href="tel:+6589623281" style="color:#a02020;font-weight:500;">+65 8962 3281</a>.
+        </div>
+
+        <form id="reg-form" action="https://api.web3forms.com/submit" method="POST">
+
+          <!-- Web3Forms -->
+          <input type="hidden" name="access_key" value="a0476863-d3f3-4794-8856-b15eaa36fa24">
+          <input type="hidden" name="subject" value="New Lead — Thomson Reserve VVIP Registration">
+          <input type="hidden" name="from_name" value="Thomson Reserve Website">
+          <input type="hidden" name="redirect" value="false">
+          <!-- Honeypot spam trap -->
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
+          <div class="form-group">
+            <label class="form-label">Enquiry Type *</label>
+            <select class="form-select" name="Enquiry Type" required>
+              <option value="">— Select —</option>
+              <option>Purchase</option>
+              <option>View Showflat</option>
+              <option>Financing</option>
+              <option>CPF Fund Usage</option>
+              <option>Loan Eligibility (LTV)</option>
+              <option>TDSR</option>
+              <option>ABSD</option>
+              <option>I want updates only</option>
+              <option>Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" class="form-input" name="Full Name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Mobile Number *</label>
+            <input type="tel" class="form-input" name="Mobile Number" placeholder="+65 XXXX XXXX" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" class="form-input" name="Email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Appointment</label>
+            <select class="form-select" name="Appointment">
+              <option value="">— Select —</option>
+              <option>I would like to make an appointment to discuss in detail</option>
+              <option>No appointment required for now</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" name="Message" placeholder="Any specific questions or unit preferences..."></textarea>
+          </div>
+          <div class="form-group">
+            <div class="form-checkbox-group">
+              <input type="checkbox" class="form-checkbox" id="privacy" required>
+              <label class="form-checkbox-label" for="privacy">I have read and agree to the <a href="https://thomson-reserves.sg/privacy-policy.html">Privacy Policy</a>. I consent to being contacted regarding Thomson Reserve.</label>
+            </div>
+          </div>
+          <button type="submit" class="form-submit" id="submit-btn">Submit Registration</button>
+          <div class="form-note">Strictly no spam policy · Your data is protected under PDPA</div>
+
+        </form>
+      </div>
+
+<script>
+(function(){
+  var form = document.getElementById('reg-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    var success = document.getElementById('form-success');
+    var error = document.getElementById('form-error');
+    if (!document.getElementById('privacy').checked){
+      alert('Please agree to the Privacy Policy before submitting.');
+      return;
+    }
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+    error.style.display = 'none';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(j){
+      if (j.success){
+        form.style.display = 'none';
+        success.style.display = 'block';
+        success.scrollIntoView({behavior:'smooth', block:'center'});
+      } else { throw new Error(j.message); }
+    })
+    .catch(function(){
+      btn.textContent = 'Submit Registration';
+      btn.disabled = false;
+      error.style.display = 'block';
+      error.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  });
+})();
+</script>
+    </div>
+  </div>
+</section>
+
+<!-- EN BLOC STORY -->
+<section class="enbloc" id="enbloc">
+  <div class="section-inner">
+    <div class="section-label">Background</div>
+    <h2 class="section-h2">The En Bloc Story — <em>How Thomson Reserve Came to Be</em></h2>
+    <div class="enbloc-grid">
+      <div>
+        <p class="body-text">Thomson Reserve stands on one of the most historically significant en bloc sites in Singapore. The former Thomson View Condominium — a 255-unit development completed in the 1980s — spent 17 years and five collective sale attempts before finally achieving a successful outcome in 2024.</p>
+        <p class="body-text">The persistence of the Thomson View owners reflects the enduring desirability of the Bright Hill Drive location. The site's proximity to nature, schools and the upcoming Bright Hill MRT interchange made it a target for developers long before the CRL was approved. The final $810 million sale, representing $1,178 psf ppr, was the largest approved residential en bloc since Chuan Park's $890 million transaction in 2023 — a number that underscores developer conviction in the long-term value of District 20.</p>
+        <p class="body-text">The High Court of Singapore formally granted the sale order on 1 July 2025. The acquisition was completed on 2 October 2025, clearing the site for what will become Thomson Reserve.</p>
+        <div class="enbloc-timeline-mini" style="margin-top:32px;">
+          <div class="enbloc-t-item"><div class="enbloc-t-year">2007</div><div class="enbloc-t-event">First en bloc attempt — unsuccessful</div></div>
+          <div class="enbloc-t-item"><div class="enbloc-t-year">2018</div><div class="enbloc-t-event">Further attempts — reserve price gap remains</div></div>
+          <div class="enbloc-t-item"><div class="enbloc-t-year">Oct 2024</div><div class="enbloc-t-event">$810M deal secured — 80%+ owner consent. UOL / SingLand / CapitaLand consortium.</div></div>
+          <div class="enbloc-t-item"><div class="enbloc-t-year">Jul 2025</div><div class="enbloc-t-event">High Court sale order granted — largest approved en bloc since Chuan Park (2023)</div></div>
+          <div class="enbloc-t-item"><div class="enbloc-t-year">Oct 2025</div><div class="enbloc-t-event">Acquisition completed. Thomson Reserve development begins.</div></div>
+        </div>
+      </div>
+      <div class="enbloc-stat-column">
+        <div class="enbloc-stat-card">
+          <div class="enbloc-stat-number">$810M</div>
+          <div class="enbloc-stat-desc">En bloc sale price — Singapore's largest approved residential en bloc since Chuan Park (2023)</div>
+        </div>
+        <div class="enbloc-stat-card">
+          <div class="enbloc-stat-number">5</div>
+          <div class="enbloc-stat-desc">Collective sale attempts over 17 years before successful outcome in 2024</div>
+        </div>
+        <div class="enbloc-stat-card">
+          <div class="enbloc-stat-number">540,000</div>
+          <div class="enbloc-stat-desc">Square feet of land — one of the largest private residential plots in D20</div>
+        </div>
+        <div class="enbloc-stat-card">
+          <div class="enbloc-stat-number">~1,240</div>
+          <div class="enbloc-stat-desc">New residential units replacing the former 255-unit Thomson View development</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<!-- CONTENT HUB — Upper Thomson Guide -->
+<section class="section" style="background:var(--cream-dark);">
+  <div class="section-inner">
+    <div class="section-label">Thomson Reserve Resource Hub</div>
+    <h2 class="section-h2" style="font-family:'Cormorant Garamond',serif;">Upper Thomson &amp; District 20 <em>Neighbourhood Guides</em></h2>
+    <p class="section-intro">Everything you need to know about buying in the Upper Thomson corridor &mdash; from MRT connectivity to school proximity, nature premium and D20 market context.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <a href="https://thomson-reserves.sg/upper-thomson-mrt.html" style="background:var(--white);border:1px solid var(--border);padding:20px 22px;text-decoration:none;display:block;transition:border-color 0.2s;position:relative;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;">MRT Connectivity</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--forest);margin-bottom:6px;">Upper Thomson MRT Guide</div>
+        <div style="font-size:13px;color:var(--text-light);font-weight:300;">TEL Station TE8 &mdash; travel times, CRL 2030 interchange &amp; Thomson Reserve walk time</div>
+      </a>
+      <a href="https://thomson-reserves.sg/bright-hill-drive.html" style="background:var(--white);border:1px solid var(--border);padding:20px 22px;text-decoration:none;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;">Neighbourhood</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--forest);margin-bottom:6px;">Bright Hill Drive Guide</div>
+        <div style="font-size:13px;color:var(--text-light);font-weight:300;">D20 address profile &mdash; amenities, heritage, en bloc history &amp; property values</div>
+      </a>
+      <a href="https://thomson-reserves.sg/ai-tong-school-1km-condo.html" style="background:var(--white);border:1px solid var(--border);padding:20px 22px;text-decoration:none;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;">Schools</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--forest);margin-bottom:6px;">Ai Tong School 1km</div>
+        <div style="font-size:13px;color:var(--text-light);font-weight:300;">P1 registration priority zone &mdash; which condos qualify &amp; how the 1km rule works</div>
+      </a>
+      <a href="https://thomson-reserves.sg/macritchie-reservoir-condo.html" style="background:var(--white);border:1px solid var(--border);padding:20px 22px;text-decoration:none;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;">Nature Premium</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--forest);margin-bottom:6px;">MacRitchie Reservoir Condo</div>
+        <div style="font-size:13px;color:var(--text-light);font-weight:300;">Permanent unobstructed views &mdash; why nature reserve adjacency is a structural premium</div>
+      </a>
+      <a href="https://thomson-reserves.sg/new-launch-vs-resale-district-20.html" style="background:var(--white);border:1px solid var(--border);padding:20px 22px;text-decoration:none;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;">Market Context</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--forest);margin-bottom:6px;">New Launch vs Resale in District 20</div>
+        <div style="font-size:13px;color:var(--text-light);font-weight:300;">Should you buy Thomson Reserve (new launch) or Jadescape / AMO Residence (resale)? Full comparison.</div>
+      </a>
+      <a href="https://thomson-reserves.sg/thomson-reserve-showflat.html" style="background:var(--forest);border:1px solid var(--forest);padding:20px 22px;text-decoration:none;display:block;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+        <div style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;">Book Now</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--white);margin-bottom:6px;">Thomson Reserve Showflat</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.5);font-weight:300;">Select your preferred date &amp; time &mdash; VVIP preview access, direct developer price</div>
+      </a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-col-title">Thomson Reserve</div>
+      <div class="footer-project-name">Thomson Reserve</div>
+      <ul class="footer-details">
+        <li><strong>Developer:</strong> UOL Group · Singapore Land Group · CapitaLand Development</li>
+        <li><strong>Tenure:</strong> 99-Year Leasehold</li>
+        <li><strong>Type:</strong> Private Condominium</li>
+        <li><strong>Total Units:</strong> Approx. 1,240</li>
+        <li><strong>Expected Preview:</strong> Q3 2026</li>
+        <li><strong>Expected TOP:</strong> 2032 (estimated)</li>
+      </ul>
+    </div>
+    <div>
+            <div class="footer-col-title">Proudly Developed By</div>
+      <div class="footer-dev-badges">
+        <div class="footer-dev-badge">
+          <img src="/uol-logo-v2.png" alt="UOL Group Limited" style="height:40px;width:auto;display:block;">
+        </div>
+        <div class="footer-dev-badge">
+          <img src="/singapore-land-logo-v2.png" alt="Singapore Land Group" style="height:32px;width:auto;display:block;">
+        </div>
+        <div class="footer-dev-badge">
+          <img src="/capitaland-logo-v2.png" alt="CapitaLand Development" style="height:38px;width:auto;display:block;">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Site Links</div>
+      <ul class="footer-links">
+        <li><a href="https://thomson-reserves.sg/">Home</a></li>
+        <li><a href="https://thomson-reserves.sg/developer.html">Developer</a></li>
+        <li><a href="https://thomson-reserves.sg/location-map.html">Location Map</a></li>
+        <li><a href="https://thomson-reserves.sg/site-plan.html">Site Plan</a></li>
+        <li><a href="https://thomson-reserves.sg/floor-plan.html">Floor Plan</a></li>
+        <li><a href="https://thomson-reserves.sg/pricing.html">Pricing</a></li>
+        <li><a href="https://thomson-reserves.sg/thomson-reserve-showflat.html">Showflat</a></li>
+        <li><a href="https://thomson-reserves.sg/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact Us</div>
+      <div class="footer-contact-item">Thomson Reserve @ Bright Hill Drive</div>
+      <div class="footer-contact-item">Mon–Sun: 10am–7pm</div>
+      <div class="footer-contact-item"><a href="tel:+6589623281" style="color:var(--gold);text-decoration:none;">+65 8962 3281</a></div>
+      <div class="footer-contact-item"><a href="mailto:sales@thomson-reserves.sg" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;">sales@thomson-reserves.sg</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">Copyright © 2026 Thomson Reserve · PropNex Realty Pte Ltd · L3008022J · +65 8962 3281</div>
+    <div class="footer-bottom-links">
+      <a href="https://thomson-reserves.sg/sitemap.html">Sitemap</a>
+      <a href="https://thomson-reserves.sg/disclaimer.html">Disclaimer</a>
+      <a href="https://thomson-reserves.sg/privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FAB -->
+<a href="https://wa.me/6589623281?text=Hi%2C%20I%27m%20interested%20in%20Thomson%20Reserve" class="whatsapp-fab" target="_blank">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- MOBILE STICKY BAR -->
+<div class="mobile-sticky">
+  <a href="https://thomson-reserves.sg/floor-plan.html"><span class="ms-icon">📐</span>Floor Plans</a>
+  <a href="https://thomson-reserves.sg/pricing.html"><span class="ms-icon">💰</span>Price List</a>
+  <a href="https://thomson-reserves.sg/balance-units-chart.html"><span class="ms-icon">📊</span>Units</a>
+  <a href="https://wa.me/6589623281" style="background:rgba(37,211,102,0.1);color:#4caf6e;"><span class="ms-icon">💬</span>WhatsApp</a>
+</div>
+
+</body>
+</html>

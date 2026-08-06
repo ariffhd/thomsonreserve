@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomson Reserve Payment Scheme — Normal Progressive Payment Schedule Singapore</title>
+<meta name="description" content="Thomson Reserve payment scheme guide. Normal Progressive Payment Schedule (NPS) milestone table, CPF usage for Thomson Reserve, and progressive payment calculator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{--forest:#1a2e1e;--forest-deep:#0f1c12;--gold:#c4a050;--gold-light:#e8c882;--cream:#f9f5ee;--cream-dark:#f0e9d8;--text-dark:#1a1a18;--text-mid:#3d3d38;--text-light:#7a7a70;--text-faint:#aaa89e;--white:#ffffff;--border:rgba(196,160,80,0.18);--border-light:rgba(196,160,80,0.1);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text-dark);font-size:16px;line-height:1.7;overflow-x:hidden;}
+  .topbar{background:var(--forest-deep);color:var(--gold-light);font-size:11px;letter-spacing:0.12em;font-weight:500;padding:9px 40px;display:flex;justify-content:space-between;align-items:center;text-transform:uppercase;}
+  .topbar a{color:var(--gold);text-decoration:none;}
+  .topbar-pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4caf6e;margin-right:8px;animation:pulse 2s infinite;vertical-align:middle;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+  nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,0.06);}
+  .nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+  .logo-mark{width:40px;height:40px;background:var(--forest);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .logo-mark span{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;letter-spacing:1px;}
+  .logo-text{line-height:1.2;}
+  .logo-text-main{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;letter-spacing:0.12em;color:var(--forest);text-transform:uppercase;white-space:nowrap;}
+  .logo-text-sub{font-size:9px;letter-spacing:0.18em;color:var(--text-faint);text-transform:uppercase;white-space:nowrap;}
+  .nav-links{display:flex;align-items:center;gap:0;list-style:none;flex-shrink:0;}
+  .nav-links li{position:relative;}
+  .nav-links li a{display:flex;align-items:center;gap:5px;padding:0 13px;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;height:72px;white-space:nowrap;transition:color 0.2s;position:relative;}
+  .nav-links li a::after{content:'';position:absolute;bottom:0;left:13px;right:13px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.2s;}
+  .nav-links li a:hover{color:var(--forest);}
+  .nav-links li a:hover::after,.nav-links li a.active::after{transform:scaleX(1);}
+  .nav-links li a.active{color:var(--forest);}
+  .nav-links li.has-dropdown>a::before{content:'';display:inline-block;width:6px;height:6px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);margin-left:4px;margin-top:-3px;flex-shrink:0;transition:transform 0.2s;}
+  .nav-links li.has-dropdown>a::after{display:none;}
+  .nav-links li.has-dropdown:hover>a::before{transform:rotate(225deg);margin-top:2px;}
+  .dropdown{display:none;position:absolute;top:72px;left:0;min-width:220px;background:var(--white);border:1px solid var(--border);border-top:2px solid var(--gold);box-shadow:0 8px 32px rgba(0,0,0,0.1);z-index:200;}
+  .nav-links li.has-dropdown:hover .dropdown{display:block;}
+  .dropdown a{display:block!important;height:auto!important;padding:13px 20px!important;font-size:11px!important;letter-spacing:0.08em!important;color:var(--text-mid)!important;border-bottom:1px solid var(--border-light);white-space:nowrap;transition:background 0.15s,color 0.15s!important;}
+  .dropdown a:last-child{border-bottom:none;}
+  .dropdown a:hover{background:var(--cream)!important;color:var(--forest)!important;}
+  .dropdown a::after{display:none!important;}
+  .nav-cta{background:var(--forest);color:var(--gold-light)!important;padding:10px 18px!important;height:auto!important;line-height:normal!important;font-size:11px!important;letter-spacing:0.12em!important;border:1px solid transparent;transition:background 0.2s!important;}
+  .nav-cta:hover{background:var(--forest-deep)!important;}
+  .nav-cta::after{display:none!important;}
+  .page-hero{background:linear-gradient(165deg,var(--forest-deep) 0%,#1a3a22 50%,#0f2a18 100%);padding:80px 0 72px;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(196,160,80,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(196,160,80,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+  .page-hero-inner{max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:2;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:28px;}
+  .breadcrumb a{font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-decoration:none;text-transform:uppercase;}
+  .breadcrumb a:hover{color:var(--gold);}
+  .breadcrumb-sep{font-size:11px;color:rgba(255,255,255,0.2);}
+  .breadcrumb-current{font-size:11px;letter-spacing:0.1em;color:var(--gold);text-transform:uppercase;}
+  .page-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .page-eyebrow-line{width:40px;height:1px;background:var(--gold);}
+  .page-eyebrow span{font-size:10px;letter-spacing:0.22em;color:var(--gold);font-weight:500;text-transform:uppercase;}
+  .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:20px;}
+  .page-hero h1 em{font-style:italic;color:var(--gold-light);}
+  .page-hero-desc{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.8;max-width:640px;font-weight:300;}
+  .section{padding:80px 0;}
+  .section-inner{max-width:1280px;margin:0 auto;padding:0 40px;}
+  .section-label{font-size:10px;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+  .section-label::before{content:'';display:block;width:30px;height:1px;background:var(--gold);}
+  .section-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,40px);font-weight:400;color:var(--forest);line-height:1.15;margin-bottom:16px;}
+  .section-h2 em{font-style:italic;color:var(--gold);}
+  .section-intro{font-size:15px;color:var(--text-mid);line-height:1.8;max-width:760px;font-weight:300;margin-bottom:44px;}
+  .body-text{font-size:15px;color:var(--text-mid);line-height:1.85;font-weight:300;margin-bottom:16px;}
+  .h3-label{font-size:9px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:8px;}
+  h3.sub-h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--forest);margin-bottom:12px;line-height:1.3;}
+  .data-table{width:100%;border-collapse:collapse;margin-top:8px;}
+  .data-table thead{background:var(--forest);}
+  .data-table thead th{padding:13px 16px;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-align:left;font-weight:600;}
+  .data-table tbody tr{border-bottom:1px solid var(--border-light);}
+  .data-table tbody tr:hover td{background:rgba(196,160,80,0.04);}
+  .data-table tbody td{padding:14px 16px;font-size:14px;color:var(--text-mid);}
+  .data-table tbody td:first-child{font-weight:500;color:var(--text-dark);}
+  .data-table tbody tr.highlight td{background:rgba(196,160,80,0.06);font-weight:600;color:var(--forest);}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+  .info-card{background:var(--white);border:1px solid var(--border);padding:28px 32px;position:relative;}
+  .info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);}
+  .info-card-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--forest);margin-bottom:12px;}
+  .info-card-text{font-size:13.5px;color:var(--text-light);line-height:1.75;font-weight:300;}
+  .note-box{background:var(--forest);color:var(--white);padding:20px 24px;margin-top:16px;font-size:13px;line-height:1.7;font-weight:300;font-style:italic;}
+  .note-box strong{color:var(--gold-light);font-style:normal;font-weight:500;}
+  /* CALCULATOR */
+  .calc-section{background:var(--forest-deep);padding:72px 0;}
+  .calc-wrap{background:rgba(255,255,255,0.04);border:1px solid rgba(196,160,80,0.2);padding:40px;max-width:680px;}
+  .calc-title{font-size:10px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid rgba(196,160,80,0.15);}
+  .calc-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+  .calc-group{display:flex;flex-direction:column;gap:8px;}
+  .calc-label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:500;}
+  .calc-input,.calc-select{background:rgba(255,255,255,0.05);border:1px solid rgba(196,160,80,0.2);color:var(--white);padding:12px 14px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;transition:border-color 0.2s;width:100%;appearance:none;}
+  .calc-input:focus,.calc-select:focus{border-color:var(--gold);}
+  .calc-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23c4a050' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;background-color:rgba(255,255,255,0.05);}
+  .calc-select option{background:var(--forest-deep);color:var(--white);}
+  .calc-btn{background:var(--gold);color:var(--forest-deep);border:none;padding:14px 32px;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;margin-top:8px;transition:background 0.2s;}
+  .calc-btn:hover{background:var(--gold-light);}
+  .calc-result{margin-top:24px;padding:20px 24px;background:rgba(196,160,80,0.08);border:1px solid rgba(196,160,80,0.2);display:none;}
+  .calc-result.show{display:block;}
+  .calc-result-label{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;}
+  .calc-result-value{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--gold-light);line-height:1;}
+  .calc-result-sub{font-size:12px;color:rgba(255,255,255,0.4);margin-top:6px;}
+  .calc-result-breakdown{margin-top:16px;border-top:1px solid rgba(196,160,80,0.15);padding-top:16px;}
+  .calc-result-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;color:rgba(255,255,255,0.6);}
+  .calc-result-row.total{color:var(--gold-light);font-weight:600;border-top:1px solid rgba(196,160,80,0.2);padding-top:10px;margin-top:4px;}
+  /* CTA */
+  .cta-strip{background:var(--cream-dark);padding:64px 0;}
+  .cta-strip-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
+  .cta-strip-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--forest);margin-bottom:8px;}
+  .cta-strip-text p{font-size:14px;color:var(--text-light);font-weight:300;}
+  .btn-primary{background:var(--gold);color:var(--forest-deep);padding:14px 32px;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background 0.2s;white-space:nowrap;}
+  .btn-primary:hover{background:var(--gold-light);}
+  .btn-group{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+  footer{background:var(--forest-deep);padding:64px 0 0;border-top:1px solid rgba(196,160,80,0.12);}
+  .footer-grid{max-width:1280px;margin:0 auto;padding:0 40px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;border-bottom:1px solid rgba(196,160,80,0.08);}
+  .footer-col-title{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(196,160,80,0.12);}
+  .footer-project-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--white);letter-spacing:0.06em;margin-bottom:16px;}
+  .footer-details{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .footer-details li{font-size:12.5px;color:rgba(255,255,255,0.35);font-weight:300;}
+  .footer-details li strong{color:rgba(255,255,255,0.55);font-weight:400;}
+  .footer-dev-badges{display:flex;flex-direction:column;gap:10px;margin-top:4px;}
+  .footer-dev-badge{display:flex;align-items:center;padding:10px 0;background:transparent;border:none;min-height:48px;}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-links a{font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;font-weight:300;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--gold);}
+  .footer-contact-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;font-size:13px;color:rgba(255,255,255,0.4);font-weight:300;}
+  .footer-bottom{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-bottom-text{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.06em;}
+  .footer-bottom-links{display:flex;gap:20px;}
+  .footer-bottom-links a{font-size:11px;color:rgba(255,255,255,0.25);text-decoration:none;}
+  .footer-bottom-links a:hover{color:var(--gold);}
+  .whatsapp-fab{position:fixed;bottom:28px;right:28px;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 24px rgba(37,211,102,0.35);z-index:999;transition:transform 0.2s;}
+  .whatsapp-fab:hover{transform:scale(1.08);}
+  .whatsapp-fab svg{width:28px;height:28px;fill:white;}
+  .mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--forest-deep);border-top:1px solid rgba(196,160,80,0.2);z-index:200;grid-template-columns:repeat(4,1fr);}
+  .mobile-sticky a{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 6px;text-decoration:none;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:500;border-right:1px solid rgba(196,160,80,0.1);gap:5px;}
+  .mobile-sticky a:last-child{border-right:none;}
+  .mobile-sticky a span.ms-icon{font-size:16px;}
+  @media(max-width:768px){
+    .mobile-sticky{display:grid;}
+    .topbar{padding:8px 20px;font-size:9px;}
+    .nav-inner{padding:0 20px;}
+    .nav-links{display:none;}
+    .page-hero{padding:60px 0 50px;}
+    .page-hero-inner,.section-inner{padding:0 20px;}
+    .section{padding:56px 0;}
+    .info-grid,.calc-row{grid-template-columns:1fr;}
+    .cta-strip-inner{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:32px;padding:0 20px 40px;}
+    body{padding-bottom:60px;}
+  }
+
+
+  /* ── MOBILE RESPONSIVE TABLES & OVERFLOW FIXES ── */
+  .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .table-wrap table{min-width:540px;}
+  @media(max-width:768px){
+    table{font-size:12px !important;}
+    table td,table th{padding:10px 8px !important;}
+    .two-col,.info-grid,.investment-grid,.loc-grid,.info-cards,.reg-grid,.inv-grid,.enbloc-grid,.mrt-grid,.mrt-cards,.dev-profile-grid,.dev-profile-grid.reverse,.calc-row,.project-grid,.lifestyle-grid{grid-template-columns:1fr !important;gap:24px !important;}
+    .hero-stats{grid-template-columns:repeat(2,1fr) !important;}
+    .psf-hero{padding:24px !important;}
+    .psf-value{font-size:36px !important;}
+    .psf-tier{flex-direction:column;gap:4px;align-items:flex-start !important;}
+    .calc-wrap{padding:24px 16px !important;}
+    .comparison-table,.data-table,.breakeven-table,.school-table,.details-table,.travel-table,.hours-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;}
+    .section-h2{font-size:clamp(22px,5vw,36px) !important;}
+    .reg-h2{font-size:clamp(24px,5vw,38px) !important;}
+    .page-hero h1{font-size:clamp(30px,7vw,52px) !important;}
+    .enbloc-stat-number{font-size:28px !important;}
+    .footer-grid{grid-template-columns:1fr !important;}
+    .trust-grid{grid-template-columns:1fr 1fr !important;}
+    .sitemap-grid{grid-template-columns:1fr !important;}
+    .contact-grid{grid-template-columns:1fr !important;}
+    .cta-strip-inner{grid-template-columns:1fr !important;}
+    .dev-cards{grid-template-columns:1fr !important;}
+    .nature-grid{grid-template-columns:1fr !important;}
+    .mrt-grid,.mrt-cards{grid-template-columns:1fr !important;}
+    .consortium-stats{grid-template-columns:1fr 1fr !important;}
+    .quick-contact{flex-direction:column !important;}
+    .qc-pill{width:100% !important;}
+    .reg-grid{grid-template-columns:1fr !important;}
+    .milestone-strip{flex-direction:column !important;}
+    .ms-item{border-right:none !important;border-bottom:1px solid rgba(196,160,80,0.1);}
+    .hero-content{grid-template-columns:1fr !important;gap:32px !important;padding:48px 20px 32px !important;}
+    .section-inner,.page-hero-inner,.legal-inner,.policy-wrap,.reg-grid,.cta-strip-inner{padding-left:20px !important;padding-right:20px !important;}
+    .topbar{padding:8px 16px !important;font-size:9px !important;gap:8px;}
+    .topbar div:first-child{display:none;}
+    .nav-inner{padding:0 16px !important;}
+    .nav-links{display:none !important;}
+    body{padding-bottom:64px;}
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://thomson-reserves.sg/payment-scheme.html#webpage",
+      "url": "https://thomson-reserves.sg/payment-scheme.html",
+      "name": "Thomson Reserve Payment Scheme - Normal Progressive Payment Schedule Singapore",
+      "description": "Thomson Reserve NPS milestone table, CPF usage guide and progressive payment calculator. Pay in stages from booking 2026 to TOP 2032.",
+      "datePublished": "2026-04-14",
+      "dateModified": "2026-04-15",
+      "isPartOf": {
+        "@id": "https://thomson-reserves.sg/#website"
+      },
+      "about": {
+        "@id": "https://thomson-reserves.sg/#project"
+      },
+      "inLanguage": "en-SG",
+      "breadcrumb": {
+        "@id": "https://thomson-reserves.sg/payment-scheme.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thomson-reserves.sg/payment-scheme.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Thomson Reserve",
+          "item": "https://thomson-reserves.sg/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Financing",
+          "item": "https://thomson-reserves.sg/stamp-duty.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Payment Scheme",
+          "item": "https://thomson-reserves.sg/payment-scheme.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thomson-reserves.sg/payment-scheme.html">
+  <meta property="og:title" content="Thomson Reserve Payment Scheme — Normal Progressive Payment Schedule Singapore">
+  <meta property="og:description" content="Thomson Reserve NPS milestone table, CPF usage guide and progressive payment calculator. Pay in stages from booking 2026 to TOP 2032.">
+  <meta property="og:site_name" content="Thomson Reserve">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thomson Reserve Payment Scheme — Normal Progressive Payment Schedule Singapore">
+  <meta name="twitter:description" content="Thomson Reserve NPS milestone table, CPF usage guide and progressive payment calculator. Pay in stages from booking 2026 to TOP 2032.">
+</head>
+<body>
+<div class="topbar">
+  <div><span class="topbar-pulse"></span>VVIP Preview Registration Open — Q3 2026</div>
+  <div>New Launch in D20 &nbsp;|&nbsp; <a href="tel:+6589623281">+65 8962 3281</a></div>
+</div>
+<nav>
+  <div class="nav-inner">
+    <a href="https://thomson-reserves.sg/" class="nav-logo">
+      <div class="logo-mark"><span>TR</span></div>
+      <div class="logo-text">
+        <div class="logo-text-main">Thomson Reserve</div>
+        <div class="logo-text-sub">District 20 · Upper Thomson · Singapore</div>
+      </div>
+    </a>
+        <ul class="nav-links">
+      <li><a href="https://thomson-reserves.sg/">Home</a></li>
+      <li><a href="https://thomson-reserves.sg/developer.html">Developer</a></li>
+      <li><a href="https://thomson-reserves.sg/location-map.html">Location Map</a></li>
+      <li><a href="https://thomson-reserves.sg/site-plan.html">Site Plan</a></li>
+      <li><a href="https://thomson-reserves.sg/floor-plan.html">Floor Plan</a></li>
+      <li><a href="https://thomson-reserves.sg/pricing.html">Pricing</a></li>
+      <li class="has-dropdown">
+        <a href="https://thomson-reserves.sg/stamp-duty.html" class="active">Financing</a>
+        <div class="dropdown">
+          <a href="https://thomson-reserves.sg/stamp-duty.html">Stamp Duty</a>
+          <a href="https://thomson-reserves.sg/payment-scheme.html">Payment Scheme</a>
+          <a href="https://thomson-reserves.sg/housing-loan-information.html">Housing Loan Information</a>
+        </div>
+      </li>
+      <li><a href="https://thomson-reserves.sg/thomson-reserve-showflat.html" class="nav-cta">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="https://thomson-reserves.sg/">Thomson Reserve</a>
+      <span class="breadcrumb-sep">&#8250;</span>
+      <span class="breadcrumb-current">Payment Scheme</span>
+    </div>
+    <div class="page-eyebrow"><div class="page-eyebrow-line"></div><span>Financing · Payment Scheme</span></div>
+    <h1>Thomson Reserve <em>Payment Scheme</em></h1>
+    <p class="page-hero-desc">Thomson Reserve follows Singapore's Normal Progressive Payment Scheme (NPS). Pay in stages tied to construction milestones from booking in 2026 to TOP in 2032. Includes progressive payment calculator.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-label">Payment Scheme</div>
+    <h2 class="section-h2">Thomson Reserve — <em>Normal Progressive Payment Scheme (NPS)</em></h2>
+    <p class="section-intro">Thomson Reserve, as an uncompleted development, will follow Singapore's Normal Progressive Payment Scheme (NPS). Under NPS, payment is made in stages tied to the completion milestones of the building — meaning you only pay as construction progresses, not all at once at the point of purchase.</p>
+    <table class="data-table">
+      <thead><tr><th>Milestone</th><th>Stage</th><th>% of Purchase Price</th><th>Est. Timeline</th></tr></thead>
+      <tbody>
+        <tr><td>Upon signing Option to Purchase (OTP)</td><td>Booking Fee</td><td>5%</td><td>Launch Day 2026</td></tr>
+        <tr><td>Upon signing Sale &amp; Purchase Agreement</td><td>S&amp;P Signing</td><td>15% (less booking fee)</td><td>Within 8 weeks of OTP</td></tr>
+        <tr><td>Completion of foundation works</td><td>Foundation</td><td>10%</td><td>Est. 2027</td></tr>
+        <tr><td>Completion of reinforced concrete framework</td><td>RC Framework</td><td>10%</td><td>Est. 2028</td></tr>
+        <tr><td>Completion of brick walls</td><td>Brick Walls</td><td>5%</td><td>Est. 2028</td></tr>
+        <tr><td>Completion of ceiling, roofing, windows &amp; doors</td><td>Ceiling / Roofing</td><td>5%</td><td>Est. 2029</td></tr>
+        <tr><td>Completion of car park, roads &amp; drainage</td><td>Car Park / Roads</td><td>5%</td><td>Est. 2030</td></tr>
+        <tr><td>Issuance of Temporary Occupation Permit (TOP)</td><td>TOP</td><td>25%</td><td>Est. 2032</td></tr>
+        <tr class="highlight"><td>Completion of development (Certificate of Statutory Completion)</td><td>CSC / Legal Completion</td><td>20%</td><td>Est. 2033</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box" style="margin-top:20px;">Total: <strong>100% of purchase price</strong>. The above is based on Singapore's standard NPS schedule under the Housing Developers (Control and Licensing) Act. Exact milestones and percentages are subject to the developer's official S&amp;P Agreement.</div>
+
+    <div class="info-grid" style="margin-top:60px;">
+      <div>
+        <div class="h3-label">What NPS Means for Thomson Reserve Buyers</div>
+        <h3 class="sub-h3">Cash Flow Benefits of Progressive Payment</h3>
+        <p class="body-text">Under NPS, Thomson Reserve buyers do not pay the full purchase price upfront. The staggered payment structure — tied to construction milestones — means your cash outflow is distributed over approximately 6–7 years from booking to legal completion. This gives buyers significant cash flow flexibility compared to buying a completed resale property.</p>
+        <p class="body-text">For buyers financing with a bank loan, interest payments begin only on the amount disbursed at each milestone — not on the full loan amount from day one. This further reduces the effective carrying cost during the construction period.</p>
+      </div>
+      <div>
+        <div class="h3-label">Using CPF for Thomson Reserve</div>
+        <h3 class="sub-h3">CPF OA for Progressive Payments</h3>
+        <p class="body-text">Singapore Citizens and PRs can use their CPF Ordinary Account (OA) savings to fund progressive payments for Thomson Reserve. CPF usage is applicable for BSD, the down payment portion, and subsequent progressive stage payments — subject to the Valuation Limit (VL) and Withdrawal Limit (WL) applicable to your property.</p>
+        <p class="body-text">For 99-year leasehold properties like Thomson Reserve, CPF usage is subject to the property's remaining lease covering the youngest buyer to at least age 95. Register to speak with our sales team for a personalised CPF computation for your Thomson Reserve purchase.</p>
+      </div>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:24px;flex-wrap:wrap;">
+        <a href="https://thomson-reserves.sg/stamp-duty.html" style="font-size:13px;color:var(--forest);font-weight:500;text-decoration:none;border-bottom:1px solid var(--gold);">Stamp duty (BSD &amp; ABSD) guide &rarr;</a>
+        <a href="https://thomson-reserves.sg/housing-loan-information.html" style="font-size:13px;color:var(--forest);font-weight:500;text-decoration:none;border-bottom:1px solid var(--gold);">Loan eligibility &amp; TDSR calculator &rarr;</a>
+        <a href="https://thomson-reserves.sg/thomson-reserve-faq.html" style="font-size:13px;color:var(--forest);font-weight:500;text-decoration:none;border-bottom:1px solid var(--gold);">Payment &amp; financing FAQ &rarr;</a>
+      </div>
+  </div>
+</section>
+
+<section class="calc-section">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--gold);">Progressive Payment Calculator</div>
+    <h2 class="section-h2" style="color:var(--white);">Thomson Reserve — <em>Progressive Payment Calculator</em></h2>
+    <p class="section-intro" style="color:rgba(255,255,255,0.55);">Estimate your progressive payment schedule for Thomson Reserve based on your unit purchase price and loan amount.</p>
+    <div class="calc-wrap">
+      <div class="calc-title">Thomson Reserve — Progressive Payment Estimator</div>
+      <div class="calc-row">
+        <div class="calc-group">
+          <label class="calc-label">Purchase Price (SGD)</label>
+          <input type="number" class="calc-input" id="pp-price" placeholder="e.g. 1800000" value="1800000">
+        </div>
+        <div class="calc-group">
+          <label class="calc-label">Loan Amount (SGD)</label>
+          <input type="number" class="calc-input" id="pp-loan" placeholder="e.g. 1260000" value="1260000">
+        </div>
+      </div>
+      <button class="calc-btn" onclick="calcProgressive()">Calculate Schedule</button>
+      <div class="calc-result" id="pp-result">
+        <div class="calc-result-label">Your Progressive Payment Schedule</div>
+        <div id="pp-table"></div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.25);margin-top:12px;">Loan disbursements reduce your cash payment at each stage. For indicative purposes only.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function calcProgressive() {
+  var price = parseFloat(document.getElementById('pp-price').value) || 0;
+  var loan = parseFloat(document.getElementById('pp-loan').value) || 0;
+  var cash = price - loan;
+  var stages = [
+    ['Booking Fee (OTP)', 5],['S&P Signing', 15],['Foundation', 10],
+    ['RC Framework', 10],['Brick Walls', 5],['Ceiling / Roofing', 5],
+    ['Car Park / Roads', 5],['TOP', 25],['CSC / Legal Completion', 20]
+  ];
+  var loanDisbursed = 0;
+  var rows = '<table style="width:100%;border-collapse:collapse;margin-top:8px;">';
+  rows += '<tr style="border-bottom:1px solid rgba(196,160,80,0.2);"><th style="padding:8px 0;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);text-align:left;">Milestone</th><th style="padding:8px 0;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);text-align:right;">Total</th><th style="padding:8px 0;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);text-align:right;">Cash</th></tr>';
+  var fmt = function(n){return 'S$'+Math.round(n).toLocaleString();};
+  var cashTotal = 0;
+  for (var i=0;i<stages.length;i++) {
+    var stageAmt = price * stages[i][1] / 100;
+    var loanPortion = Math.min(loan * stages[i][1] / 100, loan - loanDisbursed);
+    loanDisbursed += loanPortion;
+    var cashPortion = stageAmt - loanPortion;
+    cashTotal += cashPortion;
+    rows += '<tr style="border-bottom:1px solid rgba(255,255,255,0.04);"><td style="padding:10px 0;font-size:13px;color:rgba(255,255,255,0.65);">'+stages[i][0]+' ('+stages[i][1]+'%)</td><td style="padding:10px 0;font-size:13px;color:rgba(255,255,255,0.65);text-align:right;">'+fmt(stageAmt)+'</td><td style="padding:10px 0;font-size:13px;color:var(--gold);text-align:right;font-weight:600;">'+fmt(cashPortion)+'</td></tr>';
+  }
+  rows += '<tr><td style="padding:12px 0;font-size:13px;color:var(--gold-light);font-weight:600;border-top:1px solid rgba(196,160,80,0.2);">Total Cash Outlay</td><td style="padding:12px 0;font-size:13px;color:var(--gold-light);font-weight:600;text-align:right;border-top:1px solid rgba(196,160,80,0.2);">'+fmt(price)+'</td><td style="padding:12px 0;font-size:13px;color:var(--gold-light);font-weight:600;text-align:right;border-top:1px solid rgba(196,160,80,0.2);">'+fmt(cashTotal)+'</td></tr>';
+  rows += '</table>';
+  document.getElementById('pp-table').innerHTML = rows;
+  document.getElementById('pp-result').classList.add('show');
+}
+</script>
+
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <div class="cta-strip-text">
+      <h2>Register for Thomson Reserve VVIP Early Access</h2>
+      <p>Be first to receive floor plans, pricing and showflat preview dates. Direct developer price &mdash; no commission.</p>
+    </div>
+    <div class="btn-group">
+      <a href="https://thomson-reserves.sg/#register" class="btn-primary">Register Now</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-col-title">Thomson Reserve</div>
+      <div class="footer-project-name">Thomson Reserve</div>
+      <ul class="footer-details">
+        <li><strong>Developer:</strong> UOL Group · Singapore Land Group · CapitaLand Development</li>
+        <li><strong>Tenure:</strong> 99-Year Leasehold</li>
+        <li><strong>Type:</strong> Private Condominium</li>
+        <li><strong>Total Units:</strong> Approx. 1,240</li>
+        <li><strong>Expected Preview:</strong> Q3 2026</li>
+        <li><strong>Expected TOP:</strong> 2032 (estimated)</li>
+      </ul>
+    </div>
+    <div>
+            <div class="footer-col-title">Proudly Developed By</div>
+      <div class="footer-dev-badges">
+        <div class="footer-dev-badge">
+          <img src="/uol-logo-v2.png" alt="UOL Group Limited" style="height:40px;width:auto;display:block;">
+        </div>
+        <div class="footer-dev-badge">
+          <img src="/singapore-land-logo-v2.png" alt="Singapore Land Group" style="height:32px;width:auto;display:block;">
+        </div>
+        <div class="footer-dev-badge">
+          <img src="/capitaland-logo-v2.png" alt="CapitaLand Development" style="height:38px;width:auto;display:block;">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Site Links</div>
+      <ul class="footer-links">
+        <li><a href="https://thomson-reserves.sg/">Home</a></li>
+        <li><a href="https://thomson-reserves.sg/developer.html">Developer</a></li>
+        <li><a href="https://thomson-reserves.sg/location-map.html">Location Map</a></li>
+        <li><a href="https://thomson-reserves.sg/site-plan.html">Site Plan</a></li>
+        <li><a href="https://thomson-reserves.sg/floor-plan.html">Floor Plan</a></li>
+        <li><a href="https://thomson-reserves.sg/pricing.html">Pricing</a></li>
+        <li><a href="https://thomson-reserves.sg/thomson-reserve-showflat.html">Showflat</a></li>
+        <li><a href="https://thomson-reserves.sg/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact Us</div>
+      <div class="footer-contact-item">Thomson Reserve @ Bright Hill Drive</div>
+      <div class="footer-contact-item">Mon–Sun: 10am–7pm</div>
+      <div class="footer-contact-item"><a href="tel:+6589623281" style="color:var(--gold);text-decoration:none;">+65 8962 3281</a></div>
+      <div class="footer-contact-item"><a href="mailto:sales@thomson-reserves.sg" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;">sales@thomson-reserves.sg</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">Copyright © 2026 Thomson Reserve · PropNex Realty Pte Ltd · L3008022J · +65 8962 3281</div>
+    <div class="footer-bottom-links">
+      <a href="https://thomson-reserves.sg/sitemap.html">Sitemap</a>
+      <a href="https://thomson-reserves.sg/disclaimer.html">Disclaimer</a>
+      <a href="https://thomson-reserves.sg/privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/6589623281?text=Hi%2C%20I%27m%20interested%20in%20Thomson%20Reserve" class="whatsapp-fab" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<div class="mobile-sticky">
+  <a href="https://thomson-reserves.sg/floor-plan.html"><span class="ms-icon">&#128210;</span>Floor Plans</a>
+  <a href="https://thomson-reserves.sg/pricing.html"><span class="ms-icon">&#128176;</span>Price List</a>
+  <a href="https://thomson-reserves.sg/#inventory"><span class="ms-icon">&#128202;</span>Units</a>
+  <a href="https://wa.me/6589623281" style="background:rgba(37,211,102,0.1);color:#4caf6e;"><span class="ms-icon">&#128172;</span>WhatsApp</a>
+</div>
+</body>
+</html>
