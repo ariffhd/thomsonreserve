@@ -1,0 +1,28 @@
+name: Deploy to SiteGround
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to SiteGround via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SITEGROUND_FTP_SERVER }}
+          username: ${{ secrets.SITEGROUND_FTP_USERNAME }}
+          password: ${{ secrets.SITEGROUND_FTP_PASSWORD }}
+          protocol: ftps
+          # Change this to match your domain's folder in Site Tools -> Website -> Domain
+          # Primary domain: public_html/
+          # Addon domain:   public_html/your-addon-domain/
+          server-dir: public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
