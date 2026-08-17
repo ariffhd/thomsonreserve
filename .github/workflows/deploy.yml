@@ -20,8 +20,8 @@ jobs:
           protocol: ftps
           # Change this to match your domain's folder in Site Tools -> Website -> Domain
           # Primary domain: public_html/
-          # Addon domain:   public_html/your-addon-domain/
-          server-dir: public_html/
+          # Addon domain:   your-addon-domain/public_html/
+          server-dir: thomson-reserves.sg/public_html/
           exclude: |
             **/.git*
             **/.git*/**
