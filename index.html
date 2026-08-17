@@ -447,6 +447,23 @@
     margin-bottom: 48px;
   }
 
+  /* ── GALLERY — ARTIST'S IMPRESSIONS & VIDEO ── */
+  .gallery { background: var(--forest-deep); }
+  .gallery .section-label { color: var(--gold); }
+  .gallery .section-h2 { color: var(--white); }
+  .gallery .section-intro { color: rgba(255,255,255,0.55); }
+  .gallery-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: stretch; }
+  .gallery-figure { margin: 0; background: rgba(255,255,255,0.03); border: 1px solid rgba(196,160,80,0.15); overflow: hidden; display: flex; flex-direction: column; }
+  .gallery-figure img { width: 100%; height: auto; display: block; background: #000; }
+  .gallery-figcaption { padding: 16px 20px; font-size: 12.5px; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.6; border-top: 1px solid rgba(196,160,80,0.12); margin-top: auto; }
+  .gallery-figcaption strong { color: rgba(255,255,255,0.75); font-weight: 500; }
+  .gallery-video-row { margin-top: 24px; }
+  .gallery-video-row .gallery-figure iframe { width: 100%; aspect-ratio: 16/9; height: auto; border: 0; display: block; background: #000; }
+  .gallery-disclaimer { margin-top: 20px; font-size: 11.5px; color: rgba(255,255,255,0.3); font-style: italic; }
+  @media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+
   /* ── SILO 1 — PROJECT CORE ── */
   .silo-1 { background: var(--white); }
   .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 60px; }
@@ -1038,6 +1055,10 @@
       "name": "Thomson Reserve",
       "description": "Thomson Reserve is a new launch condominium located at Bright Hill Drive, District 20, Upper Thomson, Singapore. Approximately 1,268 units developed by UOL Group, Singapore Land Group and CapitaLand Development. Expected preview Early-Mid October 2026.",
       "url": "https://thomson-reserves.sg",
+      "image": [
+        "https://thomson-reserves.sg/thomson-reserve-artist-impression.jpg",
+        "https://thomson-reserves.sg/thomson-reserve-masterplan-artist-impression.jpg"
+      ],
       "numberOfAccommodationUnits": 1268,
       "address": {
         "@type": "PostalAddress",
@@ -1126,6 +1147,35 @@
           "url": "https://www.capitaland.com"
         }
       ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://thomson-reserves.sg/#image-facade",
+      "contentUrl": "https://thomson-reserves.sg/thomson-reserve-artist-impression.jpg",
+      "url": "https://thomson-reserves.sg/thomson-reserve-artist-impression.jpg",
+      "name": "Thomson Reserve Facade at Dusk — Artist's Impression",
+      "caption": "Thomson Reserve — artist's impression of the Luxury Collection tower facade at dusk, Bright Hill Drive, District 20",
+      "representativeOfPage": true,
+      "about": { "@id": "https://thomson-reserves.sg/#project" }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://thomson-reserves.sg/#image-masterplan",
+      "contentUrl": "https://thomson-reserves.sg/thomson-reserve-masterplan-artist-impression.jpg",
+      "url": "https://thomson-reserves.sg/thomson-reserve-masterplan-artist-impression.jpg",
+      "name": "Thomson Reserve Masterplan — Artist's Impression",
+      "caption": "Thomson Reserve — artist's impression of the six-tower masterplan, Bright Hill Drive, Upper Thomson, District 20",
+      "about": { "@id": "https://thomson-reserves.sg/#project" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://thomson-reserves.sg/#video-teaser",
+      "name": "Thomson Reserve — Official Teaser Video",
+      "description": "Official teaser video introducing Thomson Reserve, the new launch condominium at Bright Hill Drive, District 20, Upper Thomson, Singapore, developed by Tamarind Development Pte. Ltd. (UOL Group, Singapore Land Group and CapitaLand Development).",
+      "thumbnailUrl": "https://thomson-reserves.sg/thomson-reserve-artist-impression.jpg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/zFBQQVLWHvs",
+      "uploadDate": "2026-08-17",
+      "about": { "@id": "https://thomson-reserves.sg/#project" }
     },
     {
       "@type": "AboutPage",
@@ -1262,9 +1312,14 @@
   <meta property="og:title" content="Thomson Reserve | Official Project Information & Resource Hub | District 20">
   <meta property="og:description" content="Thomson Reserve — 1,268 units by UOL, SingLand & CapitaLand at Bright Hill Drive, District 20. Estimated preview Early-Mid October 2026. Floor plans, pricing, site plan & VVIP registration.">
   <meta property="og:site_name" content="Thomson Reserve">
+  <meta property="og:image" content="https://thomson-reserves.sg/thomson-reserve-artist-impression.jpg">
+  <meta property="og:image:width" content="2000">
+  <meta property="og:image:height" content="1006">
+  <meta property="og:image:alt" content="Thomson Reserve facade at dusk — artist's impression">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Thomson Reserve | Official Project Information & Resource Hub | District 20">
   <meta name="twitter:description" content="Thomson Reserve — 1,268 units by UOL, SingLand & CapitaLand at Bright Hill Drive, District 20. Estimated preview Early-Mid October 2026. Floor plans, pricing, site plan & VVIP registration.">
+  <meta name="twitter:image" content="https://thomson-reserves.sg/thomson-reserve-artist-impression.jpg">
 </head>
 <body>
 
@@ -1385,6 +1440,35 @@
       </div>
       <a href="latest-updates.html" class="updates-view-all">View all Thomson Reserve updates →</a>
     </div>
+  </div>
+</section>
+
+<!-- GALLERY — ARTIST'S IMPRESSIONS & VIDEO -->
+<section class="section gallery" id="gallery" style="padding:80px 0;">
+  <div class="section-inner">
+    <div class="section-label">Artist's Impressions &amp; Preview</div>
+    <h2 class="section-h2">Thomson Reserve <em>in Pictures &amp; Video</em></h2>
+    <p class="section-intro">A first look at Thomson Reserve — the 1,268-unit development at Bright Hill Drive, District 20, comprising 6 towers across the Luxury and Classic Collections. The renders below are the developer's artist's impressions of the completed estate.</p>
+
+    <div class="gallery-grid">
+      <figure class="gallery-figure">
+        <img src="thomson-reserve-artist-impression.jpg" alt="Thomson Reserve facade at dusk — artist's impression of the Luxury Collection tower, Bright Hill Drive, District 20" loading="lazy" width="2000" height="1006">
+        <figcaption class="gallery-figcaption"><strong>Thomson Reserve</strong> — Luxury Collection facade at dusk, overlooking the Central Catchment Nature Reserve.</figcaption>
+      </figure>
+      <figure class="gallery-figure">
+        <img src="thomson-reserve-masterplan-artist-impression.jpg" alt="Thomson Reserve masterplan — artist's impression of the six-tower development, Bright Hill Drive, Upper Thomson" loading="lazy" width="2000" height="1487">
+        <figcaption class="gallery-figcaption"><strong>Thomson Reserve</strong> — full masterplan view of the 6-tower estate, Luxury and Classic Collections, Bright Hill Drive.</figcaption>
+      </figure>
+    </div>
+
+    <div class="gallery-video-row">
+      <figure class="gallery-figure">
+        <iframe src="https://www.youtube-nocookie.com/embed/zFBQQVLWHvs?rel=0" title="Thomson Reserve — Official Teaser Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <figcaption class="gallery-figcaption"><strong>Thomson Reserve</strong> — official teaser video introducing the development at Bright Hill Drive, District 20.</figcaption>
+      </figure>
+    </div>
+
+    <p class="gallery-disclaimer">All images and video are the developer's artist's impressions for illustration purposes only. Actual finishes, fittings, landscaping and views may vary. See our <a href="https://thomson-reserves.sg/disclaimer.html" style="color:rgba(196,160,80,0.6);">Disclaimer</a> for full terms.</p>
   </div>
 </section>
 
@@ -1998,6 +2082,10 @@
       <div class="footer-contact-item">Mon–Sun: 10am–7pm</div>
       <div class="footer-contact-item"><a href="tel:+6589623281" style="color:var(--gold);text-decoration:none;">+65 8962 3281</a></div>
       <div class="footer-contact-item"><a href="mailto:sales@thomson-reserves.sg" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;">sales@thomson-reserves.sg</a></div>
+      <div class="footer-contact-item" style="gap:16px;margin-top:6px;">
+        <a href="https://www.youtube.com/@thomson-reserve" target="_blank" rel="noopener" aria-label="Thomson Reserve on YouTube" style="color:rgba(255,255,255,0.4);text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:13px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>YouTube</a>
+        <a href="https://www.facebook.com/thomsonreserves" target="_blank" rel="noopener" aria-label="Thomson Reserve on Facebook" style="color:rgba(255,255,255,0.4);text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:13px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>Facebook</a>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
