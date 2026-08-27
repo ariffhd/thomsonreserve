@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomson Reserve Gallery — Official Photos &amp; Renders | District 20</title>
+<meta name="description" content="Thomson Reserve gallery — the latest official artist's impressions released by the developer, covering the facade, Grand Clubhouse, pools, gyms, function rooms and kids' facilities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{--forest:#1a2e1e;--forest-deep:#0f1c12;--gold:#c4a050;--gold-light:#e8c882;--cream:#f9f5ee;--cream-dark:#f0e9d8;--text-dark:#1a1a18;--text-mid:#3d3d38;--text-light:#7a7a70;--text-faint:#aaa89e;--white:#ffffff;--border:rgba(196,160,80,0.18);--border-light:rgba(196,160,80,0.1);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text-dark);font-size:16px;line-height:1.7;overflow-x:hidden;}
+  .topbar{background:var(--forest-deep);color:var(--gold-light);font-size:11px;letter-spacing:0.12em;font-weight:500;padding:9px 40px;display:flex;justify-content:space-between;align-items:center;text-transform:uppercase;}
+  .topbar a{color:var(--gold);text-decoration:none;}
+  .topbar-pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4caf6e;margin-right:8px;animation:pulse 2s infinite;vertical-align:middle;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+  nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,0.06);}
+  .nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+  .logo-mark{width:40px;height:40px;background:var(--forest);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .logo-mark span{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;letter-spacing:1px;}
+  .logo-text{line-height:1.2;}
+  .logo-text-main{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;letter-spacing:0.12em;color:var(--forest);text-transform:uppercase;white-space:nowrap;}
+  .logo-text-sub{font-size:9px;letter-spacing:0.18em;color:var(--text-faint);text-transform:uppercase;white-space:nowrap;}
+  .nav-links{display:flex;align-items:center;gap:0;list-style:none;flex-shrink:0;}
+  .nav-links li{position:relative;}
+  .nav-links li a{display:flex;align-items:center;gap:5px;padding:0 13px;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;height:72px;white-space:nowrap;transition:color 0.2s;position:relative;}
+  .nav-links li a::after{content:'';position:absolute;bottom:0;left:13px;right:13px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.2s;}
+  .nav-links li a:hover{color:var(--forest);}
+  .nav-links li a:hover::after,.nav-links li a.active::after{transform:scaleX(1);}
+  .nav-links li a.active{color:var(--forest);}
+  .nav-links li.has-dropdown>a::before{content:'';display:inline-block;width:6px;height:6px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);margin-left:4px;margin-top:-3px;flex-shrink:0;transition:transform 0.2s;}
+  .nav-links li.has-dropdown>a::after{display:none;}
+  .nav-links li.has-dropdown:hover>a::before{transform:rotate(225deg);margin-top:2px;}
+  .dropdown{display:none;position:absolute;top:72px;left:0;min-width:220px;background:var(--white);border:1px solid var(--border);border-top:2px solid var(--gold);box-shadow:0 8px 32px rgba(0,0,0,0.1);z-index:200;}
+  .nav-links li.has-dropdown:hover .dropdown{display:block;}
+  .dropdown a{display:block!important;height:auto!important;padding:13px 20px!important;font-size:11px!important;letter-spacing:0.08em!important;color:var(--text-mid)!important;border-bottom:1px solid var(--border-light);white-space:nowrap;transition:background 0.15s,color 0.15s!important;}
+  .dropdown a:last-child{border-bottom:none;}
+  .dropdown a:hover{background:var(--cream)!important;color:var(--forest)!important;}
+  .dropdown a::after{display:none!important;}
+  .nav-cta{background:var(--forest);color:var(--gold-light)!important;padding:10px 18px!important;height:auto!important;line-height:normal!important;font-size:11px!important;letter-spacing:0.12em!important;border:1px solid transparent;transition:background 0.2s!important;}
+  .nav-cta:hover{background:var(--forest-deep)!important;}
+  .nav-cta::after{display:none!important;}
+  .page-hero{background:linear-gradient(165deg,var(--forest-deep) 0%,#1a3a22 50%,#0f2a18 100%);padding:80px 0 72px;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(196,160,80,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(196,160,80,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+  .page-hero-inner{max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:2;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:28px;}
+  .breadcrumb a{font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-decoration:none;text-transform:uppercase;}
+  .breadcrumb a:hover{color:var(--gold);}
+  .breadcrumb-sep{font-size:11px;color:rgba(255,255,255,0.2);}
+  .breadcrumb-current{font-size:11px;letter-spacing:0.1em;color:var(--gold);text-transform:uppercase;}
+  .page-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .page-eyebrow-line{width:40px;height:1px;background:var(--gold);}
+  .page-eyebrow span{font-size:10px;letter-spacing:0.22em;color:var(--gold);font-weight:500;text-transform:uppercase;}
+  .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:20px;}
+  .page-hero h1 em{font-style:italic;color:var(--gold-light);}
+  .page-hero-desc{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.8;max-width:680px;font-weight:300;}
+  .section{padding:80px 0;}
+  .section-inner{max-width:1280px;margin:0 auto;padding:0 40px;}
+  .section-label{font-size:10px;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+  .section-label::before{content:'';display:block;width:30px;height:1px;background:var(--gold);}
+  .section-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,42px);font-weight:400;color:var(--forest);line-height:1.15;margin-bottom:16px;}
+  .section-h2 em{font-style:italic;color:var(--gold);}
+  .section-intro{font-size:15px;color:var(--text-mid);line-height:1.8;max-width:760px;font-weight:300;margin-bottom:44px;}
+  .body-text{font-size:15px;color:var(--text-mid);line-height:1.85;font-weight:300;margin-bottom:16px;}
+  .gallery-disclaimer{margin-top:8px;font-size:12px;color:var(--text-faint);font-style:italic;}
+
+  /* FEATURED HERO IMAGE */
+  .gallery-featured{position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;background:#000;margin-bottom:0;}
+  .gallery-featured img{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;}
+  .gallery-featured-caption{position:absolute;left:0;right:0;bottom:0;padding:28px 40px;background:linear-gradient(transparent,rgba(0,0,0,0.65));color:#fff;font-size:13px;letter-spacing:0.04em;}
+  .gallery-featured-caption strong{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;display:block;margin-bottom:2px;}
+
+  /* CATEGORY NAV */
+  .cat-nav{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;position:sticky;top:73px;background:var(--cream);z-index:40;padding:16px 0;}
+  .cat-nav a{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;padding:8px 16px;border:1px solid var(--border);background:var(--white);transition:all 0.2s;}
+  .cat-nav a:hover{border-color:var(--gold);color:var(--forest);}
+
+  /* PHOTO GRID */
+  .photo-cat{margin-bottom:56px;scroll-margin-top:150px;}
+  .photo-cat-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--forest);margin-bottom:4px;}
+  .photo-cat-count{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-faint);margin-bottom:20px;display:block;}
+  .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px;}
+  .photo-item{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;background:#111;}
+  .photo-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;}
+  .photo-item:hover img{transform:scale(1.06);}
+  .photo-item-caption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 10px;background:linear-gradient(transparent,rgba(0,0,0,0.78));color:#fff;font-size:12.5px;font-weight:400;letter-spacing:0.02em;opacity:0;transform:translateY(6px);transition:opacity 0.25s,transform 0.25s;}
+  .photo-item:hover .photo-item-caption{opacity:1;transform:translateY(0);}
+  .photo-item-zoom{position:absolute;top:10px;right:10px;width:28px;height:28px;background:rgba(15,28,18,0.55);border:1px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;opacity:0;transition:opacity 0.25s;}
+  .photo-item:hover .photo-item-zoom{opacity:1;}
+
+  /* LIGHTBOX */
+  .lightbox{display:none;position:fixed;inset:0;background:rgba(8,14,10,0.96);z-index:1000;align-items:center;justify-content:center;padding:24px;}
+  .lightbox.active{display:flex;}
+  .lightbox-img-wrap{max-width:1200px;max-height:82vh;width:100%;display:flex;align-items:center;justify-content:center;}
+  .lightbox img{max-width:100%;max-height:82vh;object-fit:contain;display:block;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+  .lightbox-caption{position:absolute;left:0;right:0;bottom:24px;text-align:center;color:rgba(255,255,255,0.75);font-size:13px;letter-spacing:0.04em;}
+  .lightbox-caption strong{color:#fff;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;display:block;margin-bottom:2px;}
+  .lightbox-close{position:absolute;top:20px;right:24px;width:40px;height:40px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.2s;}
+  .lightbox-close:hover{background:rgba(255,255,255,0.15);}
+  .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.2s;}
+  .lightbox-nav:hover{background:rgba(255,255,255,0.15);}
+  .lightbox-prev{left:20px;}
+  .lightbox-next{right:20px;}
+  .lightbox-counter{position:absolute;top:26px;left:26px;color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;}
+
+  /* REG / CTA (reused pattern) */
+  .reg-section{background:var(--forest-deep);padding:80px 0;}
+  .reg-grid{display:grid;grid-template-columns:1fr 460px;gap:72px;align-items:start;}
+  .reg-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.5vw,46px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:20px;}
+  .reg-h2 em{font-style:italic;color:var(--gold-light);}
+  .reg-desc{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;font-weight:300;margin-bottom:28px;}
+  .reg-benefits{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+  .reg-benefits li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:rgba(255,255,255,0.6);font-weight:300;}
+  .reg-benefits li::before{content:'✓';color:var(--gold);font-weight:700;font-size:13px;flex-shrink:0;margin-top:2px;}
+  .reg-trust{display:flex;gap:20px;flex-wrap:wrap;padding-top:24px;border-top:1px solid rgba(196,160,80,0.12);}
+  .trust-badge{font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;display:flex;align-items:center;gap:8px;}
+  .trust-badge::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+  .form-card{background:rgba(255,255,255,0.04);border:1px solid rgba(196,160,80,0.2);padding:36px;}
+  .form-title{font-size:10px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid rgba(196,160,80,0.15);}
+  .form-group{margin-bottom:16px;}
+  .form-label{display:block;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:7px;font-weight:500;}
+  .form-input,.form-select,.form-textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(196,160,80,0.2);color:var(--white);padding:12px 14px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;transition:border-color 0.2s;appearance:none;}
+  .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold);}
+  .form-input::placeholder{color:rgba(255,255,255,0.2);}
+  .form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23c4a050' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;background-color:rgba(255,255,255,0.05);}
+  .form-select option{background:var(--forest-deep);color:var(--white);}
+  .form-textarea{resize:vertical;min-height:80px;}
+  .form-checkbox-group{display:flex;align-items:flex-start;gap:10px;}
+  .form-checkbox{width:15px;height:15px;margin-top:2px;flex-shrink:0;accent-color:var(--gold);}
+  .form-checkbox-label{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.5;}
+  .form-checkbox-label a{color:var(--gold);text-decoration:none;}
+  .form-submit{width:100%;background:var(--gold);color:var(--forest-deep);border:none;padding:15px;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background 0.2s;}
+  .form-submit:hover{background:var(--gold-light);}
+  .form-note{font-size:10px;color:rgba(255,255,255,0.2);text-align:center;margin-top:10px;letter-spacing:0.06em;}
+
+  footer{background:var(--forest-deep);padding:64px 0 0;border-top:1px solid rgba(196,160,80,0.12);}
+  .footer-grid{max-width:1280px;margin:0 auto;padding:0 40px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;border-bottom:1px solid rgba(196,160,80,0.08);}
+  .footer-col-title{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(196,160,80,0.12);}
+  .footer-project-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--white);letter-spacing:0.06em;margin-bottom:16px;}
+  .footer-details{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .footer-details li{font-size:12.5px;color:rgba(255,255,255,0.35);font-weight:300;}
+  .footer-details li strong{color:rgba(255,255,255,0.55);font-weight:400;}
+  .footer-dev-badges{display:flex;flex-direction:column;gap:10px;margin-top:4px;}
+  .footer-dev-badge{display:flex;align-items:center;padding:10px 0;background:transparent;border:none;min-height:48px;}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-links a{font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;font-weight:300;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--gold);}
+  .footer-contact-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;font-size:13px;color:rgba(255,255,255,0.4);font-weight:300;}
+  .footer-bottom{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-bottom-text{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.06em;}
+  .footer-bottom-links{display:flex;gap:20px;}
+  .footer-bottom-links a{font-size:11px;color:rgba(255,255,255,0.25);text-decoration:none;}
+  .footer-bottom-links a:hover{color:var(--gold);}
+  .whatsapp-fab{position:fixed;bottom:28px;right:28px;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 24px rgba(37,211,102,0.35);z-index:999;transition:transform 0.2s;}
+  .whatsapp-fab:hover{transform:scale(1.08);}
+  .whatsapp-fab svg{width:28px;height:28px;fill:white;}
+  .mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--forest-deep);border-top:1px solid rgba(196,160,80,0.2);z-index:200;grid-template-columns:repeat(4,1fr);}
+  .mobile-sticky a{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 6px;text-decoration:none;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:500;border-right:1px solid rgba(196,160,80,0.1);gap:5px;}
+  .mobile-sticky a:last-child{border-right:none;}
+  .mobile-sticky a span.ms-icon{font-size:16px;}
+  @media(max-width:768px){
+    .mobile-sticky{display:grid;}
+    .topbar{padding:8px 20px;font-size:9px;}
+    .nav-inner{padding:0 20px;}
+    .nav-links{display:none;}
+    .page-hero{padding:60px 0 50px;}
+    .page-hero-inner,.section-inner{padding:0 20px;}
+    .section{padding:56px 0;}
+    .reg-grid{grid-template-columns:1fr;gap:36px;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:32px;padding:0 20px 40px;}
+    body{padding-bottom:60px;}
+    .gallery-featured{aspect-ratio:4/3;}
+    .cat-nav{top:0;position:static;}
+    .lightbox-nav{width:38px;height:38px;font-size:16px;}
+    .lightbox-prev{left:8px;}
+    .lightbox-next{right:8px;}
+  }
+  @media(max-width:768px){
+    .photo-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}
+    .section-h2{font-size:clamp(22px,5vw,36px)!important;}
+    .reg-h2{font-size:clamp(24px,5vw,38px)!important;}
+    .page-hero h1{font-size:clamp(30px,7vw,52px)!important;}
+    .footer-grid{grid-template-columns:1fr!important;}
+    .topbar{padding:8px 16px!important;font-size:9px!important;gap:8px;}
+    .topbar div:first-child{display:none;}
+    .nav-inner{padding:0 16px!important;}
+    .nav-links{display:none!important;}
+    body{padding-bottom:64px;}
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://thomson-reserves.sg/gallery.html#webpage",
+      "url": "https://thomson-reserves.sg/gallery.html",
+      "name": "Thomson Reserve Gallery - Official Photos and Renders | District 20",
+      "description": "Thomson Reserve gallery — the latest official artist's impressions released by the developer, covering the facade, Grand Clubhouse, pools, gyms, function rooms and kids' facilities.",
+      "datePublished": "2026-08-27",
+      "dateModified": "2026-08-27",
+      "isPartOf": { "@id": "https://thomson-reserves.sg/#website" },
+      "about": { "@id": "https://thomson-reserves.sg/#project" },
+      "inLanguage": "en-SG",
+      "breadcrumb": { "@id": "https://thomson-reserves.sg/gallery.html#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thomson-reserves.sg/gallery.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Thomson Reserve", "item": "https://thomson-reserves.sg/" },
+        { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://thomson-reserves.sg/gallery.html" }
+      ]
+    },
+    {
+      "@type": "ImageGallery",
+      "@id": "https://thomson-reserves.sg/gallery.html#imagegallery",
+      "name": "Thomson Reserve Photo Gallery",
+      "about": { "@id": "https://thomson-reserves.sg/#project" },
+      "associatedMedia": [
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-facade-hero.jpg", "name": "Thomson Reserve — Facade Hero View", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-view-out.jpg", "name": "Thomson Reserve — View Out", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-view-out-from-pes.jpg", "name": "Thomson Reserve — View Out from PES", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-grand-arrival.jpg", "name": "Thomson Reserve — Grand Arrival", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-grand-lawn-pavilion.jpg", "name": "Thomson Reserve — Grand Lawn Pavilion and Grand Lawn", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-grand-function-room.jpg", "name": "Thomson Reserve — Grand Function Room", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-cedar-room.jpg", "name": "Thomson Reserve — Cedar Room (Function Room 1)", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-maple-room.jpg", "name": "Thomson Reserve — Maple Room (Function Room 3)", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-olive-lounge.jpg", "name": "Thomson Reserve — Olive Lounge (Social Lounge)", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-entertainment-room.jpg", "name": "Thomson Reserve — Entertainment Room", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-recreation-room.jpg", "name": "Thomson Reserve — Recreation Room", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-canopy-lap-pool.jpg", "name": "Thomson Reserve — Canopy Lap Pool (50m) and Hammock Cove", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-infinity-lap-pool.jpg", "name": "Thomson Reserve — Infinity Lap Pool (50m)", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-leisure-pool.jpg", "name": "Thomson Reserve — Leisure Pool", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-hydro-spa-pool.jpg", "name": "Thomson Reserve — Hydro Spa Pool and Wellness Pods", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-main-gym.jpg", "name": "Thomson Reserve — Main Gym", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-private-gym.jpg", "name": "Thomson Reserve — Private Gym", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-pilates-studio.jpg", "name": "Thomson Reserve — Pilates Studio", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-wellness-studio.jpg", "name": "Thomson Reserve — Wellness Studio", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-golf-simulator.jpg", "name": "Thomson Reserve — Golf Simulator", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-little-canopy-room.jpg", "name": "Thomson Reserve — Little Canopy Room (Kids Function Room)", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-little-explorer-nook.jpg", "name": "Thomson Reserve — Little Explorer Nook (Kids Play Room)", "about": { "@id": "https://thomson-reserves.sg/#project" } },
+        { "@type": "ImageObject", "contentUrl": "https://thomson-reserves.sg/thomson-reserve-explorer-nook-and-canopy-room.jpg", "name": "Thomson Reserve — Explorer Nook and Little Canopy Room", "about": { "@id": "https://thomson-reserves.sg/#project" } }
+      ]
+    }
+  ]
+}
+</script>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thomson-reserves.sg/gallery.html">
+  <meta property="og:title" content="Thomson Reserve Gallery — Official Photos & Renders | District 20">
+  <meta property="og:description" content="The latest official Thomson Reserve artist's impressions — facade, Grand Clubhouse, pools, gyms, function rooms and kids' facilities.">
+  <meta property="og:site_name" content="Thomson Reserve">
+  <meta property="og:image" content="https://thomson-reserves.sg/thomson-reserve-facade-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thomson Reserve Gallery — Official Photos & Renders | District 20">
+  <meta name="twitter:description" content="The latest official Thomson Reserve artist's impressions — facade, Grand Clubhouse, pools, gyms, function rooms and kids' facilities.">
+  <meta name="twitter:image" content="https://thomson-reserves.sg/thomson-reserve-facade-hero.jpg">
+</head>
+<body>
+<div class="topbar">
+  <div><span class="topbar-pulse"></span>VVIP Preview Registration Open &#8212; Early-Mid October 2026</div>
+  <div>New Launch in D20 &nbsp;|&nbsp; <a href="tel:+6589623281">+65 8962 3281</a></div>
+</div>
+<nav>
+  <div class="nav-inner">
+    <a href="https://thomson-reserves.sg/" class="nav-logo">
+      <div class="logo-mark"><span>TR</span></div>
+      <div class="logo-text">
+        <div class="logo-text-main">Thomson Reserve</div>
+        <div class="logo-text-sub">District 20 &middot; Upper Thomson &middot; Singapore</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://thomson-reserves.sg/">Home</a></li>
+      <li><a href="https://thomson-reserves.sg/developer.html">Developer</a></li>
+      <li><a href="https://thomson-reserves.sg/location-map.html">Location Map</a></li>
+      <li><a href="https://thomson-reserves.sg/site-plan.html">Site Plan</a></li>
+      <li><a href="https://thomson-reserves.sg/floor-plan.html">Floor Plan</a></li>
+      <li><a href="https://thomson-reserves.sg/gallery.html" class="active">Gallery</a></li>
+      <li><a href="https://thomson-reserves.sg/pricing.html">Pricing</a></li>
+      <li class="has-dropdown">
+        <a href="https://thomson-reserves.sg/stamp-duty.html">Financing</a>
+        <div class="dropdown">
+          <a href="https://thomson-reserves.sg/stamp-duty.html">Stamp Duty</a>
+          <a href="https://thomson-reserves.sg/payment-scheme.html">Payment Scheme</a>
+          <a href="https://thomson-reserves.sg/housing-loan-information.html">Housing Loan Information</a>
+        </div>
+      </li>
+      <li><a href="https://thomson-reserves.sg/showflat.html" class="nav-cta">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="https://thomson-reserves.sg/">Thomson Reserve</a>
+      <span class="breadcrumb-sep">&#8250;</span>
+      <span class="breadcrumb-current">Gallery</span>
+    </div>
+    <div class="page-eyebrow"><div class="page-eyebrow-line"></div><span>Official Photos &middot; Latest Release</span></div>
+    <h1>Thomson Reserve <em>Gallery</em></h1>
+    <p class="page-hero-desc"><a href="https://thomson-reserves.sg/" style="color:var(--gold-light);text-decoration:underline;">Thomson Reserve</a>'s latest official artist's impressions, released by the developer on 27 August 2026 — covering the facade, Grand Arrival, function rooms, pools, gyms and kids' facilities across the 80-facility masterplan. Click any photo to view it full-size.</p>
+  </div>
+</section>
+
+<div class="gallery-featured">
+  <img src="thomson-reserve-facade-hero.jpg" alt="Thomson Reserve facade — official hero render, Bright Hill Drive, District 20" loading="eager" data-full="thomson-reserve-facade-hero.jpg" data-caption="Facade — Hero View" data-lightbox-index="0">
+  <div class="gallery-featured-caption"><strong>Thomson Reserve</strong> Official facade render — Luxury Collection, Bright Hill Drive, District 20</div>
+</div>
+
+<section class="section" style="padding-top:52px;background:var(--cream);">
+  <div class="section-inner">
+    <div class="section-label">Photo Gallery</div>
+    <h2 class="section-h2">Latest Photos <em>Released by the Developer</em></h2>
+    <p class="section-intro">These are the most recent official Thomson Reserve artist's impressions, released 27 August 2026 — 23 renders spanning the arrival experience, the Grand Clubhouse's function rooms, the pools and wellness facilities, and the kids' zones. All images are lazy-loaded thumbnails; click any photo to open the full-resolution view.</p>
+
+    <div class="cat-nav">
+      <a href="#cat-arrival">Arrival &amp; Grounds</a>
+      <a href="#cat-function">Function &amp; Social Rooms</a>
+      <a href="#cat-pools">Pools &amp; Water Features</a>
+      <a href="#cat-fitness">Fitness &amp; Wellness</a>
+      <a href="#cat-kids">Kids' Facilities</a>
+    </div>
+
+    <div class="photo-cat" id="cat-arrival">
+      <div class="photo-cat-title">Arrival &amp; Grounds</div>
+      <span class="photo-cat-count">5 photos</span>
+      <div class="photo-grid" data-cat="arrival"></div>
+    </div>
+
+    <div class="photo-cat" id="cat-function">
+      <div class="photo-cat-title">Function &amp; Social Rooms</div>
+      <span class="photo-cat-count">6 photos</span>
+      <div class="photo-grid" data-cat="function"></div>
+    </div>
+
+    <div class="photo-cat" id="cat-pools">
+      <div class="photo-cat-title">Pools &amp; Water Features</div>
+      <span class="photo-cat-count">4 photos</span>
+      <div class="photo-grid" data-cat="pools"></div>
+    </div>
+
+    <div class="photo-cat" id="cat-fitness">
+      <div class="photo-cat-title">Fitness &amp; Wellness</div>
+      <span class="photo-cat-count">5 photos</span>
+      <div class="photo-grid" data-cat="fitness"></div>
+    </div>
+
+    <div class="photo-cat" id="cat-kids">
+      <div class="photo-cat-title">Kids' Facilities</div>
+      <span class="photo-cat-count">3 photos</span>
+      <div class="photo-grid" data-cat="kids"></div>
+    </div>
+
+    <p class="gallery-disclaimer">All images are the developer's artist's impressions for illustration purposes only. Actual finishes, fittings, landscaping and facilities may vary. See our <a href="https://thomson-reserves.sg/disclaimer.html" style="color:var(--gold);">Disclaimer</a> for full terms.</p>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+  <div class="lightbox-close" id="lightbox-close">&#10005;</div>
+  <div class="lightbox-nav lightbox-prev" id="lightbox-prev">&#10094;</div>
+  <div class="lightbox-img-wrap"><img id="lightbox-img" src="" alt=""></div>
+  <div class="lightbox-nav lightbox-next" id="lightbox-next">&#10095;</div>
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<section class="reg-section" id="register">
+  <div class="section-inner">
+    <div class="reg-grid">
+      <div>
+        <div class="section-label" style="color:var(--gold);">Register for More Updates</div>
+        <h2 class="reg-h2">Be First to See <em>New Thomson Reserve Releases</em></h2>
+        <p class="reg-desc">This gallery is updated as the developer releases new photos and renders. Register now to be notified the moment new images, floor plans and pricing are released, and to secure your VVIP preview invitation.</p>
+        <ul class="reg-benefits">
+          <li>Notified when new Thomson Reserve photos are released</li>
+          <li>Official e-brochure, floor plans and site plan upon release</li>
+          <li>VVIP preview invitation ahead of the general public</li>
+          <li>Direct developer price &#8212; no commission payable</li>
+        </ul>
+        <div class="reg-trust">
+          <div class="trust-badge">Direct Developer Price</div>
+          <div class="trust-badge">No Commission Payable</div>
+          <div class="trust-badge">Strictly No Spam</div>
+        </div>
+      </div>
+      <div class="form-card">
+  <div class="form-title">Register Your Interest &mdash; Thomson Reserve</div>
+  <div class="form-group">
+    <label class="form-label">Enquiry Type *</label>
+    <select class="form-select">
+      <option value="">&#8212; Select &#8212;</option>
+      <option>Purchase</option>
+      <option>View Showflat</option>
+      <option>Financing</option>
+      <option>CPF Fund Usage</option>
+      <option>Loan Eligibility (LTV)</option>
+      <option>TDSR</option>
+      <option>ABSD</option>
+      <option>I want updates only</option>
+      <option>Others</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Full Name *</label>
+    <input type="text" class="form-input" placeholder="Your full name">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Mobile Number *</label>
+    <input type="tel" class="form-input" placeholder="+65 XXXX XXXX">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Email Address *</label>
+    <input type="email" class="form-input" placeholder="your@email.com">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Message</label>
+    <textarea class="form-textarea" placeholder="Any specific questions or unit preferences..."></textarea>
+  </div>
+  <div class="form-group">
+    <div class="form-checkbox-group">
+      <input type="checkbox" class="form-checkbox" id="privacy-chk">
+      <label class="form-checkbox-label" for="privacy-chk">I have read and agree to the <a href="https://thomson-reserves.sg/privacy-policy.html">Privacy Policy</a>. I consent to being contacted regarding Thomson Reserve.</label>
+    </div>
+  </div>
+  <button type="submit" class="form-submit">Register Now</button>
+  <div class="form-note">Strictly no spam policy &middot; Protected under PDPA</div>
+</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-col-title">Thomson Reserve</div>
+      <div class="footer-project-name">Thomson Reserve</div>
+      <ul class="footer-details">
+        <li><strong>Developer:</strong> Tamarind Development Pte. Ltd. (UOL · SingLand · CapitaLand)</li>
+        <li><strong>Developer's Address:</strong> 168 Robinson Road, #30-01 Capital Tower, Singapore 068912</li>
+        <li><strong>Housing Developer's Licence No.:</strong> C1555 (issued 08 Jun 2026)</li>
+        <li><strong>Project Account:</strong> 762-333-930-4, United Overseas Bank Limited</li>
+        <li><strong>Tenure:</strong> 99-Year Leasehold</li>
+        <li><strong>Type:</strong> Private Condominium</li>
+        <li><strong>Total Units:</strong> Approx. 1,268</li>
+        <li><strong>Expected Preview:</strong> Early-Mid October 2026</li>
+        <li><strong>Expected TOP:</strong> 2032 (estimated)</li>
+      </ul>
+    </div>
+    <div>
+            <div class="footer-col-title">Proudly Developed By</div>
+      <div class="footer-dev-badges">
+        <div class="footer-dev-badge">
+          <img src="/uol-logo-v2.png" alt="UOL Group Limited" style="height:40px;width:auto;display:block;">
+        </div>
+        <div class="footer-dev-badge">
+          <img src="/singapore-land-logo-v2.png" alt="Singapore Land Group" style="height:32px;width:auto;display:block;">
+        </div>
+        <div class="footer-dev-badge">
+          <img src="/capitaland-logo-v2.png" alt="CapitaLand Development" style="height:38px;width:auto;display:block;">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Site Links</div>
+      <ul class="footer-links">
+        <li><a href="https://thomson-reserves.sg/">Home</a></li>
+        <li><a href="https://thomson-reserves.sg/developer.html">Developer</a></li>
+        <li><a href="https://thomson-reserves.sg/location-map.html">Location Map</a></li>
+        <li><a href="https://thomson-reserves.sg/site-plan.html">Site Plan</a></li>
+        <li><a href="https://thomson-reserves.sg/floor-plan.html">Floor Plan</a></li>
+        <li><a href="https://thomson-reserves.sg/gallery.html">Gallery</a></li>
+        <li><a href="https://thomson-reserves.sg/pricing.html">Pricing</a></li>
+        <li><a href="https://thomson-reserves.sg/showflat.html">Showflat</a></li>
+        <li><a href="https://thomson-reserves.sg/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact Us</div>
+      <div class="footer-contact-item">Thomson Reserve @ 1–11 Bright Hill Drive</div>
+      <div class="footer-contact-item">Mon–Sun: 10am–7pm</div>
+      <div class="footer-contact-item"><a href="tel:+6589623281" style="color:var(--gold);text-decoration:none;">+65 8962 3281</a></div>
+      <div class="footer-contact-item"><a href="mailto:sales@thomson-reserves.sg" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;">sales@thomson-reserves.sg</a></div>
+      <div class="footer-contact-item" style="gap:16px;margin-top:6px;">
+        <a href="https://www.youtube.com/@thomson-reserve" target="_blank" rel="noopener" aria-label="Thomson Reserve on YouTube" style="color:rgba(255,255,255,0.4);text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:13px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>YouTube</a>
+        <a href="https://www.facebook.com/thomsonreserves" target="_blank" rel="noopener" aria-label="Thomson Reserve on Facebook" style="color:rgba(255,255,255,0.4);text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:13px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>Facebook</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">Copyright © 2026 Thomson Reserve · Tamarind Development Pte. Ltd. · +65 8962 3281</div>
+    <div class="footer-bottom-links">
+      <a href="https://thomson-reserves.sg/sitemap.html">Sitemap</a>
+      <a href="https://thomson-reserves.sg/disclaimer.html">Disclaimer</a>
+      <a href="https://thomson-reserves.sg/privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/6589623281?text=Hi%2C%20I%27m%20interested%20in%20Thomson%20Reserve" class="whatsapp-fab" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<div class="mobile-sticky">
+  <a href="https://thomson-reserves.sg/floor-plan.html"><span class="ms-icon">&#128210;</span>Floor Plans</a>
+  <a href="https://thomson-reserves.sg/gallery.html"><span class="ms-icon">&#128247;</span>Gallery</a>
+  <a href="https://thomson-reserves.sg/pricing.html"><span class="ms-icon">&#128176;</span>Price List</a>
+  <a href="https://wa.me/6589623281" style="background:rgba(37,211,102,0.1);color:#4caf6e;"><span class="ms-icon">&#128172;</span>WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var photos = [
+    {cat:"arrival", thumb:"thomson-reserve-facade-hero-thumb.jpg", full:"thomson-reserve-facade-hero.jpg", title:"Facade — Hero View"},
+    {cat:"arrival", thumb:"thomson-reserve-view-out-thumb.jpg", full:"thomson-reserve-view-out.jpg", title:"View Out"},
+    {cat:"arrival", thumb:"thomson-reserve-view-out-from-pes-thumb.jpg", full:"thomson-reserve-view-out-from-pes.jpg", title:"View Out from PES"},
+    {cat:"arrival", thumb:"thomson-reserve-grand-arrival-thumb.jpg", full:"thomson-reserve-grand-arrival.jpg", title:"Grand Arrival"},
+    {cat:"arrival", thumb:"thomson-reserve-grand-lawn-pavilion-thumb.jpg", full:"thomson-reserve-grand-lawn-pavilion.jpg", title:"Grand Lawn Pavilion & Grand Lawn"},
+
+    {cat:"function", thumb:"thomson-reserve-grand-function-room-thumb.jpg", full:"thomson-reserve-grand-function-room.jpg", title:"Grand Function Room"},
+    {cat:"function", thumb:"thomson-reserve-cedar-room-thumb.jpg", full:"thomson-reserve-cedar-room.jpg", title:"Cedar Room (Function Room 1)"},
+    {cat:"function", thumb:"thomson-reserve-maple-room-thumb.jpg", full:"thomson-reserve-maple-room.jpg", title:"Maple Room (Function Room 3)"},
+    {cat:"function", thumb:"thomson-reserve-olive-lounge-thumb.jpg", full:"thomson-reserve-olive-lounge.jpg", title:"Olive Lounge (Social Lounge)"},
+    {cat:"function", thumb:"thomson-reserve-entertainment-room-thumb.jpg", full:"thomson-reserve-entertainment-room.jpg", title:"Entertainment Room"},
+    {cat:"function", thumb:"thomson-reserve-recreation-room-thumb.jpg", full:"thomson-reserve-recreation-room.jpg", title:"Recreation Room"},
+
+    {cat:"pools", thumb:"thomson-reserve-canopy-lap-pool-thumb.jpg", full:"thomson-reserve-canopy-lap-pool.jpg", title:"Canopy Lap Pool (50m) & Hammock Cove"},
+    {cat:"pools", thumb:"thomson-reserve-infinity-lap-pool-thumb.jpg", full:"thomson-reserve-infinity-lap-pool.jpg", title:"Infinity Lap Pool (50m)"},
+    {cat:"pools", thumb:"thomson-reserve-leisure-pool-thumb.jpg", full:"thomson-reserve-leisure-pool.jpg", title:"Leisure Pool"},
+    {cat:"pools", thumb:"thomson-reserve-hydro-spa-pool-thumb.jpg", full:"thomson-reserve-hydro-spa-pool.jpg", title:"Hydro Spa Pool & Wellness Pods"},
+
+    {cat:"fitness", thumb:"thomson-reserve-main-gym-thumb.jpg", full:"thomson-reserve-main-gym.jpg", title:"Main Gym"},
+    {cat:"fitness", thumb:"thomson-reserve-private-gym-thumb.jpg", full:"thomson-reserve-private-gym.jpg", title:"Private Gym"},
+    {cat:"fitness", thumb:"thomson-reserve-pilates-studio-thumb.jpg", full:"thomson-reserve-pilates-studio.jpg", title:"Pilates Studio"},
+    {cat:"fitness", thumb:"thomson-reserve-wellness-studio-thumb.jpg", full:"thomson-reserve-wellness-studio.jpg", title:"Wellness Studio"},
+    {cat:"fitness", thumb:"thomson-reserve-golf-simulator-thumb.jpg", full:"thomson-reserve-golf-simulator.jpg", title:"Golf Simulator"},
+
+    {cat:"kids", thumb:"thomson-reserve-little-canopy-room-thumb.jpg", full:"thomson-reserve-little-canopy-room.jpg", title:"Little Canopy Room (Kids Function Room)"},
+    {cat:"kids", thumb:"thomson-reserve-little-explorer-nook-thumb.jpg", full:"thomson-reserve-little-explorer-nook.jpg", title:"Little Explorer Nook (Kids Play Room)"},
+    {cat:"kids", thumb:"thomson-reserve-explorer-nook-and-canopy-room-thumb.jpg", full:"thomson-reserve-explorer-nook-and-canopy-room.jpg", title:"Explorer Nook & Little Canopy Room"}
+  ];
+
+  // Populate grids
+  var grids = {};
+  document.querySelectorAll(".photo-grid").forEach(function(g){ grids[g.getAttribute("data-cat")] = g; });
+
+  photos.forEach(function(p, i){
+    var item = document.createElement("div");
+    item.className = "photo-item";
+    item.setAttribute("data-index", i);
+    item.innerHTML =
+      '<img src="' + p.thumb + '" alt="Thomson Reserve — ' + p.title + ', official artist\'s impression" loading="lazy">' +
+      '<div class="photo-item-zoom">&#8599;</div>' +
+      '<div class="photo-item-caption"><strong>Thomson Reserve</strong> ' + p.title + '</div>';
+    item.addEventListener("click", function(){ openLightbox(i); });
+    if (grids[p.cat]) grids[p.cat].appendChild(item);
+  });
+
+  // Featured hero click also opens lightbox at index 0
+  document.querySelector(".gallery-featured img").addEventListener("click", function(){ openLightbox(0); });
+
+  var lb = document.getElementById("lightbox");
+  var lbImg = document.getElementById("lightbox-img");
+  var lbCaption = document.getElementById("lightbox-caption");
+  var lbCounter = document.getElementById("lightbox-counter");
+  var current = 0;
+
+  function openLightbox(i){
+    current = i;
+    render();
+    lb.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+  function closeLightbox(){
+    lb.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+  function render(){
+    var p = photos[current];
+    lbImg.src = p.full;
+    lbImg.alt = "Thomson Reserve — " + p.title;
+    lbCaption.innerHTML = "<strong>Thomson Reserve</strong>" + p.title;
+    lbCounter.textContent = (current + 1) + " / " + photos.length;
+  }
+  function next(){ current = (current + 1) % photos.length; render(); }
+  function prev(){ current = (current - 1 + photos.length) % photos.length; render(); }
+
+  document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
+  document.getElementById("lightbox-next").addEventListener("click", next);
+  document.getElementById("lightbox-prev").addEventListener("click", prev);
+  lb.addEventListener("click", function(e){ if (e.target === lb) closeLightbox(); });
+  document.addEventListener("keydown", function(e){
+    if (!lb.classList.contains("active")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowRight") next();
+    if (e.key === "ArrowLeft") prev();
+  });
+})();
+</script>
+
+</body>
+</html>
