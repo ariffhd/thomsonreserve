@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thomson Reserve Floor Plan — Unit Types, Sizes & Layout Guide | District 20</title>
-<meta name="description" content="Thomson Reserve floor plans not yet released. Expected unit types: 2BR to 5BR. Register to download all Thomson Reserve floor plan PDFs upon official release. Early-Mid October 2026 preview.">
+<title>Thomson Reserve Floor Plan — Show Unit Floor Plans Released | District 20</title>
+<meta name="description" content="Thomson Reserve show unit floor plans are out — BPS1 (2BR Premium+Study), CP1 (3BR Premium), DP1(L) (4BR Premium, private lift) and E1(L) (5BR Suite, private lift). View layouts and download the PDF pack.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -84,6 +84,27 @@
   .dark-table .data-table tbody tr.highlight td{background:rgba(196,160,80,0.12);color:var(--gold-light);font-weight:600;}
   .dark-table .data-table tbody tr:hover td{background:rgba(255,255,255,0.05);}
   .data-table tbody tr.highlight td{background:rgba(196,160,80,0.07);font-weight:600;color:var(--forest);}
+  /* SHOW UNIT FLOOR PLAN CARDS */
+  .fp-released-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(76,175,110,0.1);border:1px solid rgba(76,175,110,0.3);padding:8px 20px;font-size:11px;letter-spacing:0.14em;color:#2e8b57;text-transform:uppercase;font-weight:600;margin-bottom:28px;}
+  .fp-released-dot{width:7px;height:7px;border-radius:50%;background:#4caf6e;animation:pulse 2s infinite;flex-shrink:0;}
+  .fp-download-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:44px;}
+  .fp-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .fp-card{background:var(--white);border:1px solid var(--border);overflow:hidden;}
+  .fp-card-img-wrap{position:relative;background:#f4f0e6;}
+  .fp-card-img-wrap img{width:100%;height:auto;display:block;cursor:zoom-in;}
+  .fp-card-tag{display:inline-block;background:var(--forest);color:var(--gold-light);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;padding:5px 12px;margin-bottom:10px;}
+  .fp-card-body{padding:24px 26px 26px;}
+  .fp-card-type{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:4px;}
+  .fp-card-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--forest);margin-bottom:6px;line-height:1.25;}
+  .fp-card-size{font-size:13.5px;color:var(--text-mid);margin-bottom:16px;}
+  .fp-card-features{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:16px;}
+  .fp-card-features li{font-size:12.5px;color:var(--text-light);line-height:1.6;padding-left:14px;position:relative;}
+  .fp-card-features li::before{content:'—';position:absolute;left:0;color:var(--gold);}
+  .fp-card-brands{font-size:11px;color:var(--text-faint);letter-spacing:0.03em;padding-top:14px;border-top:1px solid var(--border-light);}
+  .fp-card-brands strong{color:var(--text-mid);font-weight:500;}
+  .fp-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;font-weight:600;color:var(--forest);text-decoration:none;border-bottom:1px solid var(--gold);}
+  .fp-card-link:hover{color:var(--gold);}
+  @media(max-width:768px){ .fp-grid{grid-template-columns:1fr;} }
   /* PLACEHOLDER BOX */
   .placeholder-box{background:var(--forest);padding:60px 40px;text-align:center;position:relative;overflow:hidden;}
   .placeholder-box::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(196,160,80,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(196,160,80,0.04) 1px,transparent 1px);background-size:40px 40px;}
@@ -237,10 +258,10 @@
       "@type": "WebPage",
       "@id": "https://thomson-reserves.sg/floor-plan.html#webpage",
       "url": "https://thomson-reserves.sg/floor-plan.html",
-      "name": "Thomson Reserve Floor Plan - Unit Types, Sizes and Layout Guide | District 20",
-      "description": "Thomson Reserve floor plans not yet released. Expected 2BR to 5BR. Register to download all PDFs upon official release. Early-Mid October 2026 showflat preview.",
+      "name": "Thomson Reserve Floor Plan - Show Unit Floor Plans Released | District 20",
+      "description": "Thomson Reserve show unit floor plans are out - BPS1 (2BR Premium+Study), CP1 (3BR Premium), DP1(L) (4BR Premium, private lift) and E1(L) (5BR Suite, private lift). View layouts and download the PDF pack.",
       "datePublished": "2026-04-14",
-      "dateModified": "2026-04-15",
+      "dateModified": "2026-09-14",
       "isPartOf": {
         "@id": "https://thomson-reserves.sg/#website"
       },
@@ -269,18 +290,50 @@
           "item": "https://thomson-reserves.sg/floor-plan.html"
         }
       ]
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://thomson-reserves.sg/thomson-reserve-floorplan-bps1-2br-premium-study.jpg",
+      "name": "Thomson Reserve Floor Plan — Type BPS1, 2-Bedroom Premium + Study, 732 sqft",
+      "about": { "@id": "https://thomson-reserves.sg/#project" }
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://thomson-reserves.sg/thomson-reserve-floorplan-cp1-3br-premium.jpg",
+      "name": "Thomson Reserve Floor Plan — Type CP1, 3-Bedroom Premium, 1055 sqft",
+      "about": { "@id": "https://thomson-reserves.sg/#project" }
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://thomson-reserves.sg/thomson-reserve-floorplan-dp1l-4br-premium-private-lift.jpg",
+      "name": "Thomson Reserve Floor Plan — Type DP1(L), 4-Bedroom Premium with Private Lift, 1367 sqft",
+      "about": { "@id": "https://thomson-reserves.sg/#project" }
+    },
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://thomson-reserves.sg/thomson-reserve-floorplan-e1l-5br-suite-private-lift.jpg",
+      "name": "Thomson Reserve Floor Plan — Type E1(L), 5-Bedroom Suite with Private Lift, 1808 sqft",
+      "about": { "@id": "https://thomson-reserves.sg/#project" }
+    },
+    {
+      "@type": "DigitalDocument",
+      "name": "Thomson Reserve Show Unit Floor Plans (PDF)",
+      "url": "https://thomson-reserves.sg/thomson-reserve-show-unit-floor-plans.pdf",
+      "about": { "@id": "https://thomson-reserves.sg/#project" }
     }
   ]
 }
 </script>
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thomson-reserves.sg/floor-plan.html">
-  <meta property="og:title" content="Thomson Reserve Floor Plan — Unit Types, Sizes & Layout Guide | District 20">
-  <meta property="og:description" content="Thomson Reserve floor plans not yet released. Expected 2BR to 5BR. Register to download all PDFs upon official release. Early-Mid October 2026 showflat preview.">
+  <meta property="og:title" content="Thomson Reserve Floor Plan — Show Unit Floor Plans Released | District 20">
+  <meta property="og:description" content="Thomson Reserve show unit floor plans are out — BPS1, CP1, DP1(L) and E1(L). View layouts and download the PDF pack.">
   <meta property="og:site_name" content="Thomson Reserve">
+  <meta property="og:image" content="https://thomson-reserves.sg/thomson-reserve-floorplan-e1l-5br-suite-private-lift.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Thomson Reserve Floor Plan — Unit Types, Sizes & Layout Guide | District 20">
-  <meta name="twitter:description" content="Thomson Reserve floor plans not yet released. Expected 2BR to 5BR. Register to download all PDFs upon official release. Early-Mid October 2026 showflat preview.">
+  <meta name="twitter:title" content="Thomson Reserve Floor Plan — Show Unit Floor Plans Released | District 20">
+  <meta name="twitter:description" content="Thomson Reserve show unit floor plans are out — BPS1, CP1, DP1(L) and E1(L). View layouts and download the PDF pack.">
+  <meta name="twitter:image" content="https://thomson-reserves.sg/thomson-reserve-floorplan-e1l-5br-suite-private-lift.jpg">
 </head>
 <body>
 <div class="topbar">
@@ -325,58 +378,139 @@
     </div>
     <div class="page-eyebrow"><div class="page-eyebrow-line"></div><span>Project Info &middot; Floor Plan</span></div>
     <h1>Thomson Reserve <em>Floor Plan</em></h1>
-    <p class="page-hero-desc"><a href="https://thomson-reserves.sg/" style="color:var(--gold-light);text-decoration:underline;">Thomson Reserve</a> floor plans will be released ahead of the Early-Mid October 2026 preview. Expected unit types from 2-bedroom to 5-bedroom, including private-lift 4&amp;5-bedroom types. Register now to receive all layouts and PDFs the moment they are available.</p>
+    <p class="page-hero-desc"><a href="https://thomson-reserves.sg/" style="color:var(--gold-light);text-decoration:underline;">Thomson Reserve</a>'s official show unit floor plans are out — 4 confirmed layouts covering the 2-Bedroom Premium + Study, 3-Bedroom Premium, and the private-lift 4-Bedroom Premium and 5-Bedroom Suite. View each layout below or download the full PDF pack.</p>
   </div>
 </section>
 
 <section class="section" style="background:var(--white);">
   <div class="section-inner">
     <div class="section-label">Thomson Reserve Floor Plan</div>
-    <h2 class="section-h2">Thomson Reserve Floor Plan &#8212; <em>Unit Types, Sizes &amp; Layouts</em></h2>
-    <p class="section-intro">Thomson Reserve floor plans have not been officially released. The developer has confirmed the unit mix runs from 2-bedroom to 5-bedroom configurations &#8212; there is no 1-bedroom type in this development &#8212; designed to serve homeowners, families and investors. Register below to receive all Thomson Reserve floor plans the moment they are available.</p>
+    <h2 class="section-h2">Show Unit Floor Plans &#8212; <em>Officially Released</em></h2>
+    <p class="section-intro">The developer has released official floor plans for 4 Thomson Reserve show units, confirming exact layouts, strata areas and specifications. The unit mix overall runs from 2-bedroom to 5-bedroom &#8212; there is no 1-bedroom type in this development. Other unit types will be confirmed closer to the Early-Mid October 2026 preview.</p>
 
-    <div class="placeholder-box">
-      <div class="placeholder-box-inner">
-        <div class="placeholder-icon">&#x1F4D0;</div>
-        <div class="placeholder-badge"><span>&#x25CF;</span> Floor Plans Release Expected Early-Mid October 2026</div>
-        <div class="placeholder-title">Thomson Reserve Floor Plans</div>
-        <div class="placeholder-text">Official Thomson Reserve floor plans &#8212; including all unit types, layout dimensions, and PDF downloads &#8212; will be released ahead of the Early-Mid October 2026 showflat preview. Register to receive them directly to your inbox upon release.</div>
-        <div class="milestone-strip">
-          <div class="ms-item"><div class="ms-dot done"></div><div class="ms-label">Land Acquired</div></div>
-          <div class="ms-item"><div class="ms-dot done"></div><div class="ms-label">Project Named</div></div>
-          <div class="ms-item"><div class="ms-dot active"></div><div class="ms-label">Floor Plans &#8594; Register</div></div>
-          <div class="ms-item"><div class="ms-dot pending"></div><div class="ms-label">Showflat Opens</div></div>
-          <div class="ms-item"><div class="ms-dot pending"></div><div class="ms-label">Booking Day</div></div>
+    <div class="fp-released-badge"><span class="fp-released-dot"></span>4 Show Unit Floor Plans Released</div>
+
+    <div class="fp-download-row">
+      <a href="https://thomson-reserves.sg/thomson-reserve-show-unit-floor-plans.pdf" target="_blank" class="btn-primary" style="background:var(--gold);color:var(--forest-deep);padding:14px 28px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;">Download Full PDF Pack (4 Floor Plans)</a>
+    </div>
+
+    <div class="fp-grid">
+
+      <div class="fp-card">
+        <div class="fp-card-img-wrap">
+          <a href="thomson-reserve-floorplan-bps1-2br-premium-study.jpg" target="_blank"><img src="thomson-reserve-floorplan-bps1-2br-premium-study.jpg" alt="Thomson Reserve floor plan — Type BPS1, 2-Bedroom Premium + Study, 732 sqft" loading="lazy" width="1800" height="1013"></a>
+        </div>
+        <div class="fp-card-body">
+          <span class="fp-card-tag">Show Unit &middot; Mirrored</span>
+          <div class="fp-card-type">Type BPS1</div>
+          <div class="fp-card-title">2-Bedroom Premium + Study</div>
+          <div class="fp-card-size">68 sqm / 732 sqft</div>
+          <ul class="fp-card-features">
+            <li>Highly-efficient dumbbell layout</li>
+            <li>Study integrated into the Master Bedroom for work, relaxation or personal use</li>
+            <li>All bedrooms with ensuite bath</li>
+            <li>Living and all bedrooms offer full frontage</li>
+            <li>Enclosable kitchen with branded appliances</li>
+            <li>Extra storage at corridor</li>
+          </ul>
+          <div class="fp-card-brands">Appliances: <strong>Smeg &middot; Grohe &middot; Blanco</strong></div>
         </div>
       </div>
+
+      <div class="fp-card">
+        <div class="fp-card-img-wrap">
+          <a href="thomson-reserve-floorplan-cp1-3br-premium.jpg" target="_blank"><img src="thomson-reserve-floorplan-cp1-3br-premium.jpg" alt="Thomson Reserve floor plan — Type CP1, 3-Bedroom Premium, 1055 sqft" loading="lazy" width="1800" height="1013"></a>
+        </div>
+        <div class="fp-card-body">
+          <span class="fp-card-tag">Show Unit</span>
+          <div class="fp-card-type">Type CP1</div>
+          <div class="fp-card-title">3-Bedroom Premium</div>
+          <div class="fp-card-size">98 sqm / 1,055 sqft</div>
+          <ul class="fp-card-features">
+            <li>Living and all bedrooms with full frontage</li>
+            <li>Spacious living/dining with balcony that extends the living space (~3.0m)</li>
+            <li>All bathrooms with natural ventilation</li>
+            <li>Large functional kitchen and dedicated yard, naturally ventilated</li>
+            <li>HS doubles as utility room, storage space or maid's room</li>
+            <li>Extra store at kitchen</li>
+          </ul>
+          <div class="fp-card-brands">Appliances: <strong>Smeg &middot; Grohe &middot; Blanco</strong></div>
+        </div>
+      </div>
+
+      <div class="fp-card">
+        <div class="fp-card-img-wrap">
+          <a href="thomson-reserve-floorplan-dp1l-4br-premium-private-lift.jpg" target="_blank"><img src="thomson-reserve-floorplan-dp1l-4br-premium-private-lift.jpg" alt="Thomson Reserve floor plan — Type DP1(L), 4-Bedroom Premium with Private Lift, 1367 sqft" loading="lazy" width="1800" height="1013"></a>
+        </div>
+        <div class="fp-card-body">
+          <span class="fp-card-tag">Show Unit &middot; Private Lift &#128273;</span>
+          <div class="fp-card-type">Type DP1 (L)</div>
+          <div class="fp-card-title">4-Bedroom Premium <span title="Private lift access">&#128273;</span></div>
+          <div class="fp-card-size">127 sqm / 1,367 sqft</div>
+          <ul class="fp-card-features">
+            <li>Exclusive private lift access with marble-finished lobby, living &amp; dining (~3.4m frontage)</li>
+            <li>Ducted aircon to living/dining and Master Bedroom, plus Master walk-in wardrobe</li>
+            <li>Kitchen with sliding glass doors for seamless flow to living, dining and balcony</li>
+            <li>Junior Master Bedroom with ensuite</li>
+            <li>All bathrooms with natural ventilation; additional storage cabinet in wet kitchen</li>
+            <li>Dedicated yard with HS doubling as maid's room</li>
+          </ul>
+          <div class="fp-card-brands">Appliances: <strong>Miele &middot; Liebherr &middot; Grohe &middot; Blanco</strong></div>
+        </div>
+      </div>
+
+      <div class="fp-card">
+        <div class="fp-card-img-wrap">
+          <a href="thomson-reserve-floorplan-e1l-5br-suite-private-lift.jpg" target="_blank"><img src="thomson-reserve-floorplan-e1l-5br-suite-private-lift.jpg" alt="Thomson Reserve floor plan — Type E1(L), 5-Bedroom Suite with Private Lift, 1808 sqft" loading="lazy" width="1800" height="1013"></a>
+        </div>
+        <div class="fp-card-body">
+          <span class="fp-card-tag">Show Unit &middot; Private Lift &#128273;</span>
+          <div class="fp-card-type">Type E1 (L)</div>
+          <div class="fp-card-title">5-Bedroom Suite <span title="Private lift access">&#128273;</span></div>
+          <div class="fp-card-size">168 sqm / 1,808 sqft</div>
+          <ul class="fp-card-features">
+            <li>~6m-wide frontage with unblocked views of the low-rise GCB cluster, Windsor Nature Park &amp; MacRitchie Reservoir</li>
+            <li>Exclusive private lift access; marble flooring &amp; ducted aircon to living/dining</li>
+            <li>Master Bedroom with corner window, ducted aircon and walk-in wardrobe with sensor lighting</li>
+            <li>Ensuite with "His and Her" basins and bathtub; sizable naturally-ventilated Junior Master ensuite</li>
+            <li>Show kitchen with glass doors, additional store in wet kitchen</li>
+            <li>Dedicated yard with HS doubling as maid's room</li>
+          </ul>
+          <div class="fp-card-brands">Appliances: <strong>Miele &middot; Liebherr &middot; Grohe &middot; Blanco</strong></div>
+        </div>
+      </div>
+
     </div>
+    <p style="font-size:12px;color:var(--text-faint);margin-top:20px;font-style:italic;">Floor plans not drawn to scale. Subject to final amendments by the developer and relevant authorities. Click any floor plan to view full size, or download the complete PDF pack above.</p>
   </div>
 </section>
 
 <section class="section" style="background:var(--cream);">
   <div class="section-inner">
-    <div class="section-label">Expected Unit Mix</div>
-    <h2 class="section-h2">Thomson Reserve Floor Plan &#8212; <em>Expected Unit Types &amp; Sizes</em></h2>
-    <p class="section-intro">Confirmed by the developer: Thomson Reserve's unit mix runs from 2-Bedroom to 5-Bedroom only &#8212; there is no 1-Bedroom type in this development. 2 &amp; 3-Bedroom units make up 1,066 of the 1,268 total units (84%), while 4 &amp; 5-Bedroom units account for the remaining 202 units (16%), reflecting a deliberately limited large-unit supply. Exact size ranges and pricing are subject to official developer release.</p>
+    <div class="section-label">Full Unit Mix</div>
+    <h2 class="section-h2">Thomson Reserve Floor Plan &#8212; <em>Unit Types &amp; Sizes</em></h2>
+    <p class="section-intro">Confirmed by the developer: Thomson Reserve's unit mix runs from 2-Bedroom to 5-Bedroom only &#8212; there is no 1-Bedroom type in this development. 2 &amp; 3-Bedroom units make up 1,066 of the 1,268 total units (84%), while 4 &amp; 5-Bedroom units account for the remaining 202 units (16%). The 4 unit types below with a confirmed size are the released show units &#8212; sizes for the rest remain estimates pending official release.</p>
 
     <table class="data-table">
-      <thead><tr><th>Unit Type</th><th>Expected Size Range</th><th>Target Profile</th><th>Est. Entry Price</th></tr></thead>
+      <thead><tr><th>Unit Type</th><th>Size</th><th>Target Profile</th><th>Est. Entry Price</th></tr></thead>
       <tbody>
-        <tr><td>2-Bedroom</td><td>~650&#8211;700 sq ft</td><td>Couples, young families, investors</td><td>~$1.5M&#8211;$1.75M</td></tr>
-        <tr><td>2-Bedroom Premium</td><td>~700&#8211;800 sq ft</td><td>Couples, dual-income households</td><td>~$1.65M&#8211;$1.95M</td></tr>
-        <tr class="highlight"><td>3-Bedroom</td><td>~900&#8211;1,100 sq ft</td><td>Families, HDB upgraders</td><td>~$2.1M&#8211;$2.6M</td></tr>
-        <tr class="highlight"><td>4-Bedroom</td><td>~1,200&#8211;1,500 sq ft</td><td>Growing families, multi-gen</td><td>~$2.8M&#8211;$3.7M</td></tr>
-        <tr><td>4-Bedroom Premium <span title="Comes with private lift access">&#128273;</span></td><td>~1,500&#8211;1,700 sq ft</td><td>Multi-gen, private-lift buyers</td><td>~$3.7M&#8211;$4.2M</td></tr>
-        <tr><td>4-Bedroom Premium + Study <span title="Comes with private lift access">&#128273;</span></td><td>~1,700&#8211;1,900 sq ft</td><td>Multi-gen, home-office households</td><td>~$4.0M&#8211;$4.5M</td></tr>
-        <tr><td>5-Bedroom Suite <span title="Comes with private lift access">&#128273;</span></td><td>~1,900&#8211;2,200 sq ft</td><td>Large families, luxury buyers</td><td>~$4.5M+</td></tr>
+        <tr><td>2-Bedroom</td><td>~650&#8211;700 sq ft (est.)</td><td>Couples, young families, investors</td><td>~$1.5M&#8211;$1.75M</td></tr>
+        <tr><td>2-Bedroom Premium</td><td>~700&#8211;800 sq ft (est.)</td><td>Couples, dual-income households</td><td>~$1.65M&#8211;$1.95M</td></tr>
+        <tr class="highlight"><td>2-Bedroom Premium + Study <span title="Confirmed show unit — Type BPS1">&#9989;</span></td><td>732 sq ft (confirmed)</td><td>Couples, WFH households</td><td>~$1.75M&#8211;$2.0M</td></tr>
+        <tr><td>3-Bedroom</td><td>~900&#8211;1,050 sq ft (est.)</td><td>Families, HDB upgraders</td><td>~$2.0M&#8211;$2.4M</td></tr>
+        <tr class="highlight"><td>3-Bedroom Premium <span title="Confirmed show unit — Type CP1">&#9989;</span></td><td>1,055 sq ft (confirmed)</td><td>Families, HDB upgraders</td><td>~$2.4M&#8211;$2.7M</td></tr>
+        <tr><td>4-Bedroom</td><td>~1,200&#8211;1,300 sq ft (est.)</td><td>Growing families, multi-gen</td><td>~$2.8M&#8211;$3.2M</td></tr>
+        <tr class="highlight"><td>4-Bedroom Premium <span title="Confirmed show unit — Type DP1(L), private lift access">&#9989; &#128273;</span></td><td>1,367 sq ft (confirmed)</td><td>Multi-gen, private-lift buyers</td><td>~$3.4M&#8211;$3.9M</td></tr>
+        <tr><td>4-Bedroom Premium + Study <span title="Comes with private lift access">&#128273;</span></td><td>~1,700&#8211;1,900 sq ft (est.)</td><td>Multi-gen, home-office households</td><td>~$4.0M&#8211;$4.5M</td></tr>
+        <tr class="highlight"><td>5-Bedroom Suite <span title="Confirmed show unit — Type E1(L), private lift access">&#9989; &#128273;</span></td><td>1,808 sq ft (confirmed)</td><td>Large families, luxury buyers</td><td>~$4.4M&#8211;$5.0M</td></tr>
       </tbody>
     </table>
-    <p style="font-size:12px;color:var(--text-faint);margin-top:12px;font-style:italic;">All sizes and prices are indicative estimates based on comparable developments. Subject to official developer announcement.</p>
+    <p style="font-size:12px;color:var(--text-faint);margin-top:12px;font-style:italic;">&#9989; Confirmed show unit floor plan, officially released. Sizes for all other types are indicative estimates and subject to official developer announcement. Pricing throughout is an analyst estimate, not an official developer figure.</p>
 
     <div style="margin-top:52px;">
       <div class="section-label">What to Look For</div>
       <h2 class="section-h2">How to Evaluate the <em>Thomson Reserve Floor Plans</em></h2>
-      <p class="section-intro">When the official Thomson Reserve floor plans are released, here is a framework for evaluating which layouts offer the best value and liveability.</p>
+      <p class="section-intro">Now that the official show unit floor plans are out, here is a framework for evaluating which layouts offer the best value and liveability.</p>
       <div class="info-cards">
         <div class="info-card">
           <div class="info-card-title">Efficiency Ratio</div>
@@ -416,12 +550,12 @@
   <div class="section-inner">
     <div class="reg-grid">
       <div>
-        <div class="section-label" style="color:var(--gold);">Download Thomson Reserve Floor Plans</div>
-        <h2 class="reg-h2">Be First to Receive the <em>Thomson Reserve Floor Plans</em></h2>
-        <p class="reg-desc">Official Thomson Reserve floor plans will be released ahead of the Early-Mid October 2026 showflat preview. Register now to receive all unit type layouts, PDF downloads and a VVIP preview invitation the moment they become available.</p>
+        <div class="section-label" style="color:var(--gold);">Register for Updates</div>
+        <h2 class="reg-h2">Be First to Know When <em>More Floor Plans Release</em></h2>
+        <p class="reg-desc">4 Thomson Reserve show unit floor plans are out now — download the PDF pack above. Register to be notified the moment the remaining unit types are confirmed, and to secure your VVIP preview invitation ahead of the Early-Mid October 2026 showflat opening.</p>
         <ul class="reg-benefits">
-          <li>All Thomson Reserve floor plan PDFs upon official release</li>
-          <li>Unit type guide &#8212; 2BR through 5BR Suite, including private-lift types</li>
+          <li>Confirmed show unit floor plans — download now</li>
+          <li>Notified when remaining unit types are released</li>
           <li>Layout efficiency analysis for each unit type</li>
           <li>VVIP preview invitation ahead of public launch</li>
           <li>Direct developer price &#8212; no commission payable</li>
