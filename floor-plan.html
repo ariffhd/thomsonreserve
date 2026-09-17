@@ -568,9 +568,32 @@
       </div>
       <div class="form-card">
   <div class="form-title">Register Your Interest &mdash; Thomson Reserve</div>
+
+  <!-- SUCCESS STATE -->
+  <div id="form-success" style="display:none;padding:32px 24px;text-align:center;">
+    <div style="font-size:44px;margin-bottom:14px;color:#4caf6e;">&#10003;</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--gold-light);margin-bottom:10px;">Registration Received</div>
+    <div style="font-size:14px;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.75;">Thank you &mdash; our team will be in touch within the hour.<br>You will be among the first to receive floor plans and the VVIP preview invitation.</div>
+  </div>
+
+  <!-- ERROR STATE -->
+  <div id="form-error" style="display:none;padding:14px 18px;background:rgba(200,40,40,0.12);border:1px solid rgba(200,40,40,0.3);margin-bottom:16px;font-size:13px;color:#e08080;line-height:1.6;">
+    Something went wrong. Please try again or call us at <a href="tel:+6589623281" style="color:#e08080;font-weight:500;">+65 8962 3281</a>.
+  </div>
+
+  <form id="reg-form" action="https://api.web3forms.com/submit" method="POST">
+
+    <!-- Web3Forms -->
+    <input type="hidden" name="access_key" value="a0476863-d3f3-4794-8856-b15eaa36fa24">
+    <input type="hidden" name="subject" value="New Lead — Thomson Reserve VVIP Registration (floor-plan.html)">
+    <input type="hidden" name="from_name" value="Thomson Reserve Website">
+    <input type="hidden" name="redirect" value="false">
+    <!-- Honeypot spam trap -->
+    <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
   <div class="form-group">
     <label class="form-label">Enquiry Type *</label>
-    <select class="form-select">
+    <select class="form-select" name="Enquiry Type" required>
       <option value="">&#8212; Select &#8212;</option>
       <option>Purchase</option>
       <option>View Showflat</option>
@@ -585,29 +608,69 @@
   </div>
   <div class="form-group">
     <label class="form-label">Full Name *</label>
-    <input type="text" class="form-input" placeholder="Your full name">
+    <input type="text" class="form-input" name="Full Name" placeholder="Your full name" required>
   </div>
   <div class="form-group">
     <label class="form-label">Mobile Number *</label>
-    <input type="tel" class="form-input" placeholder="+65 XXXX XXXX">
+    <input type="tel" class="form-input" name="Mobile Number" placeholder="+65 XXXX XXXX" required>
   </div>
   <div class="form-group">
     <label class="form-label">Email Address *</label>
-    <input type="email" class="form-input" placeholder="your@email.com">
+    <input type="email" class="form-input" name="Email" placeholder="your@email.com" required>
   </div>
   <div class="form-group">
     <label class="form-label">Message</label>
-    <textarea class="form-textarea" placeholder="Any specific questions or unit preferences..."></textarea>
+    <textarea class="form-textarea" name="Message" placeholder="Any specific questions or unit preferences..."></textarea>
   </div>
   <div class="form-group">
     <div class="form-checkbox-group">
-      <input type="checkbox" class="form-checkbox" id="privacy-chk">
+      <input type="checkbox" class="form-checkbox" id="privacy-chk" required>
       <label class="form-checkbox-label" for="privacy-chk">I have read and agree to the <a href="https://thomson-reserves.sg/privacy-policy.html">Privacy Policy</a>. I consent to being contacted regarding Thomson Reserve.</label>
     </div>
   </div>
-  <button type="submit" class="form-submit">Register Now</button>
+  <button type="submit" class="form-submit" id="submit-btn">Register Now</button>
   <div class="form-note">Strictly no spam policy &middot; Protected under PDPA</div>
+
+  </form>
 </div>
+
+<script>
+(function(){
+  var form = document.getElementById('reg-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    var success = document.getElementById('form-success');
+    var error = document.getElementById('form-error');
+    if (!document.getElementById('privacy-chk').checked){
+      alert('Please agree to the Privacy Policy before submitting.');
+      return;
+    }
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+    error.style.display = 'none';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(j){
+      if (j.success){
+        form.style.display = 'none';
+        success.style.display = 'block';
+        success.scrollIntoView({behavior:'smooth', block:'center'});
+      } else { throw new Error(j.message); }
+    })
+    .catch(function(){
+      btn.textContent = 'Register Now';
+      btn.disabled = false;
+      error.style.display = 'block';
+      error.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  });
+})();
+</script>
     </div>
   </div>
 </section>
