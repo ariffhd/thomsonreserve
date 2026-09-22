@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thomson Reserve Site Plan — 5-Hectare Masterplan at Bright Hill Drive, D20</title>
-<meta name="description" content="Thomson Reserve site plan not yet released. Register to receive the official site plan upon launch. 5-hectare masterplan, 1,268 units, by UOL SingLand CapitaLand at Bright Hill Drive D20.">
+<meta name="description" content="Thomson Reserve official site plan released — 86 numbered facilities across the Island Club, Grand Clubhouse and Wellness Club. 5-hectare masterplan, 1,268 units, by UOL SingLand CapitaLand at Bright Hill Drive D20.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -129,6 +129,19 @@
   .form-submit{width:100%;background:var(--gold);color:var(--forest-deep);border:none;padding:15px;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background 0.2s;}
   .form-submit:hover{background:var(--gold-light);}
   .form-note{font-size:10px;color:rgba(255,255,255,0.2);text-align:center;margin-top:10px;letter-spacing:0.06em;}
+  /* FACILITY LEGEND */
+  .released-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(76,175,110,0.1);border:1px solid rgba(76,175,110,0.3);padding:8px 20px;font-size:11px;letter-spacing:0.14em;color:#2e8b57;text-transform:uppercase;font-weight:600;margin-bottom:24px;}
+  .released-dot{width:7px;height:7px;border-radius:50%;background:#4caf6e;animation:pulse 2s infinite;flex-shrink:0;}
+  .club-block{margin-bottom:44px;}
+  .club-block:last-child{margin-bottom:0;}
+  .club-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--forest);margin-bottom:4px;}
+  .club-count{font-size:12px;color:var(--text-faint);margin-bottom:16px;}
+  .facility-list{column-count:3;column-gap:28px;}
+  .facility-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-mid);line-height:1.5;padding:6px 0;break-inside:avoid;}
+  .facility-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--forest);color:var(--gold-light);font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+  .facility-others{margin-top:32px;padding-top:24px;border-top:1px solid var(--border-light);}
+  .facility-others .facility-num{background:transparent;border:1px solid var(--gold);color:var(--gold);}
+  @media(max-width:768px){ .facility-list{column-count:1;} }
   /* INFO CARDS */
   .info-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px;}
   .info-card{background:var(--white);border:1px solid var(--border);padding:24px;position:relative;}
@@ -238,7 +251,7 @@
       "@id": "https://thomson-reserves.sg/site-plan.html#webpage",
       "url": "https://thomson-reserves.sg/site-plan.html",
       "name": "Thomson Reserve Site Plan - 5-Hectare Masterplan at Bright Hill Drive, D20",
-      "description": "Thomson Reserve site plan not yet released. Register to receive the official site plan upon 17–27 October 2026 launch. 5-hectare masterplan, 1,268 units by UOL SingLand CapitaLand.",
+      "description": "Thomson Reserve official site plan released — 86 numbered facilities across the Island Club, Grand Clubhouse and Wellness Club. 5-hectare masterplan, 1,268 units by UOL SingLand CapitaLand.",
       "datePublished": "2026-04-14",
       "dateModified": "2026-09-22",
       "isPartOf": {
@@ -276,11 +289,11 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thomson-reserves.sg/site-plan.html">
   <meta property="og:title" content="Thomson Reserve Site Plan — 5-Hectare Masterplan at Bright Hill Drive, D20">
-  <meta property="og:description" content="Thomson Reserve site plan not yet released. Register to receive the official site plan upon 17–27 October 2026 launch. 5-hectare masterplan, 1,268 units by UOL SingLand CapitaLand.">
+  <meta property="og:description" content="Thomson Reserve official site plan released — 86 numbered facilities across the Island Club, Grand Clubhouse and Wellness Club. 5-hectare masterplan, 1,268 units by UOL SingLand CapitaLand.">
   <meta property="og:site_name" content="Thomson Reserve">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Thomson Reserve Site Plan — 5-Hectare Masterplan at Bright Hill Drive, D20">
-  <meta name="twitter:description" content="Thomson Reserve site plan not yet released. Register to receive the official site plan upon 17–27 October 2026 launch. 5-hectare masterplan, 1,268 units by UOL SingLand CapitaLand.">
+  <meta name="twitter:description" content="Thomson Reserve official site plan released — 86 numbered facilities across the Island Club, Grand Clubhouse and Wellness Club. 5-hectare masterplan, 1,268 units by UOL SingLand CapitaLand.">
 </head>
 <body>
 <div class="topbar">
@@ -333,25 +346,139 @@
   <div class="section-inner">
     <div class="section-label">Thomson Reserve Site Plan</div>
     <h2 class="section-h2">Thomson Reserve Site Plan &#8212; <em>5-Hectare Masterplan at Bright Hill Drive</em></h2>
-    <p class="section-intro">The detailed Thomson Reserve site plan diagram has not been officially released, but the developer has confirmed the masterplan structure: 6 towers (2 x 30-storey Luxury Collection, 4 x 21-storey Classic Collection), 80 lifestyle facilities and 2 entry/exit points, occupying approximately 540,000 sq ft (5 hectares) along Bright Hill Drive, Upper Thomson. Register below to receive the official site plan diagram and stack chart the moment it is released.</p>
+    <div class="released-badge"><span class="released-dot"></span> Official Site Plan Released</div>
+    <p class="section-intro">The official Thomson Reserve site plan is out, showing the full layout of all 86 numbered facilities and 6 towers across the 5-hectare (approx. 540,000 sq ft) masterplan along Bright Hill Drive, Upper Thomson &#8212; anchored by three signature clubs: the Island Club, Grand Clubhouse and Wellness Club.</p>
 
-    <figure style="margin:0 0 40px;border:1px solid var(--border);">
-      <img src="thomson-reserve-masterplan-artist-impression.jpg" alt="Thomson Reserve masterplan — artist's impression of the six-tower development, Bright Hill Drive, Upper Thomson" loading="lazy" width="2000" height="1487" style="width:100%;height:auto;display:block;">
-      <figcaption style="padding:14px 18px;font-size:12.5px;color:var(--text-light);font-style:italic;">Thomson Reserve — artist's impression of the six-tower masterplan (not the official site plan diagram; awaiting 17–27 October 2026 release).</figcaption>
+    <figure style="margin:0 0 24px;border:1px solid var(--border);">
+      <img src="thomson-reserve-site-plan-official.jpg" alt="Thomson Reserve official site plan — numbered layout of all 86 facilities, 6 towers and 3 signature clubs, Bright Hill Drive" loading="lazy" width="2000" height="1414" style="width:100%;height:auto;display:block;">
+      <figcaption style="padding:14px 18px;font-size:12.5px;color:var(--text-light);font-style:italic;">Thomson Reserve — official site plan with numbered facility markers (see legend below).</figcaption>
     </figure>
 
-    <div class="placeholder-box">
-      <div class="placeholder-box-inner">
-        <div class="placeholder-icon">&#x1F5FA;</div>
-        <div class="placeholder-badge"><span>&#x25CF;</span> Pre-Launch Phase &mdash; Official Release 17–27 October 2026</div>
-        <div class="placeholder-title">Thomson Reserve Site Plan</div>
-        <div class="placeholder-text">The official Thomson Reserve site plan will be released ahead of the 17–27 October 2026 showflat preview. Register your interest below to receive the site plan, facilities list and e-brochure directly to your inbox the moment they are available.</div>
-        <div class="milestone-strip">
-          <div class="ms-item"><div class="ms-dot done"></div><div class="ms-label">Land Acquired</div></div>
-          <div class="ms-item"><div class="ms-dot done"></div><div class="ms-label">Project Named</div></div>
-          <div class="ms-item"><div class="ms-dot active"></div><div class="ms-label">Site Plan &#8594; Register</div></div>
-          <div class="ms-item"><div class="ms-dot pending"></div><div class="ms-label">Showflat Opens</div></div>
-          <div class="ms-item"><div class="ms-dot pending"></div><div class="ms-label">Booking Day</div></div>
+    <figure style="margin:0 0 40px;border:1px solid var(--border);">
+      <img src="thomson-reserve-three-clubs-overview.jpg" alt="Thomson Reserve three signature clubs overview — Wellness Club, Grand Clubhouse and Island Club across the masterplan" loading="lazy" width="1800" height="1012" style="width:100%;height:auto;display:block;">
+      <figcaption style="padding:14px 18px;font-size:12.5px;color:var(--text-light);font-style:italic;">More than 80 curated lifestyle facilities across the 5-hectare land, organised into three signature clubs.</figcaption>
+    </figure>
+
+    <div class="section-label">Facilities Legend</div>
+    <h2 class="section-h2" style="margin-bottom:28px;">All 86 Thomson Reserve Facilities &#8212; <em>Numbered by Club</em></h2>
+
+    <div class="club-block">
+      <div class="club-title">Island Club</div>
+      <div class="club-count">32 facilities &middot; markers 1&ndash;32</div>
+      <div class="facility-list">
+        <div class="facility-item"><span class="facility-num">1</span>Reflective Pool</div>
+        <div class="facility-item"><span class="facility-num">2</span>Oak Lounge (Social Lounge 1)</div>
+        <div class="facility-item"><span class="facility-num">3</span>Seating Deck</div>
+        <div class="facility-item"><span class="facility-num">4</span>Cedar Room (Function Room 1)</div>
+        <div class="facility-item"><span class="facility-num">5</span>Entertainment Room 1</div>
+        <div class="facility-item"><span class="facility-num">6</span>Changing Room</div>
+        <div class="facility-item"><span class="facility-num">7</span>Cherry Room (Function Room 2)</div>
+        <div class="facility-item"><span class="facility-num">8</span>Social Lawn</div>
+        <div class="facility-item"><span class="facility-num">9</span>Central Lawn</div>
+        <div class="facility-item"><span class="facility-num">10</span>Clubhouse Terrace</div>
+        <div class="facility-item"><span class="facility-num">11</span>Island Pool</div>
+        <div class="facility-item"><span class="facility-num">12</span>Garden Lawn</div>
+        <div class="facility-item"><span class="facility-num">13</span>Relaxation Deck</div>
+        <div class="facility-item"><span class="facility-num">14</span>Relaxation Bubble Pool</div>
+        <div class="facility-item"><span class="facility-num">15</span>Waterbed</div>
+        <div class="facility-item"><span class="facility-num">16</span>Island Pool Deck</div>
+        <div class="facility-item"><span class="facility-num">17</span>Pool Cabana</div>
+        <div class="facility-item"><span class="facility-num">18</span>Infinity Lap Pool Deck</div>
+        <div class="facility-item"><span class="facility-num">19</span>Infinity Lap Pool (50m)</div>
+        <div class="facility-item"><span class="facility-num">20</span>Waterfall</div>
+        <div class="facility-item"><span class="facility-num">21</span>Island Floating Bridge</div>
+        <div class="facility-item"><span class="facility-num">22</span>Grand Arrival</div>
+        <div class="facility-item"><span class="facility-num">23</span>Forest Grill Pavilion 1</div>
+        <div class="facility-item"><span class="facility-num">24</span>Forest Grill Pavilion 2</div>
+        <div class="facility-item"><span class="facility-num">25</span>Forest Grill Pavilion 3</div>
+        <div class="facility-item"><span class="facility-num">26</span>Forest Quest Playground</div>
+        <div class="facility-item"><span class="facility-num">27</span>Play Lawn</div>
+        <div class="facility-item"><span class="facility-num">28</span>Forest Gym</div>
+        <div class="facility-item"><span class="facility-num">29</span>Forest Pavilion</div>
+        <div class="facility-item"><span class="facility-num">30</span>Paw Garden</div>
+        <div class="facility-item"><span class="facility-num">31</span>Paw Garden Pavilion</div>
+        <div class="facility-item"><span class="facility-num">32</span>Forest Terrace</div>
+      </div>
+    </div>
+
+    <div class="club-block">
+      <div class="club-title">Grand Clubhouse</div>
+      <div class="club-count">32 facilities &middot; markers 33&ndash;64</div>
+      <div class="facility-list">
+        <div class="facility-item"><span class="facility-num">33</span>Cascade Terrace</div>
+        <div class="facility-item"><span class="facility-num">34</span>Cascade Cove</div>
+        <div class="facility-item"><span class="facility-num">35</span>Zen Terrace</div>
+        <div class="facility-item"><span class="facility-num">36</span>Grand Function Room</div>
+        <div class="facility-item"><span class="facility-num">37</span>Maple Room (Function Room 3)</div>
+        <div class="facility-item"><span class="facility-num">38</span>Changing Room</div>
+        <div class="facility-item"><span class="facility-num">39</span>Golf Simulator</div>
+        <div class="facility-item"><span class="facility-num">40</span>Recreation Room</div>
+        <div class="facility-item"><span class="facility-num">41</span>Little Canopy Room (Kids Function Room)</div>
+        <div class="facility-item"><span class="facility-num">42</span>Little Explorer Nook (Kids Play Room)</div>
+        <div class="facility-item"><span class="facility-num">43</span>Main Gym (2nd Storey)</div>
+        <div class="facility-item"><span class="facility-num">44</span>Outdoor Yoga Deck (2nd Storey)</div>
+        <div class="facility-item"><span class="facility-num">45</span>Leisure Pool</div>
+        <div class="facility-item"><span class="facility-num">46</span>Leisure Pool Deck</div>
+        <div class="facility-item"><span class="facility-num">47</span>Grand Lawn</div>
+        <div class="facility-item"><span class="facility-num">48</span>Grand Lawn Pavilion</div>
+        <div class="facility-item"><span class="facility-num">49</span>Sensory Play</div>
+        <div class="facility-item"><span class="facility-num">50</span>Lookout Pavilion</div>
+        <div class="facility-item"><span class="facility-num">51</span>Hammock Cove</div>
+        <div class="facility-item"><span class="facility-num">52</span>Kids Adventure Zone</div>
+        <div class="facility-item"><span class="facility-num">53</span>Kids Pool</div>
+        <div class="facility-item"><span class="facility-num">54</span>Social Garden</div>
+        <div class="facility-item"><span class="facility-num">55</span>Family Deck</div>
+        <div class="facility-item"><span class="facility-num">56</span>Aspen Room (Function Room 4)</div>
+        <div class="facility-item"><span class="facility-num">57</span>Olive Lounge (Social Lounge 2)</div>
+        <div class="facility-item"><span class="facility-num">58</span>Changing Room</div>
+        <div class="facility-item"><span class="facility-num">59</span>Entertainment Room 2</div>
+        <div class="facility-item"><span class="facility-num">60</span>Pine Room (Function Room 5)</div>
+        <div class="facility-item"><span class="facility-num">61</span>Canopy Pool Deck</div>
+        <div class="facility-item"><span class="facility-num">62</span>Canopy Lap Pool (50m)</div>
+        <div class="facility-item"><span class="facility-num">63</span>Firefly Riverine Garden</div>
+        <div class="facility-item"><span class="facility-num">64</span>Serenity Lawn</div>
+      </div>
+    </div>
+
+    <div class="club-block">
+      <div class="club-title">Wellness Club</div>
+      <div class="club-count">22 facilities &middot; markers 65&ndash;86</div>
+      <div class="facility-list">
+        <div class="facility-item"><span class="facility-num">65</span>Wellness Lawn</div>
+        <div class="facility-item"><span class="facility-num">66</span>Wellness Pod Pavilion 1</div>
+        <div class="facility-item"><span class="facility-num">67</span>Wellness Pod Pavilion 2</div>
+        <div class="facility-item"><span class="facility-num">68</span>Wellness Pod Pavilion 3</div>
+        <div class="facility-item"><span class="facility-num">69</span>Herb Garden</div>
+        <div class="facility-item"><span class="facility-num">70</span>Poolside BBQ Pavilion 1</div>
+        <div class="facility-item"><span class="facility-num">71</span>Poolside BBQ Pavilion 2</div>
+        <div class="facility-item"><span class="facility-num">72</span>Hydro Bay</div>
+        <div class="facility-item"><span class="facility-num">73</span>Hydro Spa Pool</div>
+        <div class="facility-item"><span class="facility-num">74</span>Hydro Lounger</div>
+        <div class="facility-item"><span class="facility-num">75</span>Active Pool</div>
+        <div class="facility-item"><span class="facility-num">76</span>Hydro Gym</div>
+        <div class="facility-item"><span class="facility-num">77</span>Wellness Terrace</div>
+        <div class="facility-item"><span class="facility-num">78</span>Wellness Studio</div>
+        <div class="facility-item"><span class="facility-num">79</span>Pilates Studio</div>
+        <div class="facility-item"><span class="facility-num">80</span>Changing Room / Steam Room</div>
+        <div class="facility-item"><span class="facility-num">81</span>Private Gym</div>
+        <div class="facility-item"><span class="facility-num">82</span>Changing Room / Steam Room</div>
+        <div class="facility-item"><span class="facility-num">83</span>Pavilion</div>
+        <div class="facility-item"><span class="facility-num">84</span>Multi-Purpose Court 1</div>
+        <div class="facility-item"><span class="facility-num">85</span>Multi-Purpose Court 2</div>
+        <div class="facility-item"><span class="facility-num">86</span>Tennis Court</div>
+      </div>
+      <div class="facility-others">
+        <div class="club-count" style="margin-bottom:12px;">Site &amp; Back-of-House &mdash; lettered markers</div>
+        <div class="facility-list">
+          <div class="facility-item"><span class="facility-num">A</span>Pedestrian Gate (1st Storey)</div>
+          <div class="facility-item"><span class="facility-num">B</span>Guard House (1st Storey)</div>
+          <div class="facility-item"><span class="facility-num">C</span>Genset (1st Storey)</div>
+          <div class="facility-item"><span class="facility-num">D</span>Management Office (1st Storey)</div>
+          <div class="facility-item"><span class="facility-num">E</span>Bicycle Parking (1st Storey &amp; Basement 1)</div>
+          <div class="facility-item"><span class="facility-num">F</span>Electrical Substation (Basement 1)</div>
+          <div class="facility-item"><span class="facility-num">G</span>Bin Centre (Basement 1)</div>
+          <div class="facility-item"><span class="facility-num">H</span>Guard Post</div>
+          <div class="facility-item"><span class="facility-num">I</span>Ventilation Shafts</div>
         </div>
       </div>
     </div>
@@ -396,7 +523,7 @@
   <div class="section-inner">
     <div class="section-label">Stack Analysis</div>
     <h2 class="section-h2">Which Thomson Reserve Stacks Will Be <em>Most Valuable?</em></h2>
-    <p class="section-intro">While the official site plan has not been released, buyers evaluating Thomson Reserve can use the site's known orientation and surroundings to anticipate which stacks will command premiums at launch. This analysis is based on the site's location along Bright Hill Drive and the surrounding land use.</p>
+    <p class="section-intro">With the official site plan now released, buyers evaluating Thomson Reserve can see exactly which towers and stacks sit closest to each club and facing direction. The analysis below combines the confirmed site plan layout with the site's known orientation and surroundings to anticipate which stacks will command premiums at launch.</p>
     <div class="two-col">
       <div>
         <div class="h3-label">Premium Facing Directions</div>
@@ -431,14 +558,14 @@
   <div class="section-inner">
     <div class="reg-grid">
       <div>
-        <div class="section-label" style="color:var(--gold);">Get Thomson Reserve Site Plan</div>
-        <h2 class="reg-h2">Be First to Receive the <em>Thomson Reserve Site Plan</em></h2>
-        <p class="reg-desc">The official Thomson Reserve site plan will be released ahead of the 17–27 October 2026 showflat preview. Register your interest now to receive it directly to your inbox the moment it is available &#8212; along with the e-brochure, floor plans and VVIP preview invitation.</p>
+        <div class="section-label" style="color:var(--gold);">Book Your Showflat Appointment</div>
+        <h2 class="reg-h2">Site Plan Is Out &#8212; <em>See It in Person at the Showflat</em></h2>
+        <p class="reg-desc">The official Thomson Reserve site plan and full floor plan collection are out now. Register to receive the e-brochure and official price list the moment it's released, and to secure your VVIP preview appointment for the 17–27 October 2026 showflat opening.</p>
         <ul class="reg-benefits">
-          <li>Official Thomson Reserve site plan upon release</li>
-          <li>Full facilities list and masterplan overview</li>
+          <li>Official price list upon release</li>
+          <li>Full e-brochure with facilities and specifications</li>
           <li>Stack analysis guide &#8212; which units to prioritise</li>
-          <li>VVIP preview invitation ahead of general public</li>
+          <li>VVIP preview appointment ahead of general public</li>
           <li>Direct developer price &#8212; no commission payable</li>
         </ul>
         <div class="reg-trust">

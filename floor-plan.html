@@ -105,6 +105,17 @@
   .fp-card-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;font-weight:600;color:var(--forest);text-decoration:none;border-bottom:1px solid var(--gold);}
   .fp-card-link:hover{color:var(--gold);}
   @media(max-width:768px){ .fp-grid{grid-template-columns:1fr;} }
+  /* FULL FLOOR PLAN COLLECTION */
+  .fpc-category{margin-bottom:36px;}
+  .fpc-category:last-child{margin-bottom:0;}
+  .fpc-cat-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:16px;}
+  .fpc-cat-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--forest);}
+  .fpc-cat-meta{font-size:12px;color:var(--text-faint);}
+  .fpc-type-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;}
+  .fpc-type-tile{display:block;border:1px solid var(--border);text-decoration:none;background:var(--white);overflow:hidden;transition:border-color 0.2s;}
+  .fpc-type-tile:hover{border-color:var(--gold);}
+  .fpc-type-tile img{width:100%;height:110px;object-fit:cover;object-position:top;display:block;background:#f4f0e6;}
+  .fpc-type-code{display:block;font-size:11px;font-weight:600;color:var(--forest);text-align:center;padding:8px 4px;letter-spacing:0.04em;}
   /* PLACEHOLDER BOX */
   .placeholder-box{background:var(--forest);padding:60px 40px;text-align:center;position:relative;overflow:hidden;}
   .placeholder-box::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(196,160,80,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(196,160,80,0.04) 1px,transparent 1px);background-size:40px 40px;}
@@ -489,25 +500,296 @@
   <div class="section-inner">
     <div class="section-label">Full Unit Mix</div>
     <h2 class="section-h2">Thomson Reserve Floor Plan &#8212; <em>Unit Types &amp; Sizes</em></h2>
-    <p class="section-intro">Confirmed by the developer: Thomson Reserve's unit mix runs from 2-Bedroom to 5-Bedroom only &#8212; there is no 1-Bedroom type in this development. 2 &amp; 3-Bedroom units make up 1,066 of the 1,268 total units (84%), while 4 &amp; 5-Bedroom units account for the remaining 202 units (16%). The 4 unit types below with a confirmed size are the released show units &#8212; sizes for the rest remain estimates pending official release.</p>
+    <div class="fp-released-badge"><span class="fp-released-dot"></span> Official Unit Mix Released &mdash; All 1,268 Units</div>
+    <p class="section-intro">The developer has officially released the full unit mix: Thomson Reserve's 1,268 units run from 2-Bedroom to 5-Bedroom only &#8212; there is no 1-Bedroom type in this development. 2 &amp; 3-Bedroom units make up 1,066 of the 1,268 total units (84%), while 4 &amp; 5-Bedroom units account for the remaining 202 units (16%). All strata sizes below are confirmed &#8212; only pricing remains an analyst estimate pending the developer's official price list.</p>
 
     <table class="data-table">
-      <thead><tr><th>Unit Type</th><th>Size</th><th>Target Profile</th><th>Est. Entry Price</th></tr></thead>
+      <thead><tr><th>Unit Type</th><th>Strata Size</th><th>No. of Units</th><th>% of Total</th><th>Est. Entry Price</th></tr></thead>
       <tbody>
-        <tr><td>2-Bedroom</td><td>~650&#8211;700 sq ft (est.)</td><td>Couples, young families, investors</td><td>~$1.5M&#8211;$1.75M</td></tr>
-        <tr><td>2-Bedroom Premium</td><td>~700&#8211;800 sq ft (est.)</td><td>Couples, dual-income households</td><td>~$1.65M&#8211;$1.95M</td></tr>
-        <tr class="highlight"><td>2-Bedroom Premium + Study <span title="Confirmed show unit — Type BPS1">&#9989;</span></td><td>732 sq ft (confirmed)</td><td>Couples, WFH households</td><td>~$1.75M&#8211;$2.0M</td></tr>
-        <tr><td>3-Bedroom</td><td>~900&#8211;1,050 sq ft (est.)</td><td>Families, HDB upgraders</td><td>~$2.0M&#8211;$2.4M</td></tr>
-        <tr class="highlight"><td>3-Bedroom Premium <span title="Confirmed show unit — Type CP1">&#9989;</span></td><td>1,055 sq ft (confirmed)</td><td>Families, HDB upgraders</td><td>~$2.4M&#8211;$2.7M</td></tr>
-        <tr><td>4-Bedroom</td><td>~1,200&#8211;1,300 sq ft (est.)</td><td>Growing families, multi-gen</td><td>~$2.8M&#8211;$3.2M</td></tr>
-        <tr class="highlight"><td>4-Bedroom Premium <span title="Confirmed show unit — Type DP1(L), private lift access">&#9989; &#128273;</span></td><td>1,367 sq ft (confirmed)</td><td>Multi-gen, private-lift buyers</td><td>~$3.4M&#8211;$3.9M</td></tr>
-        <tr><td>4-Bedroom Premium + Study <span title="Comes with private lift access">&#128273;</span></td><td>~1,700&#8211;1,900 sq ft (est.)</td><td>Multi-gen, home-office households</td><td>~$4.0M&#8211;$4.5M</td></tr>
-        <tr class="highlight"><td>5-Bedroom Suite <span title="Confirmed show unit — Type E1(L), private lift access">&#9989; &#128273;</span></td><td>1,808 sq ft (confirmed)</td><td>Large families, luxury buyers</td><td>~$4.4M&#8211;$5.0M</td></tr>
+        <tr><td>2-Bedroom</td><td>592 sq ft</td><td>100</td><td>8%</td><td>~$1.35M (~$2,280 psf)</td></tr>
+        <tr><td>2-Bedroom Premium</td><td>678 sq ft</td><td>416</td><td>33%</td><td>~$1.6M (~$2,360 psf)</td></tr>
+        <tr class="highlight"><td>2-Bedroom Premium + Study <span title="Includes show unit Type BPS1">&#9989;</span></td><td>732 &amp; 775 sq ft</td><td>200</td><td>16%</td><td>~$1.75M (~$2,390 psf)</td></tr>
+        <tr><td>3-Bedroom</td><td>947 sq ft</td><td>120</td><td>10%</td><td>~$2.2M (~$2,320 psf)</td></tr>
+        <tr class="highlight"><td>3-Bedroom Premium <span title="Includes show unit Type CP1">&#9989;</span></td><td>1,055 sq ft</td><td>170</td><td>13%</td><td>~$2.5M (~$2,370 psf)</td></tr>
+        <tr><td>3-Bedroom Premium + Study</td><td>1,152 sq ft</td><td>60</td><td>5%</td><td>~$2.75M (~$2,390 psf)</td></tr>
+        <tr><td>4-Bedroom</td><td>1,238 sq ft</td><td>90</td><td>7%</td><td>~$2.95M (~$2,380 psf)</td></tr>
+        <tr class="highlight"><td>4-Bedroom Premium <span title="Includes show unit Type DP1(L), private lift access">&#9989; &#128273;</span></td><td>1,367 sq ft</td><td>56</td><td>4%</td><td>~$3.35M (~$2,450 psf)</td></tr>
+        <tr><td>4-Bedroom Premium + Study <span title="Comes with private lift access">&#128273;</span></td><td>1,485 sq ft</td><td>28</td><td>2%</td><td>~$3.65M (~$2,460 psf)</td></tr>
+        <tr class="highlight"><td>5-Bedroom Suite <span title="Includes show unit Type E1(L), private lift access">&#9989; &#128273;</span></td><td>1,808 sq ft</td><td>28</td><td>2%</td><td>~$4.4M (~$2,435 psf)</td></tr>
+        <tr style="font-weight:600;"><td>Total</td><td>&mdash;</td><td>1,268</td><td>100%</td><td>&mdash;</td></tr>
       </tbody>
     </table>
-    <p style="font-size:12px;color:var(--text-faint);margin-top:12px;font-style:italic;">&#9989; Confirmed show unit floor plan, officially released. Sizes for all other types are indicative estimates and subject to official developer announcement. Pricing throughout is an analyst estimate, not an official developer figure.</p>
+    <p style="font-size:12px;color:var(--text-faint);margin-top:12px;font-style:italic;">&#9989; Includes a released show unit floor plan. &#128273; Comes with private lift access. All strata sizes and unit counts above are official developer figures. Pricing is an analyst estimate only, not an official developer figure &#8212; the official price list will be released at the showflat preview.</p>
+  </div>
+</section>
 
-    <div style="margin-top:52px;">
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-label">Complete Floor Plan Collection</div>
+    <h2 class="section-h2">All 41 Thomson Reserve Unit Types &#8212; <em>Full Floor Plans</em></h2>
+    <p class="section-intro">The developer has released the complete floor plan set covering every unit type across all 6 towers &#8212; 26 layouts in the Classic Collection (Blocks 1, 3, 9, 11) and 15 layouts in the Luxury Collection (Blocks 5, 7, with private lift access). Grouped below by bedroom type; click any floor plan to view full size or download.</p>
+
+    <div class="fpc-category">
+      <div class="fpc-cat-header">
+        <div class="fpc-cat-name">2-Bedroom</div>
+        <div class="fpc-cat-meta">55 sqm (592 sqft) &middot; 100 units &middot; 8% of total</div>
+      </div>
+      <div class="fpc-type-grid">
+        <a href="thomson-reserve-fullplan-b1-2br.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-b1-2br.jpg" alt="Thomson Reserve full floor plan, Type B1, 2-Bedroom, 592 sqft" loading="lazy">
+          <span class="fpc-type-code">Type B1</span>
+        </a>
+        <a href="thomson-reserve-fullplan-b2-2br.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-b2-2br.jpg" alt="Thomson Reserve full floor plan, Type B2, 2-Bedroom, 592 sqft" loading="lazy">
+          <span class="fpc-type-code">Type B2</span>
+        </a>
+        <a href="thomson-reserve-fullplan-b3-2br.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-b3-2br.jpg" alt="Thomson Reserve full floor plan, Type B3, 2-Bedroom, 592 sqft" loading="lazy">
+          <span class="fpc-type-code">Type B3</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="fpc-category">
+      <div class="fpc-cat-header">
+        <div class="fpc-cat-name">2-Bedroom Premium</div>
+        <div class="fpc-cat-meta">63 sqm (678 sqft) &middot; 416 units &middot; 33% of total</div>
+      </div>
+      <div class="fpc-type-grid">
+        <a href="thomson-reserve-fullplan-bp1-2br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bp1-2br-premium.jpg" alt="Thomson Reserve full floor plan, Type BP1, 2-Bedroom Premium, 678 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BP1</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bp2-2br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bp2-2br-premium.jpg" alt="Thomson Reserve full floor plan, Type BP2, 2-Bedroom Premium, 678 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BP2</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bp3-2br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bp3-2br-premium.jpg" alt="Thomson Reserve full floor plan, Type BP3, 2-Bedroom Premium, 678 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BP3</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bp4-2br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bp4-2br-premium.jpg" alt="Thomson Reserve full floor plan, Type BP4, 2-Bedroom Premium, 678 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BP4</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bp5-2br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bp5-2br-premium.jpg" alt="Thomson Reserve full floor plan, Type BP5, 2-Bedroom Premium, 678 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BP5</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bp8-2br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bp8-2br-premium.jpg" alt="Thomson Reserve full floor plan, Type BP8, 2-Bedroom Premium, 678 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BP8</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bp9-2br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bp9-2br-premium.jpg" alt="Thomson Reserve full floor plan, Type BP9, 2-Bedroom Premium, 678 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BP9</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bp2l-2br-premium-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bp2l-2br-premium-private-lift.jpg" alt="Thomson Reserve full floor plan, Type BP2(L), 2-Bedroom Premium, 678 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BP2(L)</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bp3l-2br-premium-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bp3l-2br-premium-private-lift.jpg" alt="Thomson Reserve full floor plan, Type BP3(L), 2-Bedroom Premium, 678 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BP3(L)</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bp6l-2br-premium-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bp6l-2br-premium-private-lift.jpg" alt="Thomson Reserve full floor plan, Type BP6(L), 2-Bedroom Premium, 678 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BP6(L)</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bp7l-2br-premium-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bp7l-2br-premium-private-lift.jpg" alt="Thomson Reserve full floor plan, Type BP7(L), 2-Bedroom Premium, 678 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BP7(L)</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="fpc-category">
+      <div class="fpc-cat-header">
+        <div class="fpc-cat-name">2-Bedroom Premium + Study</div>
+        <div class="fpc-cat-meta">68 & 72 sqm (732 & 775 sqft) &middot; 200 units &middot; 16% of total</div>
+      </div>
+      <div class="fpc-type-grid">
+        <a href="thomson-reserve-fullplan-bps1-2br-premium-study.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bps1-2br-premium-study.jpg" alt="Thomson Reserve full floor plan, Type BPS1, 2-Bedroom Premium + Study, 732 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BPS1</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bps4-2br-premium-study.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bps4-2br-premium-study.jpg" alt="Thomson Reserve full floor plan, Type BPS4, 2-Bedroom Premium + Study, 775 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BPS4</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bps2l-2br-premium-study-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bps2l-2br-premium-study-private-lift.jpg" alt="Thomson Reserve full floor plan, Type BPS2(L), 2-Bedroom Premium + Study, 732 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BPS2(L)</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bps3l-2br-premium-study-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bps3l-2br-premium-study-private-lift.jpg" alt="Thomson Reserve full floor plan, Type BPS3(L), 2-Bedroom Premium + Study, 732 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BPS3(L)</span>
+        </a>
+        <a href="thomson-reserve-fullplan-bps4l-2br-premium-study-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-bps4l-2br-premium-study-private-lift.jpg" alt="Thomson Reserve full floor plan, Type BPS4(L), 2-Bedroom Premium + Study, 775 sqft" loading="lazy">
+          <span class="fpc-type-code">Type BPS4(L)</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="fpc-category">
+      <div class="fpc-cat-header">
+        <div class="fpc-cat-name">3-Bedroom</div>
+        <div class="fpc-cat-meta">88 sqm (947 sqft) &middot; 120 units &middot; 10% of total</div>
+      </div>
+      <div class="fpc-type-grid">
+        <a href="thomson-reserve-fullplan-c1-3br.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-c1-3br.jpg" alt="Thomson Reserve full floor plan, Type C1, 3-Bedroom, 947 sqft" loading="lazy">
+          <span class="fpc-type-code">Type C1</span>
+        </a>
+        <a href="thomson-reserve-fullplan-c2-3br.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-c2-3br.jpg" alt="Thomson Reserve full floor plan, Type C2, 3-Bedroom, 947 sqft" loading="lazy">
+          <span class="fpc-type-code">Type C2</span>
+        </a>
+        <a href="thomson-reserve-fullplan-c4-3br.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-c4-3br.jpg" alt="Thomson Reserve full floor plan, Type C4, 3-Bedroom, 947 sqft" loading="lazy">
+          <span class="fpc-type-code">Type C4</span>
+        </a>
+        <a href="thomson-reserve-fullplan-c3l-3br-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-c3l-3br-private-lift.jpg" alt="Thomson Reserve full floor plan, Type C3(L), 3-Bedroom, 947 sqft" loading="lazy">
+          <span class="fpc-type-code">Type C3(L)</span>
+        </a>
+        <a href="thomson-reserve-fullplan-c5l-3br-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-c5l-3br-private-lift.jpg" alt="Thomson Reserve full floor plan, Type C5(L), 3-Bedroom, 947 sqft" loading="lazy">
+          <span class="fpc-type-code">Type C5(L)</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="fpc-category">
+      <div class="fpc-cat-header">
+        <div class="fpc-cat-name">3-Bedroom Premium</div>
+        <div class="fpc-cat-meta">98 sqm (1,055 sqft) &middot; 170 units &middot; 13% of total</div>
+      </div>
+      <div class="fpc-type-grid">
+        <a href="thomson-reserve-fullplan-cp1-3br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-cp1-3br-premium.jpg" alt="Thomson Reserve full floor plan, Type CP1, 3-Bedroom Premium, 1055 sqft" loading="lazy">
+          <span class="fpc-type-code">Type CP1</span>
+        </a>
+        <a href="thomson-reserve-fullplan-cp2-3br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-cp2-3br-premium.jpg" alt="Thomson Reserve full floor plan, Type CP2, 3-Bedroom Premium, 1055 sqft" loading="lazy">
+          <span class="fpc-type-code">Type CP2</span>
+        </a>
+        <a href="thomson-reserve-fullplan-cp3-3br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-cp3-3br-premium.jpg" alt="Thomson Reserve full floor plan, Type CP3, 3-Bedroom Premium, 1055 sqft" loading="lazy">
+          <span class="fpc-type-code">Type CP3</span>
+        </a>
+        <a href="thomson-reserve-fullplan-cp4-3br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-cp4-3br-premium.jpg" alt="Thomson Reserve full floor plan, Type CP4, 3-Bedroom Premium, 1055 sqft" loading="lazy">
+          <span class="fpc-type-code">Type CP4</span>
+        </a>
+        <a href="thomson-reserve-fullplan-cp5-3br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-cp5-3br-premium.jpg" alt="Thomson Reserve full floor plan, Type CP5, 3-Bedroom Premium, 1055 sqft" loading="lazy">
+          <span class="fpc-type-code">Type CP5</span>
+        </a>
+        <a href="thomson-reserve-fullplan-cp6-3br-premium.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-cp6-3br-premium.jpg" alt="Thomson Reserve full floor plan, Type CP6, 3-Bedroom Premium, 1055 sqft" loading="lazy">
+          <span class="fpc-type-code">Type CP6</span>
+        </a>
+        <a href="thomson-reserve-fullplan-cp7l-3br-premium-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-cp7l-3br-premium-private-lift.jpg" alt="Thomson Reserve full floor plan, Type CP7(L), 3-Bedroom Premium, 1055 sqft" loading="lazy">
+          <span class="fpc-type-code">Type CP7(L)</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="fpc-category">
+      <div class="fpc-cat-header">
+        <div class="fpc-cat-name">3-Bedroom Premium + Study</div>
+        <div class="fpc-cat-meta">107 sqm (1,152 sqft) &middot; 60 units &middot; 5% of total</div>
+      </div>
+      <div class="fpc-type-grid">
+        <a href="thomson-reserve-fullplan-cps1-3br-premium-study.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-cps1-3br-premium-study.jpg" alt="Thomson Reserve full floor plan, Type CPS1, 3-Bedroom Premium + Study, 1152 sqft" loading="lazy">
+          <span class="fpc-type-code">Type CPS1</span>
+        </a>
+        <a href="thomson-reserve-fullplan-cps2-3br-premium-study.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-cps2-3br-premium-study.jpg" alt="Thomson Reserve full floor plan, Type CPS2, 3-Bedroom Premium + Study, 1152 sqft" loading="lazy">
+          <span class="fpc-type-code">Type CPS2</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="fpc-category">
+      <div class="fpc-cat-header">
+        <div class="fpc-cat-name">4-Bedroom</div>
+        <div class="fpc-cat-meta">115 sqm (1,238 sqft) &middot; 90 units &middot; 7% of total</div>
+      </div>
+      <div class="fpc-type-grid">
+        <a href="thomson-reserve-fullplan-d1-4br.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-d1-4br.jpg" alt="Thomson Reserve full floor plan, Type D1, 4-Bedroom, 1238 sqft" loading="lazy">
+          <span class="fpc-type-code">Type D1</span>
+        </a>
+        <a href="thomson-reserve-fullplan-d2-4br.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-d2-4br.jpg" alt="Thomson Reserve full floor plan, Type D2, 4-Bedroom, 1238 sqft" loading="lazy">
+          <span class="fpc-type-code">Type D2</span>
+        </a>
+        <a href="thomson-reserve-fullplan-d3-4br.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-d3-4br.jpg" alt="Thomson Reserve full floor plan, Type D3, 4-Bedroom, 1238 sqft" loading="lazy">
+          <span class="fpc-type-code">Type D3</span>
+        </a>
+        <a href="thomson-reserve-fullplan-d4l-4br-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-d4l-4br-private-lift.jpg" alt="Thomson Reserve full floor plan, Type D4(L), 4-Bedroom, 1238 sqft" loading="lazy">
+          <span class="fpc-type-code">Type D4(L)</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="fpc-category">
+      <div class="fpc-cat-header">
+        <div class="fpc-cat-name">4-Bedroom Premium (Private Lift)</div>
+        <div class="fpc-cat-meta">127 sqm (1,367 sqft) &middot; 56 units &middot; 4% of total</div>
+      </div>
+      <div class="fpc-type-grid">
+        <a href="thomson-reserve-fullplan-dp1l-4br-premium-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-dp1l-4br-premium-private-lift.jpg" alt="Thomson Reserve full floor plan, Type DP1(L), 4-Bedroom Premium (Private Lift), 1367 sqft" loading="lazy">
+          <span class="fpc-type-code">Type DP1(L)</span>
+        </a>
+        <a href="thomson-reserve-fullplan-dp2l-4br-premium-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-dp2l-4br-premium-private-lift.jpg" alt="Thomson Reserve full floor plan, Type DP2(L), 4-Bedroom Premium (Private Lift), 1367 sqft" loading="lazy">
+          <span class="fpc-type-code">Type DP2(L)</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="fpc-category">
+      <div class="fpc-cat-header">
+        <div class="fpc-cat-name">4-Bedroom Premium + Study (Private Lift)</div>
+        <div class="fpc-cat-meta">138 sqm (1,485 sqft) &middot; 28 units &middot; 2% of total</div>
+      </div>
+      <div class="fpc-type-grid">
+        <a href="thomson-reserve-fullplan-dps1l-4br-premium-study-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-dps1l-4br-premium-study-private-lift.jpg" alt="Thomson Reserve full floor plan, Type DPS1(L), 4-Bedroom Premium + Study (Private Lift), 1485 sqft" loading="lazy">
+          <span class="fpc-type-code">Type DPS1(L)</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="fpc-category">
+      <div class="fpc-cat-header">
+        <div class="fpc-cat-name">5-Bedroom Suite (Private Lift)</div>
+        <div class="fpc-cat-meta">168 sqm (1,808 sqft) &middot; 28 units &middot; 2% of total</div>
+      </div>
+      <div class="fpc-type-grid">
+        <a href="thomson-reserve-fullplan-e1l-5br-suite-private-lift.jpg" target="_blank" class="fpc-type-tile">
+          <img src="thomson-reserve-fullplan-e1l-5br-suite-private-lift.jpg" alt="Thomson Reserve full floor plan, Type E1(L), 5-Bedroom Suite (Private Lift), 1808 sqft" loading="lazy">
+          <span class="fpc-type-code">Type E1(L)</span>
+        </a>
+      </div>
+    </div>
+
+    <p style="font-size:12px;color:var(--text-faint);margin-top:8px;font-style:italic;">Floor plans not drawn to scale. Subject to final amendments by the developer and relevant authorities. &#9989; types marked elsewhere on this page are the officially released show units.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner">
+    <div style="margin-top:0;">
       <div class="section-label">What to Look For</div>
       <h2 class="section-h2">How to Evaluate the <em>Thomson Reserve Floor Plans</em></h2>
       <p class="section-intro">Now that the official show unit floor plans are out, here is a framework for evaluating which layouts offer the best value and liveability.</p>
