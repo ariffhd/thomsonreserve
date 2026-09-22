@@ -20,13 +20,24 @@ function getSheet_() {
   return sheet;
 }
 
+// Google Sheets silently converts a cell value that looks like a date
+// (e.g. "2026-11-01") into a real Date object on write, even via
+// appendRow(). Normalize before comparing so a stored Date and an
+// incoming "YYYY-MM-DD" string still match.
+function normalizeDate_(val) {
+  if (Object.prototype.toString.call(val) === '[object Date]') {
+    return Utilities.formatDate(val, Session.getScriptTimeZone(), 'yyyy-MM-dd');
+  }
+  return String(val);
+}
+
 function doGet(e) {
   var date = e.parameter.date;
   var sheet = getSheet_();
   var data = sheet.getDataRange().getValues();
   var booked = [];
   for (var i = 1; i < data.length; i++) {
-    if (String(data[i][0]) === date) {
+    if (normalizeDate_(data[i][0]) === date) {
       booked.push(data[i][1]);
     }
   }
@@ -50,7 +61,7 @@ function doPost(e) {
     var sheet = getSheet_();
     var data = sheet.getDataRange().getValues();
     for (var i = 1; i < data.length; i++) {
-      if (String(data[i][0]) === date && String(data[i][1]) === time) {
+      if (normalizeDate_(data[i][0]) === date && String(data[i][1]) === time) {
         return ContentService.createTextOutput(JSON.stringify({ success: false, message: 'Slot already booked' }))
           .setMimeType(ContentService.MimeType.JSON);
       }
