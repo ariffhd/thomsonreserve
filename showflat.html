@@ -467,11 +467,11 @@
           <div class="form-2col">
             <div class="form-group">
               <label class="form-label">Preferred Date *</label>
-              <input type="date" class="form-input" name="Preferred Date" min="2026-07-01" required>
+              <input type="date" class="form-input" name="Preferred Date" id="sf-date" min="2026-07-01" required>
             </div>
             <div class="form-group">
               <label class="form-label">Preferred Time *</label>
-              <select class="form-select" name="Preferred Time" required>
+              <select class="form-select" name="Preferred Time" id="sf-time" required>
                 <option value="">Select time</option>
                 <option>10:00am &ndash; 11:00am</option>
                 <option>11:00am &ndash; 12:00pm</option>
@@ -482,6 +482,7 @@
                 <option>5:00pm &ndash; 6:00pm</option>
                 <option>6:00pm &ndash; 7:00pm</option>
               </select>
+              <div id="sf-slot-status" style="font-size:11.5px;margin-top:6px;min-height:14px;color:rgba(255,255,255,0.45);"></div>
             </div>
           </div>
           <div class="form-group">
@@ -539,38 +540,120 @@
 
 <script>
 (function(){
+  // Set this to your deployed Apps Script Web App URL (ends in /exec) to
+  // enable slot-availability checking and double-booking prevention.
+  var APPS_SCRIPT_URL = 'PASTE_DEPLOYED_WEB_APP_URL_HERE';
+
   var form = document.getElementById('sf-form');
   if (!form) return;
+  var dateInput = document.getElementById('sf-date');
+  var timeSelect = document.getElementById('sf-time');
+  var slotStatus = document.getElementById('sf-slot-status');
+  var btn = document.getElementById('sf-submit-btn');
+  var success = document.getElementById('sf-success');
+  var error = document.getElementById('sf-error');
+  var backendReady = APPS_SCRIPT_URL && APPS_SCRIPT_URL.indexOf('PASTE_') !== 0;
+  var allTimeOptions = Array.prototype.slice.call(timeSelect.options);
+
+  function resetTimeOptions(){
+    allTimeOptions.forEach(function(opt){
+      opt.disabled = false;
+      opt.textContent = opt.textContent.replace(' — Booked', '');
+    });
+  }
+
+  function checkAvailability(opts){
+    opts = opts || {};
+    if (!backendReady || !dateInput.value) return;
+    if (!opts.silent){
+      slotStatus.textContent = 'Checking availability…';
+      slotStatus.style.color = 'rgba(255,255,255,0.45)';
+    }
+    resetTimeOptions();
+    fetch(APPS_SCRIPT_URL + '?date=' + encodeURIComponent(dateInput.value))
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        var booked = j.booked || [];
+        var bookedCount = 0;
+        allTimeOptions.forEach(function(opt){
+          if (!opt.value) return;
+          if (booked.indexOf(opt.value) !== -1){
+            opt.disabled = true;
+            opt.textContent = opt.textContent + ' — Booked';
+            bookedCount++;
+            if (timeSelect.value === opt.value) timeSelect.value = '';
+          }
+        });
+        if (bookedCount >= allTimeOptions.length - 1){
+          slotStatus.textContent = 'This date is fully booked — please choose another date.';
+          slotStatus.style.color = '#e08080';
+        } else if (bookedCount > 0){
+          slotStatus.textContent = bookedCount + ' slot(s) already booked on this date.';
+        } else {
+          slotStatus.textContent = 'All slots available on this date.';
+        }
+      })
+      .catch(function(){
+        slotStatus.textContent = '';
+      });
+  }
+
+  dateInput.addEventListener('change', checkAvailability);
+
+  function claimSlot(){
+    if (!backendReady) return Promise.resolve({ success: true });
+    return fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify({
+        date: dateInput.value,
+        time: timeSelect.value,
+        name: form.elements['Full Name'].value,
+        mobile: form.elements['Mobile Number'].value,
+        email: form.elements['Email'].value
+      })
+    }).then(function(r){ return r.json(); });
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    var btn = document.getElementById('sf-submit-btn');
-    var success = document.getElementById('sf-success');
-    var error = document.getElementById('sf-error');
     if (!document.getElementById('sf-privacy').checked){
       alert('Please agree to the Privacy Policy before submitting.');
       return;
     }
-    btn.textContent = 'Submitting…';
+    btn.textContent = 'Checking slot…';
     btn.disabled = true;
     error.style.display = 'none';
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: new FormData(form)
-    })
-    .then(function(r){ return r.json(); })
-    .then(function(j){
-      if (j.success){
-        form.style.display = 'none';
-        success.style.display = 'block';
-        success.scrollIntoView({behavior:'smooth', block:'center'});
-      } else { throw new Error(j.message); }
-    })
-    .catch(function(){
-      btn.textContent = 'Confirm Appointment Request';
-      btn.disabled = false;
-      error.style.display = 'block';
-      error.scrollIntoView({behavior:'smooth', block:'center'});
-    });
+
+    claimSlot()
+      .then(function(claimResult){
+        if (!claimResult.success){
+          btn.textContent = 'Confirm Appointment Request';
+          btn.disabled = false;
+          slotStatus.textContent = 'That time slot was just booked by someone else — please choose another.';
+          slotStatus.style.color = '#e08080';
+          checkAvailability({ silent: true });
+          return;
+        }
+        btn.textContent = 'Submitting…';
+        return fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form)
+        })
+        .then(function(r){ return r.json(); })
+        .then(function(j){
+          if (j.success){
+            form.style.display = 'none';
+            success.style.display = 'block';
+            success.scrollIntoView({behavior:'smooth', block:'center'});
+          } else { throw new Error(j.message); }
+        });
+      })
+      .catch(function(){
+        btn.textContent = 'Confirm Appointment Request';
+        btn.disabled = false;
+        error.style.display = 'block';
+        error.scrollIntoView({behavior:'smooth', block:'center'});
+      });
   });
 })();
 </script>
