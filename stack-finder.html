@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomson Reserve Stack Finder — Browse All 55 Stacks by Facing &amp; Type | District 20</title>
+<meta name="description" content="Interactive Thomson Reserve stack finder — browse all 55 stacks across 6 towers by collection, bedroom type and site position. Filter, shortlist and view the full floor plan for any stack.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{--forest:#1a2e1e;--forest-deep:#0f1c12;--gold:#c4a050;--gold-light:#e8c882;--cream:#f9f5ee;--cream-dark:#f0e9d8;--text-dark:#1a1a18;--text-mid:#3d3d38;--text-light:#7a7a70;--text-faint:#aaa89e;--white:#ffffff;--border:rgba(196,160,80,0.18);--border-light:rgba(196,160,80,0.1);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text-dark);font-size:16px;line-height:1.7;overflow-x:hidden;}
+  .topbar{background:var(--forest-deep);color:var(--gold-light);font-size:11px;letter-spacing:0.12em;font-weight:500;padding:9px 40px;display:flex;justify-content:space-between;align-items:center;text-transform:uppercase;}
+  .topbar a{color:var(--gold);text-decoration:none;}
+  .topbar-pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4caf6e;margin-right:8px;animation:pulse 2s infinite;vertical-align:middle;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+  nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,0.06);}
+  .nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+  .logo-mark{width:40px;height:40px;background:var(--forest);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .logo-mark span{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;letter-spacing:1px;}
+  .logo-text{line-height:1.2;}
+  .logo-text-main{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;letter-spacing:0.12em;color:var(--forest);text-transform:uppercase;white-space:nowrap;}
+  .logo-text-sub{font-size:9px;letter-spacing:0.18em;color:var(--text-faint);text-transform:uppercase;white-space:nowrap;}
+  .nav-links{display:flex;align-items:center;gap:0;list-style:none;flex-shrink:0;}
+  .nav-links li{position:relative;}
+  .nav-links li a{display:flex;align-items:center;gap:5px;padding:0 13px;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-mid);text-decoration:none;height:72px;white-space:nowrap;transition:color 0.2s;position:relative;}
+  .nav-links li a::after{content:'';position:absolute;bottom:0;left:13px;right:13px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.2s;}
+  .nav-links li a:hover{color:var(--forest);}
+  .nav-links li a:hover::after,.nav-links li a.active::after{transform:scaleX(1);}
+  .nav-links li a.active{color:var(--forest);}
+  .nav-links li.has-dropdown>a::before{content:'';display:inline-block;width:6px;height:6px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);margin-left:4px;margin-top:-3px;flex-shrink:0;transition:transform 0.2s;}
+  .nav-links li.has-dropdown>a::after{display:none;}
+  .nav-links li.has-dropdown:hover>a::before{transform:rotate(225deg);margin-top:2px;}
+  .dropdown{display:none;position:absolute;top:72px;left:0;min-width:220px;background:var(--white);border:1px solid var(--border);border-top:2px solid var(--gold);box-shadow:0 8px 32px rgba(0,0,0,0.1);z-index:200;}
+  .nav-links li.has-dropdown:hover .dropdown{display:block;}
+  .dropdown a{display:block!important;height:auto!important;padding:13px 20px!important;font-size:11px!important;letter-spacing:0.08em!important;color:var(--text-mid)!important;border-bottom:1px solid var(--border-light);white-space:nowrap;transition:background 0.15s,color 0.15s!important;}
+  .dropdown a:last-child{border-bottom:none;}
+  .dropdown a:hover{background:var(--cream)!important;color:var(--forest)!important;}
+  .dropdown a::after{display:none!important;}
+  .nav-cta{background:var(--forest);color:var(--gold-light)!important;padding:10px 18px!important;height:auto!important;line-height:normal!important;font-size:11px!important;letter-spacing:0.12em!important;border:1px solid transparent;transition:background 0.2s!important;}
+  .nav-cta:hover{background:var(--forest-deep)!important;}
+  .nav-cta::after{display:none!important;}
+  .page-hero{background:linear-gradient(165deg,var(--forest-deep) 0%,#1a3a22 50%,#0f2a18 100%);padding:80px 0 72px;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(196,160,80,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(196,160,80,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+  .page-hero-inner{max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:2;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:28px;}
+  .breadcrumb a{font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-decoration:none;text-transform:uppercase;}
+  .breadcrumb a:hover{color:var(--gold);}
+  .breadcrumb-sep{font-size:11px;color:rgba(255,255,255,0.2);}
+  .breadcrumb-current{font-size:11px;letter-spacing:0.1em;color:var(--gold);text-transform:uppercase;}
+  .page-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .page-eyebrow-line{width:40px;height:1px;background:var(--gold);}
+  .page-eyebrow span{font-size:10px;letter-spacing:0.22em;color:var(--gold);font-weight:500;text-transform:uppercase;}
+  .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:20px;}
+  .page-hero h1 em{font-style:italic;color:var(--gold-light);}
+  .page-hero-desc{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.8;max-width:640px;font-weight:300;}
+  .section{padding:80px 0;}
+  .section-inner{max-width:1280px;margin:0 auto;padding:0 40px;}
+  .section-label{font-size:10px;letter-spacing:0.28em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+  .section-label::before{content:'';display:block;width:30px;height:1px;background:var(--gold);}
+  .section-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,42px);font-weight:400;color:var(--forest);line-height:1.15;margin-bottom:16px;}
+  .section-h2 em{font-style:italic;color:var(--gold);}
+  .section-intro{font-size:15px;color:var(--text-mid);line-height:1.8;max-width:760px;font-weight:300;margin-bottom:36px;}
+  .released-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(76,175,110,0.1);border:1px solid rgba(76,175,110,0.3);padding:8px 20px;font-size:11px;letter-spacing:0.14em;color:#2e8b57;text-transform:uppercase;font-weight:600;margin-bottom:24px;}
+  .released-dot{width:7px;height:7px;border-radius:50%;background:#4caf6e;animation:pulse 2s infinite;flex-shrink:0;}
+  .note-box{background:rgba(196,160,80,0.07);border-left:3px solid var(--gold);padding:16px 20px;font-size:13px;color:var(--text-mid);line-height:1.7;font-style:italic;margin-bottom:36px;}
+
+  /* STACK FINDER TOOL */
+  .sf-tool{display:grid;grid-template-columns:1fr 380px;gap:32px;align-items:start;}
+  .sf-toolbar{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px;padding:20px;background:var(--white);border:1px solid var(--border);}
+  .sf-filter-group{flex:1;min-width:160px;}
+  .sf-filter-label{display:block;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-faint);margin-bottom:6px;font-weight:500;}
+  .sf-select{width:100%;background:var(--cream);border:1px solid var(--border);color:var(--text-dark);padding:10px 12px;font-family:'Jost',sans-serif;font-size:13px;font-weight:400;outline:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23c4a050' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;}
+  .sf-select:focus{border-color:var(--gold);}
+  .sf-reset-btn{align-self:flex-end;background:transparent;border:1px solid var(--border);color:var(--text-mid);padding:10px 18px;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;transition:border-color 0.2s,color 0.2s;}
+  .sf-reset-btn:hover{border-color:var(--gold);color:var(--forest);}
+  .sf-match-count{font-size:12.5px;color:var(--text-faint);margin-bottom:20px;}
+  .sf-match-count strong{color:var(--forest);}
+  .sf-block-group{margin-bottom:28px;}
+  .sf-block-group:last-child{margin-bottom:0;}
+  .sf-block-header{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border-light);}
+  .sf-block-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--forest);}
+  .sf-block-tag{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:2px 9px;font-weight:600;}
+  .sf-block-tag.classic{background:rgba(26,46,30,0.08);color:var(--forest);}
+  .sf-block-tag.luxury{background:rgba(196,160,80,0.14);color:#8a6a2e;}
+  .sf-stack-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px;}
+  .sf-stack-tile{background:var(--white);border:1px solid var(--border);padding:9px 6px;text-align:center;cursor:pointer;transition:border-color 0.15s,background 0.15s;font-family:'Jost',sans-serif;}
+  .sf-stack-tile:hover{border-color:var(--gold);}
+  .sf-stack-tile.selected{background:var(--forest);border-color:var(--forest);}
+  .sf-stack-tile.selected .sf-tile-num,.sf-stack-tile.selected .sf-tile-type{color:var(--gold-light);}
+  .sf-stack-tile.dimmed{opacity:0.28;}
+  .sf-tile-num{display:block;font-size:14px;font-weight:600;color:var(--text-dark);}
+  .sf-tile-type{display:block;font-size:9.5px;color:var(--text-faint);letter-spacing:0.03em;margin-top:1px;}
+  .sf-stack-tile.selected .sf-tile-type{color:rgba(232,200,130,0.7);}
+
+  .sf-panel{position:sticky;top:96px;}
+  .sf-detail-card{background:var(--forest);padding:28px;margin-bottom:16px;}
+  .sf-detail-empty{color:rgba(255,255,255,0.4);font-size:13px;font-weight:300;line-height:1.7;text-align:center;padding:24px 0;}
+  .sf-detail-stack{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;}
+  .sf-detail-type{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--white);margin-bottom:4px;}
+  .sf-detail-size{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:18px;}
+  .sf-detail-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:12.5px;}
+  .sf-detail-row span:first-child{color:rgba(255,255,255,0.4);}
+  .sf-detail-row span:last-child{color:rgba(255,255,255,0.85);font-weight:500;text-align:right;}
+  .sf-detail-note{font-size:12.5px;color:rgba(255,255,255,0.6);line-height:1.7;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.08);}
+  .sf-detail-actions{display:flex;flex-direction:column;gap:8px;margin-top:18px;}
+  .sf-btn{display:block;width:100%;text-align:center;padding:12px;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background 0.2s,color 0.2s;}
+  .sf-btn-gold{background:var(--gold);color:var(--forest-deep);}
+  .sf-btn-gold:hover{background:var(--gold-light);}
+  .sf-btn-outline{background:transparent;color:var(--gold-light);border:1px solid rgba(196,160,80,0.35)!important;}
+  .sf-btn-outline:hover{border-color:var(--gold)!important;}
+  .sf-shortlist-card{background:var(--white);border:1px solid var(--border);padding:24px;}
+  .sf-shortlist-title{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;}
+  .sf-shortlist-clear{font-size:10px;color:var(--text-faint);text-decoration:underline;cursor:pointer;text-transform:none;letter-spacing:0;font-weight:400;}
+  .sf-shortlist-empty{font-size:12.5px;color:var(--text-faint);line-height:1.6;margin-top:12px;font-style:italic;}
+  .sf-shortlist-item{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--border-light);font-size:12.5px;}
+  .sf-shortlist-item:last-of-type{border-bottom:none;}
+  .sf-shortlist-item-main{color:var(--text-dark);font-weight:500;}
+  .sf-shortlist-item-sub{color:var(--text-faint);font-size:11px;}
+  .sf-shortlist-remove{background:none;border:none;color:var(--text-faint);cursor:pointer;font-size:16px;line-height:1;padding:2px 6px;}
+  .sf-shortlist-remove:hover{color:#a02020;}
+  @media(max-width:900px){
+    .sf-tool{grid-template-columns:1fr;}
+    .sf-panel{position:static;}
+  }
+
+  .info-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px;}
+  .info-card{background:var(--white);border:1px solid var(--border);padding:24px;position:relative;}
+  .info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);}
+  .info-card-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--forest);margin-bottom:10px;}
+  .info-card-text{font-size:13px;color:var(--text-light);line-height:1.7;font-weight:300;}
+
+  .reg-section{background:var(--forest-deep);padding:80px 0;}
+  .reg-grid{display:grid;grid-template-columns:1fr 460px;gap:72px;align-items:start;}
+  .reg-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.5vw,46px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:20px;}
+  .reg-h2 em{font-style:italic;color:var(--gold-light);}
+  .reg-desc{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;font-weight:300;margin-bottom:28px;}
+  .reg-benefits{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+  .reg-benefits li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:rgba(255,255,255,0.6);font-weight:300;}
+  .reg-benefits li::before{content:'✓';color:var(--gold);font-weight:700;font-size:13px;flex-shrink:0;margin-top:2px;}
+  .reg-trust{display:flex;gap:20px;flex-wrap:wrap;padding-top:24px;border-top:1px solid rgba(196,160,80,0.12);}
+  .trust-badge{font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;display:flex;align-items:center;gap:8px;}
+  .trust-badge::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+  .form-card{background:rgba(255,255,255,0.04);border:1px solid rgba(196,160,80,0.2);padding:36px;}
+  .form-title{font-size:10px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid rgba(196,160,80,0.15);}
+  .form-group{margin-bottom:16px;}
+  .form-label{display:block;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:7px;font-weight:500;}
+  .form-input,.form-select,.form-textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(196,160,80,0.2);color:var(--white);padding:12px 14px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;transition:border-color 0.2s;appearance:none;}
+  .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold);}
+  .form-input::placeholder{color:rgba(255,255,255,0.2);}
+  .form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23c4a050' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;background-color:rgba(255,255,255,0.05);}
+  .form-select option{background:var(--forest-deep);color:var(--white);}
+  .form-textarea{resize:vertical;min-height:80px;}
+  .form-checkbox-group{display:flex;align-items:flex-start;gap:10px;}
+  .form-checkbox{width:15px;height:15px;margin-top:2px;flex-shrink:0;accent-color:var(--gold);}
+  .form-checkbox-label{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.5;}
+  .form-checkbox-label a{color:var(--gold);text-decoration:none;}
+  .form-submit{width:100%;background:var(--gold);color:var(--forest-deep);border:none;padding:15px;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;margin-top:6px;transition:background 0.2s;}
+  .form-submit:hover{background:var(--gold-light);}
+  .form-note{font-size:10px;color:rgba(255,255,255,0.2);text-align:center;margin-top:10px;letter-spacing:0.06em;}
+  footer{background:var(--forest-deep);padding:64px 0 0;border-top:1px solid rgba(196,160,80,0.12);}
+  .footer-grid{max-width:1280px;margin:0 auto;padding:0 40px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;border-bottom:1px solid rgba(196,160,80,0.08);}
+  .footer-col-title{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(196,160,80,0.12);}
+  .footer-project-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--white);letter-spacing:0.06em;margin-bottom:16px;}
+  .footer-details{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .footer-details li{font-size:12.5px;color:rgba(255,255,255,0.35);font-weight:300;}
+  .footer-details li strong{color:rgba(255,255,255,0.55);font-weight:400;}
+  .footer-dev-badges{display:flex;flex-direction:column;gap:10px;margin-top:4px;}
+  .footer-dev-badge{display:flex;align-items:center;padding:10px 0;background:transparent;border:none;min-height:48px;}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-links a{font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;font-weight:300;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--gold);}
+  .footer-contact-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;font-size:13px;color:rgba(255,255,255,0.4);font-weight:300;}
+  .footer-bottom{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-bottom-text{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.06em;}
+  .footer-bottom-links{display:flex;gap:20px;}
+  .footer-bottom-links a{font-size:11px;color:rgba(255,255,255,0.25);text-decoration:none;}
+  .footer-bottom-links a:hover{color:var(--gold);}
+  .whatsapp-fab{position:fixed;bottom:28px;right:28px;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 24px rgba(37,211,102,0.35);z-index:999;transition:transform 0.2s;}
+  .whatsapp-fab:hover{transform:scale(1.08);}
+  .whatsapp-fab svg{width:28px;height:28px;fill:white;}
+  .mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--forest-deep);border-top:1px solid rgba(196,160,80,0.2);z-index:200;grid-template-columns:repeat(4,1fr);}
+  .mobile-sticky a{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 6px;text-decoration:none;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:500;border-right:1px solid rgba(196,160,80,0.1);gap:5px;}
+  .mobile-sticky a:last-child{border-right:none;}
+  .mobile-sticky a span.ms-icon{font-size:16px;}
+  @media(max-width:768px){
+    .mobile-sticky{display:grid;}
+    .topbar{padding:8px 20px;font-size:9px;}
+    .nav-inner{padding:0 20px;}
+    .nav-links{display:none;}
+    .page-hero{padding:60px 0 50px;}
+    .page-hero-inner,.section-inner{padding:0 20px;}
+    .section{padding:56px 0;}
+    .info-cards,.reg-grid{grid-template-columns:1fr;gap:36px;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:32px;padding:0 20px 40px;}
+    body{padding-bottom:60px;}
+    .section-h2{font-size:clamp(22px,5vw,36px)!important;}
+    .reg-h2{font-size:clamp(24px,5vw,38px)!important;}
+    .page-hero h1{font-size:clamp(30px,7vw,52px)!important;}
+    .footer-grid{grid-template-columns:1fr!important;}
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://thomson-reserves.sg/stack-finder.html#webpage",
+      "url": "https://thomson-reserves.sg/stack-finder.html",
+      "name": "Thomson Reserve Stack Finder - Browse All 55 Stacks by Facing & Type",
+      "description": "Interactive Thomson Reserve stack finder — browse all 55 stacks across 6 towers by collection, bedroom type and site position. Filter, shortlist and view the full floor plan for any stack.",
+      "datePublished": "2026-09-30",
+      "dateModified": "2026-09-30",
+      "isPartOf": {
+        "@id": "https://thomson-reserves.sg/#website"
+      },
+      "about": {
+        "@id": "https://thomson-reserves.sg/#project"
+      },
+      "inLanguage": "en-SG",
+      "breadcrumb": {
+        "@id": "https://thomson-reserves.sg/stack-finder.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thomson-reserves.sg/stack-finder.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Thomson Reserve",
+          "item": "https://thomson-reserves.sg/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Stack Finder",
+          "item": "https://thomson-reserves.sg/stack-finder.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thomson-reserves.sg/stack-finder.html">
+  <meta property="og:title" content="Thomson Reserve Stack Finder — Browse All 55 Stacks by Facing & Type">
+  <meta property="og:description" content="Interactive Thomson Reserve stack finder — browse all 55 stacks across 6 towers by collection, bedroom type and site position. Filter, shortlist and view the full floor plan for any stack.">
+  <meta property="og:site_name" content="Thomson Reserve">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thomson Reserve Stack Finder — Browse All 55 Stacks by Facing & Type">
+  <meta name="twitter:description" content="Interactive Thomson Reserve stack finder — browse all 55 stacks across 6 towers by collection, bedroom type and site position. Filter, shortlist and view the full floor plan for any stack.">
+</head>
+<body>
+<div class="topbar">
+  <div><span class="topbar-pulse"></span>VVIP Preview Registration Open &#8212; 17–27 October 2026</div>
+  <div>New Launch in D20 &nbsp;|&nbsp; <a href="tel:+6589623281">+65 8962 3281</a></div>
+</div>
+<nav>
+  <div class="nav-inner">
+    <a href="https://thomson-reserves.sg/" class="nav-logo">
+      <div class="logo-mark"><span>TR</span></div>
+      <div class="logo-text">
+        <div class="logo-text-main">Thomson Reserve</div>
+        <div class="logo-text-sub">District 20 &middot; Upper Thomson &middot; Singapore</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://thomson-reserves.sg/">Home</a></li>
+      <li><a href="https://thomson-reserves.sg/developer.html">Developer</a></li>
+      <li><a href="https://thomson-reserves.sg/location-map.html">Location Map</a></li>
+      <li><a href="https://thomson-reserves.sg/site-plan.html">Site Plan</a></li>
+      <li><a href="https://thomson-reserves.sg/floor-plan.html">Floor Plan</a></li>
+      <li><a href="https://thomson-reserves.sg/stack-finder.html" class="active">Stack Finder</a></li>
+      <li><a href="https://thomson-reserves.sg/pricing.html">Pricing</a></li>
+      <li class="has-dropdown">
+        <a href="https://thomson-reserves.sg/stamp-duty.html">Financing</a>
+        <div class="dropdown">
+          <a href="https://thomson-reserves.sg/stamp-duty.html">Stamp Duty</a>
+          <a href="https://thomson-reserves.sg/payment-scheme.html">Payment Scheme</a>
+          <a href="https://thomson-reserves.sg/housing-loan-information.html">Housing Loan Information</a>
+        </div>
+      </li>
+      <li><a href="https://thomson-reserves.sg/showflat.html" class="nav-cta">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="https://thomson-reserves.sg/">Thomson Reserve</a>
+      <span class="breadcrumb-sep">&#8250;</span>
+      <span class="breadcrumb-current">Stack Finder</span>
+    </div>
+    <div class="page-eyebrow"><div class="page-eyebrow-line"></div><span>Project Info &middot; Stack Finder</span></div>
+    <h1>Thomson Reserve <em>Stack Finder</em></h1>
+    <p class="page-hero-desc">Browse all 55 stacks across the 6 Thomson Reserve towers &#8212; filter by collection and bedroom type, see each stack's unit type, size and site position, and build a shortlist to bring to your showflat appointment.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-label">Stack Finder</div>
+    <h2 class="section-h2">55 Stacks &#8212; <em>6 Towers, 1,268 Homes</em></h2>
+    <div class="released-badge"><span class="released-dot"></span> Built From the Official Site Plan &amp; Floor Plans</div>
+    <p class="section-intro">Every stack below is taken directly from the developer's released unit schedule and floor plans. Site-position notes are our own reading of the official site plan &#8212; not an official developer ranking &#8212; so treat them as a starting point, and confirm exact orientation with the sales team using your specific unit number.</p>
+    <div class="note-box">No pricing is shown here because Thomson Reserve's official price list has not been released. See the <a href="https://thomson-reserves.sg/pricing.html" style="color:var(--forest);font-weight:500;">Pricing page</a> for indicative psf estimates by unit type.</div>
+
+    <div class="sf-tool">
+      <div>
+        <div class="sf-toolbar">
+          <div class="sf-filter-group">
+            <label class="sf-filter-label" for="sf-collection">Collection</label>
+            <select class="sf-select" id="sf-collection">
+              <option value="">All collections</option>
+              <option value="Classic">Classic</option>
+              <option value="Luxury">Luxury (Private Lift)</option>
+            </select>
+          </div>
+          <div class="sf-filter-group">
+            <label class="sf-filter-label" for="sf-category">Bedroom type</label>
+            <select class="sf-select" id="sf-category">
+              <option value="">All bedroom types</option>
+            </select>
+          </div>
+          <div class="sf-filter-group">
+            <label class="sf-filter-label" for="sf-block">Tower</label>
+            <select class="sf-select" id="sf-block">
+              <option value="">All towers</option>
+            </select>
+          </div>
+          <button class="sf-reset-btn" id="sf-reset">Reset filters</button>
+        </div>
+        <div class="sf-match-count"><strong id="sf-match-n">55</strong> of 55 stacks shown</div>
+        <div id="sf-grid"></div>
+      </div>
+
+      <div class="sf-panel">
+        <div class="sf-detail-card" id="sf-detail">
+          <div class="sf-detail-empty">Select a stack on the left to see its unit type, size and site position.</div>
+        </div>
+        <div class="sf-shortlist-card">
+          <div class="sf-shortlist-title"><span>Your Shortlist &middot; <span id="sf-shortlist-count">0</span></span><span class="sf-shortlist-clear" id="sf-shortlist-clear">Clear all</span></div>
+          <div id="sf-shortlist-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner">
+    <div class="section-label">How This Works</div>
+    <h2 class="section-h2">Reading a <em>Thomson Reserve Stack</em></h2>
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="info-card-title">Stack Numbers Are Fixed Per Tower</div>
+        <div class="info-card-text">Each of the 55 stacks keeps the same unit type from its lowest to highest floor &#8212; e.g. stack 19 in Block 5 is always Type E1(L), the 5-Bedroom Suite, from level 3 to the penthouse. Only the view typically improves with floor level, not the layout.</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">Classic vs Luxury Collection</div>
+        <div class="info-card-text">Blocks 1, 3, 9 &amp; 11 (21-storey) form the Classic Collection. Blocks 5 &amp; 7 (30-storey) are the Luxury Collection, with private lift access on every unit &#8212; the only two towers where this applies.</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">Facing Notes Are Our Analysis</div>
+        <div class="info-card-text">The site-position note on each stack comes from our own reading of the released site plan (see the <a href="https://thomson-reserves.sg/site-plan.html" style="color:var(--gold);">full Site Plan &amp; tower breakdown</a>), not from the developer. Confirm exact facing for your unit with the sales team.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reg-section" id="register">
+  <div class="section-inner">
+    <div class="reg-grid">
+      <div>
+        <div class="section-label" style="color:var(--gold);">Book Your Showflat Appointment</div>
+        <h2 class="reg-h2">Found Your Stacks? <em>Bring Your Shortlist to the Showflat</em></h2>
+        <p class="reg-desc">Register now to book your VVIP preview appointment for the 17&ndash;27 October 2026 showflat opening. Mention the stacks on your shortlist and our sales team will walk you through availability and the official price list on the day.</p>
+        <ul class="reg-benefits">
+          <li>Official price list upon release</li>
+          <li>Full e-brochure with facilities and specifications</li>
+          <li>Sales team confirmation of exact stack facing and floor availability</li>
+          <li>VVIP preview appointment ahead of general public</li>
+          <li>Direct developer price &#8212; no commission payable</li>
+        </ul>
+        <div class="reg-trust">
+          <div class="trust-badge">Direct Developer Price</div>
+          <div class="trust-badge">No Commission Payable</div>
+          <div class="trust-badge">Strictly No Spam</div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-title">Register Your Interest &mdash; Thomson Reserve</div>
+
+        <div id="form-success" style="display:none;padding:32px 24px;text-align:center;">
+          <div style="font-size:44px;margin-bottom:14px;color:#4caf6e;">&#10003;</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--gold-light);margin-bottom:10px;">Registration Received</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.75;">Thank you &mdash; our team will be in touch within the hour.</div>
+        </div>
+
+        <div id="form-error" style="display:none;padding:14px 18px;background:rgba(200,40,40,0.12);border:1px solid rgba(200,40,40,0.3);margin-bottom:16px;font-size:13px;color:#e08080;line-height:1.6;">
+          Something went wrong. Please try again or call us at <a href="tel:+6589623281" style="color:#e08080;font-weight:500;">+65 8962 3281</a>.
+        </div>
+
+        <form id="reg-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="a0476863-d3f3-4794-8856-b15eaa36fa24">
+          <input type="hidden" name="subject" value="New Lead — Thomson Reserve Stack Finder">
+          <input type="hidden" name="from_name" value="Thomson Reserve Website">
+          <input type="hidden" name="redirect" value="false">
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" class="form-input" name="Full Name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Mobile Number *</label>
+            <input type="tel" class="form-input" name="Mobile Number" placeholder="+65 XXXX XXXX" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" class="form-input" name="Email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Shortlisted Stacks</label>
+            <input type="text" class="form-input" name="Shortlisted Stacks" id="sf-form-shortlist" placeholder="Add stacks to your shortlist above" readonly>
+          </div>
+          <div class="form-group">
+            <div class="form-checkbox-group">
+              <input type="checkbox" class="form-checkbox" id="sf-privacy" required>
+              <label class="form-checkbox-label" for="sf-privacy">I have read and agree to the <a href="https://thomson-reserves.sg/privacy-policy.html">Privacy Policy</a>. I consent to being contacted regarding Thomson Reserve.</label>
+            </div>
+          </div>
+          <button type="submit" class="form-submit" id="submit-btn">Register Now</button>
+          <div class="form-note">Strictly no spam policy &middot; Your data is protected under PDPA</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-col-title">Thomson Reserve</div>
+      <div class="footer-project-name">Thomson Reserve</div>
+      <ul class="footer-details">
+        <li><strong>Developer:</strong> Tamarind Development Pte. Ltd. (UOL · SingLand · CapitaLand)</li>
+        <li><strong>Developer's Address:</strong> 168 Robinson Road, #30-01 Capital Tower, Singapore 068912</li>
+        <li><strong>Housing Developer's Licence No.:</strong> C1555 (issued 08 Jun 2026)</li>
+        <li><strong>Project Account:</strong> 762-333-930-4, United Overseas Bank Limited</li>
+        <li><strong>Tenure:</strong> 99-Year Leasehold</li>
+        <li><strong>Type:</strong> Private Condominium</li>
+        <li><strong>Total Units:</strong> Approx. 1,268</li>
+        <li><strong>Expected Preview:</strong> 17–27 October 2026</li>
+        <li><strong>Expected TOP:</strong> 2032 (estimated)</li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Proudly Developed By</div>
+      <div class="footer-dev-badges">
+        <div class="footer-dev-badge">
+          <img src="/uol-logo-v2.png" alt="UOL Group Limited" style="height:40px;width:auto;display:block;">
+        </div>
+        <div class="footer-dev-badge">
+          <img src="/singapore-land-logo-v2.png" alt="Singapore Land Group" style="height:32px;width:auto;display:block;">
+        </div>
+        <div class="footer-dev-badge">
+          <img src="/capitaland-logo-v2.png" alt="CapitaLand Development" style="height:38px;width:auto;display:block;">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Site Links</div>
+      <ul class="footer-links">
+        <li><a href="https://thomson-reserves.sg/">Home</a></li>
+        <li><a href="https://thomson-reserves.sg/developer.html">Developer</a></li>
+        <li><a href="https://thomson-reserves.sg/location-map.html">Location Map</a></li>
+        <li><a href="https://thomson-reserves.sg/site-plan.html">Site Plan</a></li>
+        <li><a href="https://thomson-reserves.sg/floor-plan.html">Floor Plan</a></li>
+        <li><a href="https://thomson-reserves.sg/stack-finder.html">Stack Finder</a></li>
+        <li><a href="https://thomson-reserves.sg/gallery.html">Gallery</a></li>
+        <li><a href="https://thomson-reserves.sg/pricing.html">Pricing</a></li>
+        <li><a href="https://thomson-reserves.sg/showflat.html">Showflat</a></li>
+        <li><a href="https://thomson-reserves.sg/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact Us</div>
+      <div class="footer-contact-item">Thomson Reserve @ 1–11 Bright Hill Drive</div>
+      <div class="footer-contact-item">Mon–Sun: 10am–7pm</div>
+      <div class="footer-contact-item"><a href="tel:+6589623281" style="color:var(--gold);text-decoration:none;">+65 8962 3281</a></div>
+      <div class="footer-contact-item"><a href="mailto:sales@thomson-reserves.sg" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;">sales@thomson-reserves.sg</a></div>
+      <div class="footer-contact-item" style="gap:16px;margin-top:6px;">
+        <a href="https://www.youtube.com/@thomson-reserve" target="_blank" rel="noopener" aria-label="Thomson Reserve on YouTube" style="color:rgba(255,255,255,0.4);text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:13px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>YouTube</a>
+        <a href="https://www.facebook.com/thomsonreserves" target="_blank" rel="noopener" aria-label="Thomson Reserve on Facebook" style="color:rgba(255,255,255,0.4);text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-size:13px;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>Facebook</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">Copyright © 2026 Thomson Reserve · Tamarind Development Pte. Ltd. · +65 8962 3281</div>
+    <div class="footer-bottom-links">
+      <a href="https://thomson-reserves.sg/sitemap.html">Sitemap</a>
+      <a href="https://thomson-reserves.sg/disclaimer.html">Disclaimer</a>
+      <a href="https://thomson-reserves.sg/privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/6589623281?text=Hi%2C%20I%27m%20interested%20in%20Thomson%20Reserve" class="whatsapp-fab" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<div class="mobile-sticky">
+  <a href="https://thomson-reserves.sg/floor-plan.html"><span class="ms-icon">&#128210;</span>Floor Plans</a>
+  <a href="https://thomson-reserves.sg/stack-finder.html"><span class="ms-icon">&#127959;&#65039;</span>Stack Finder</a>
+  <a href="https://thomson-reserves.sg/pricing.html"><span class="ms-icon">&#128176;</span>Price List</a>
+  <a href="https://wa.me/6589623281" style="background:rgba(37,211,102,0.1);color:#4caf6e;"><span class="ms-icon">&#128172;</span>WhatsApp</a>
+</div>
+
+<script>
+var STACKS = [{"stack":"01","block":1,"type":"CP2","category":"3-Bedroom Premium","sqm":98,"sqft":1055,"collection":"Classic","img":"thomson-reserve-fullplan-cp2-3br-premium.jpg","note":"Grand Arrival & Island Club (Reflective Pool, Social Lawn). Stacks 01 & 09 face the arrival pool side; 02\u201308 wrap toward Block 3.","storeys":"3\u201321 (+02 PES)"},{"stack":"02","block":1,"type":"BP3","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Classic","img":"thomson-reserve-fullplan-bp3-2br-premium.jpg","note":"Grand Arrival & Island Club (Reflective Pool, Social Lawn). Stacks 01 & 09 face the arrival pool side; 02\u201308 wrap toward Block 3.","storeys":"3\u201321 (+02 PES)"},{"stack":"03","block":1,"type":"BP1","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Classic","img":"thomson-reserve-fullplan-bp1-2br-premium.jpg","note":"Grand Arrival & Island Club (Reflective Pool, Social Lawn). Stacks 01 & 09 face the arrival pool side; 02\u201308 wrap toward Block 3.","storeys":"3\u201321 (+02 PES)"},{"stack":"04","block":1,"type":"BPS1","category":"2-Bedroom Premium + Study","sqm":68,"sqft":732,"collection":"Classic","img":"thomson-reserve-fullplan-bps1-2br-premium-study.jpg","note":"Grand Arrival & Island Club (Reflective Pool, Social Lawn). Stacks 01 & 09 face the arrival pool side; 02\u201308 wrap toward Block 3.","storeys":"3\u201321 (+02 PES)"},{"stack":"05","block":1,"type":"CPS1","category":"3-Bedroom Premium + Study","sqm":107,"sqft":1152,"collection":"Classic","img":"thomson-reserve-fullplan-cps1-3br-premium-study.jpg","note":"Grand Arrival & Island Club (Reflective Pool, Social Lawn). Stacks 01 & 09 face the arrival pool side; 02\u201308 wrap toward Block 3.","storeys":"3\u201321 (+02 PES)"},{"stack":"06","block":1,"type":"CP1","category":"3-Bedroom Premium","sqm":98,"sqft":1055,"collection":"Classic","img":"thomson-reserve-fullplan-cp1-3br-premium.jpg","note":"Grand Arrival & Island Club (Reflective Pool, Social Lawn). Stacks 01 & 09 face the arrival pool side; 02\u201308 wrap toward Block 3.","storeys":"3\u201321 (+02 PES)"},{"stack":"07","block":1,"type":"B1","category":"2-Bedroom","sqm":55,"sqft":592,"collection":"Classic","img":"thomson-reserve-fullplan-b1-2br.jpg","note":"Grand Arrival & Island Club (Reflective Pool, Social Lawn). Stacks 01 & 09 face the arrival pool side; 02\u201308 wrap toward Block 3.","storeys":"3\u201321 (+02 PES)"},{"stack":"08","block":1,"type":"B2","category":"2-Bedroom","sqm":55,"sqft":592,"collection":"Classic","img":"thomson-reserve-fullplan-b2-2br.jpg","note":"Grand Arrival & Island Club (Reflective Pool, Social Lawn). Stacks 01 & 09 face the arrival pool side; 02\u201308 wrap toward Block 3.","storeys":"3\u201321 (+02 PES)"},{"stack":"09","block":1,"type":"C1","category":"3-Bedroom","sqm":88,"sqft":947,"collection":"Classic","img":"thomson-reserve-fullplan-c1-3br.jpg","note":"Grand Arrival & Island Club (Reflective Pool, Social Lawn). Stacks 01 & 09 face the arrival pool side; 02\u201308 wrap toward Block 3.","storeys":"3\u201321 (+02 PES)"},{"stack":"10","block":3,"type":"CPS1","category":"3-Bedroom Premium + Study","sqm":107,"sqft":1152,"collection":"Classic","img":"thomson-reserve-fullplan-cps1-3br-premium-study.jpg","note":"Island Pool & kids' facilities. Fronts Upper Thomson Road on its south side; north-facing stacks look onto the Island Pool.","storeys":"3\u201321 (+02 PES)"},{"stack":"11","block":3,"type":"BPS1","category":"2-Bedroom Premium + Study","sqm":68,"sqft":732,"collection":"Classic","img":"thomson-reserve-fullplan-bps1-2br-premium-study.jpg","note":"Island Pool & kids' facilities. Fronts Upper Thomson Road on its south side; north-facing stacks look onto the Island Pool.","storeys":"3\u201321 (+02 PES)"},{"stack":"12","block":3,"type":"BP3","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Classic","img":"thomson-reserve-fullplan-bp3-2br-premium.jpg","note":"Island Pool & kids' facilities. Fronts Upper Thomson Road on its south side; north-facing stacks look onto the Island Pool.","storeys":"3\u201321 (+02 PES)"},{"stack":"13","block":3,"type":"BP2","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Classic","img":"thomson-reserve-fullplan-bp2-2br-premium.jpg","note":"Island Pool & kids' facilities. Fronts Upper Thomson Road on its south side; north-facing stacks look onto the Island Pool.","storeys":"3\u201321 (+02 PES)"},{"stack":"14","block":3,"type":"D3","category":"4-Bedroom","sqm":115,"sqft":1238,"collection":"Classic","img":"thomson-reserve-fullplan-d3-4br.jpg","note":"Island Pool & kids' facilities. Fronts Upper Thomson Road on its south side; north-facing stacks look onto the Island Pool.","storeys":"3\u201321 (+02 PES)"},{"stack":"15","block":3,"type":"D2","category":"4-Bedroom","sqm":115,"sqft":1238,"collection":"Classic","img":"thomson-reserve-fullplan-d2-4br.jpg","note":"Island Pool & kids' facilities. Fronts Upper Thomson Road on its south side; north-facing stacks look onto the Island Pool.","storeys":"3\u201321 (+02 PES)"},{"stack":"16","block":3,"type":"B3","category":"2-Bedroom","sqm":55,"sqft":592,"collection":"Classic","img":"thomson-reserve-fullplan-b3-2br.jpg","note":"Island Pool & kids' facilities. Fronts Upper Thomson Road on its south side; north-facing stacks look onto the Island Pool.","storeys":"3\u201321 (+02 PES)"},{"stack":"17","block":3,"type":"B1","category":"2-Bedroom","sqm":55,"sqft":592,"collection":"Classic","img":"thomson-reserve-fullplan-b1-2br.jpg","note":"Island Pool & kids' facilities. Fronts Upper Thomson Road on its south side; north-facing stacks look onto the Island Pool.","storeys":"3\u201321 (+02 PES)"},{"stack":"18","block":3,"type":"CP1","category":"3-Bedroom Premium","sqm":98,"sqft":1055,"collection":"Classic","img":"thomson-reserve-fullplan-cp1-3br-premium.jpg","note":"Island Pool & kids' facilities. Fronts Upper Thomson Road on its south side; north-facing stacks look onto the Island Pool.","storeys":"3\u201321 (+02 PES)"},{"stack":"19","block":5,"type":"E1(L)","category":"5-Bedroom Suite","sqm":168,"sqft":1808,"collection":"Luxury","img":"thomson-reserve-fullplan-e1l-5br-suite-private-lift.jpg","note":"Grand Clubhouse (Canopy Lap Pool, Kids Pool). Fronts Upper Thomson Road; north-facing stacks overlook the Grand Clubhouse pool.","storeys":"2\u201330"},{"stack":"20","block":5,"type":"BP7(L)","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Luxury","img":"thomson-reserve-fullplan-bp7l-2br-premium-private-lift.jpg","note":"Grand Clubhouse (Canopy Lap Pool, Kids Pool). Fronts Upper Thomson Road; north-facing stacks overlook the Grand Clubhouse pool.","storeys":"2\u201330"},{"stack":"21","block":5,"type":"BP3(L)","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Luxury","img":"thomson-reserve-fullplan-bp3l-2br-premium-private-lift.jpg","note":"Grand Clubhouse (Canopy Lap Pool, Kids Pool). Fronts Upper Thomson Road; north-facing stacks overlook the Grand Clubhouse pool.","storeys":"2\u201330"},{"stack":"22","block":5,"type":"DPS1(L)","category":"4-Bedroom Premium + Study","sqm":138,"sqft":1485,"collection":"Luxury","img":"thomson-reserve-fullplan-dps1l-4br-premium-study-private-lift.jpg","note":"Grand Clubhouse (Canopy Lap Pool, Kids Pool). Fronts Upper Thomson Road; north-facing stacks overlook the Grand Clubhouse pool.","storeys":"2\u201330"},{"stack":"23","block":5,"type":"C5(L)","category":"3-Bedroom","sqm":88,"sqft":947,"collection":"Luxury","img":"thomson-reserve-fullplan-c5l-3br-private-lift.jpg","note":"Grand Clubhouse (Canopy Lap Pool, Kids Pool). Fronts Upper Thomson Road; north-facing stacks overlook the Grand Clubhouse pool.","storeys":"2\u201330"},{"stack":"24","block":5,"type":"BPS3(L)","category":"2-Bedroom Premium + Study","sqm":68,"sqft":732,"collection":"Luxury","img":"thomson-reserve-fullplan-bps3l-2br-premium-study-private-lift.jpg","note":"Grand Clubhouse (Canopy Lap Pool, Kids Pool). Fronts Upper Thomson Road; north-facing stacks overlook the Grand Clubhouse pool.","storeys":"2\u201330"},{"stack":"25","block":5,"type":"BPS4(L)","category":"2-Bedroom Premium + Study","sqm":72,"sqft":775,"collection":"Luxury","img":"thomson-reserve-fullplan-bps4l-2br-premium-study-private-lift.jpg","note":"Grand Clubhouse (Canopy Lap Pool, Kids Pool). Fronts Upper Thomson Road; north-facing stacks overlook the Grand Clubhouse pool.","storeys":"2\u201330"},{"stack":"26","block":5,"type":"BP6(L)","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Luxury","img":"thomson-reserve-fullplan-bp6l-2br-premium-private-lift.jpg","note":"Grand Clubhouse (Canopy Lap Pool, Kids Pool). Fronts Upper Thomson Road; north-facing stacks overlook the Grand Clubhouse pool.","storeys":"2\u201330"},{"stack":"27","block":5,"type":"D4(L)","category":"4-Bedroom","sqm":115,"sqft":1238,"collection":"Luxury","img":"thomson-reserve-fullplan-d4l-4br-private-lift.jpg","note":"Grand Clubhouse (Canopy Lap Pool, Kids Pool). Fronts Upper Thomson Road; north-facing stacks overlook the Grand Clubhouse pool.","storeys":"2\u201330"},{"stack":"28","block":7,"type":"CP7(L)","category":"3-Bedroom Premium","sqm":98,"sqft":1055,"collection":"Luxury","img":"thomson-reserve-fullplan-cp7l-3br-premium-private-lift.jpg","note":"Wellness Club (tennis courts, wellness pods). North-west corner \u2014 closest tower to Sin Ming Avenue and the nature-facing boundary.","storeys":"2\u201330"},{"stack":"29","block":7,"type":"BP2(L)","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Luxury","img":"thomson-reserve-fullplan-bp2l-2br-premium-private-lift.jpg","note":"Wellness Club (tennis courts, wellness pods). North-west corner \u2014 closest tower to Sin Ming Avenue and the nature-facing boundary.","storeys":"2\u201330"},{"stack":"30","block":7,"type":"BP3(L)","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Luxury","img":"thomson-reserve-fullplan-bp3l-2br-premium-private-lift.jpg","note":"Wellness Club (tennis courts, wellness pods). North-west corner \u2014 closest tower to Sin Ming Avenue and the nature-facing boundary.","storeys":"2\u201330"},{"stack":"31","block":7,"type":"BPS2(L)","category":"2-Bedroom Premium + Study","sqm":68,"sqft":732,"collection":"Luxury","img":"thomson-reserve-fullplan-bps2l-2br-premium-study-private-lift.jpg","note":"Wellness Club (tennis courts, wellness pods). North-west corner \u2014 closest tower to Sin Ming Avenue and the nature-facing boundary.","storeys":"2\u201330"},{"stack":"32","block":7,"type":"DP2(L)","category":"4-Bedroom Premium","sqm":127,"sqft":1367,"collection":"Luxury","img":"thomson-reserve-fullplan-dp2l-4br-premium-private-lift.jpg","note":"Wellness Club (tennis courts, wellness pods). North-west corner \u2014 closest tower to Sin Ming Avenue and the nature-facing boundary.","storeys":"2\u201330"},{"stack":"33","block":7,"type":"C3(L)","category":"3-Bedroom","sqm":88,"sqft":947,"collection":"Luxury","img":"thomson-reserve-fullplan-c3l-3br-private-lift.jpg","note":"Wellness Club (tennis courts, wellness pods). North-west corner \u2014 closest tower to Sin Ming Avenue and the nature-facing boundary.","storeys":"2\u201330"},{"stack":"34","block":7,"type":"BPS4(L)","category":"2-Bedroom Premium + Study","sqm":72,"sqft":775,"collection":"Luxury","img":"thomson-reserve-fullplan-bps4l-2br-premium-study-private-lift.jpg","note":"Wellness Club (tennis courts, wellness pods). North-west corner \u2014 closest tower to Sin Ming Avenue and the nature-facing boundary.","storeys":"2\u201330"},{"stack":"35","block":7,"type":"BP6(L)","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Luxury","img":"thomson-reserve-fullplan-bp6l-2br-premium-private-lift.jpg","note":"Wellness Club (tennis courts, wellness pods). North-west corner \u2014 closest tower to Sin Ming Avenue and the nature-facing boundary.","storeys":"2\u201330"},{"stack":"36","block":7,"type":"DP1(L)","category":"4-Bedroom Premium","sqm":127,"sqft":1367,"collection":"Luxury","img":"thomson-reserve-fullplan-dp1l-4br-premium-private-lift.jpg","note":"Wellness Club (tennis courts, wellness pods). North-west corner \u2014 closest tower to Sin Ming Avenue and the nature-facing boundary.","storeys":"2\u201330"},{"stack":"37","block":9,"type":"CP6","category":"3-Bedroom Premium","sqm":98,"sqft":1055,"collection":"Classic","img":"thomson-reserve-fullplan-cp6-3br-premium.jpg","note":"Island Club & Grand Clubhouse pool interface. Most centrally embedded tower \u2014 no direct road frontage.","storeys":"3\u201321 (+02 PES)"},{"stack":"38","block":9,"type":"BP1","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Classic","img":"thomson-reserve-fullplan-bp1-2br-premium.jpg","note":"Island Club & Grand Clubhouse pool interface. Most centrally embedded tower \u2014 no direct road frontage.","storeys":"3\u201321 (+02 PES)"},{"stack":"39","block":9,"type":"BP3","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Classic","img":"thomson-reserve-fullplan-bp3-2br-premium.jpg","note":"Island Club & Grand Clubhouse pool interface. Most centrally embedded tower \u2014 no direct road frontage.","storeys":"3\u201321 (+02 PES)"},{"stack":"40","block":9,"type":"C4","category":"3-Bedroom","sqm":88,"sqft":947,"collection":"Classic","img":"thomson-reserve-fullplan-c4-3br.jpg","note":"Island Club & Grand Clubhouse pool interface. Most centrally embedded tower \u2014 no direct road frontage.","storeys":"3\u201321 (+02 PES)"},{"stack":"41","block":9,"type":"CPS2","category":"3-Bedroom Premium + Study","sqm":107,"sqft":1152,"collection":"Classic","img":"thomson-reserve-fullplan-cps2-3br-premium-study.jpg","note":"Island Club & Grand Clubhouse pool interface. Most centrally embedded tower \u2014 no direct road frontage.","storeys":"3\u201321 (+02 PES)"},{"stack":"42","block":9,"type":"BP9","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Classic","img":"thomson-reserve-fullplan-bp9-2br-premium.jpg","note":"Island Club & Grand Clubhouse pool interface. Most centrally embedded tower \u2014 no direct road frontage.","storeys":"3\u201321 (+02 PES)"},{"stack":"43","block":9,"type":"BP5","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Classic","img":"thomson-reserve-fullplan-bp5-2br-premium.jpg","note":"Island Club & Grand Clubhouse pool interface. Most centrally embedded tower \u2014 no direct road frontage.","storeys":"3\u201321 (+02 PES)"},{"stack":"44","block":9,"type":"BPS4","category":"2-Bedroom Premium + Study","sqm":72,"sqft":775,"collection":"Classic","img":"thomson-reserve-fullplan-bps4-2br-premium-study.jpg","note":"Island Club & Grand Clubhouse pool interface. Most centrally embedded tower \u2014 no direct road frontage.","storeys":"3\u201321 (+02 PES)"},{"stack":"45","block":9,"type":"D1","category":"4-Bedroom","sqm":115,"sqft":1238,"collection":"Classic","img":"thomson-reserve-fullplan-d1-4br.jpg","note":"Island Club & Grand Clubhouse pool interface. Most centrally embedded tower \u2014 no direct road frontage.","storeys":"3\u201321 (+02 PES)"},{"stack":"46","block":11,"type":"CP3","category":"3-Bedroom Premium","sqm":98,"sqft":1055,"collection":"Classic","img":"thomson-reserve-fullplan-cp3-3br-premium.jpg","note":"Bright Hill Drive frontage. Most road-facing of the 6 towers \u2014 sits nearest Bright Hill Drive and the Exit 2 driveway.","storeys":"3\u201321 (+02 PES)"},{"stack":"47","block":11,"type":"BP3","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Classic","img":"thomson-reserve-fullplan-bp3-2br-premium.jpg","note":"Bright Hill Drive frontage. Most road-facing of the 6 towers \u2014 sits nearest Bright Hill Drive and the Exit 2 driveway.","storeys":"3\u201321 (+02 PES)"},{"stack":"48","block":11,"type":"BP4","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Classic","img":"thomson-reserve-fullplan-bp4-2br-premium.jpg","note":"Bright Hill Drive frontage. Most road-facing of the 6 towers \u2014 sits nearest Bright Hill Drive and the Exit 2 driveway.","storeys":"3\u201321 (+02 PES)"},{"stack":"49","block":11,"type":"BP4","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Classic","img":"thomson-reserve-fullplan-bp4-2br-premium.jpg","note":"Bright Hill Drive frontage. Most road-facing of the 6 towers \u2014 sits nearest Bright Hill Drive and the Exit 2 driveway.","storeys":"3\u201321 (+02 PES)"},{"stack":"50","block":11,"type":"CP4","category":"3-Bedroom Premium","sqm":98,"sqft":1055,"collection":"Classic","img":"thomson-reserve-fullplan-cp4-3br-premium.jpg","note":"Bright Hill Drive frontage. Most road-facing of the 6 towers \u2014 sits nearest Bright Hill Drive and the Exit 2 driveway.","storeys":"3\u201321 (+02 PES)"},{"stack":"51","block":11,"type":"CP5","category":"3-Bedroom Premium","sqm":98,"sqft":1055,"collection":"Classic","img":"thomson-reserve-fullplan-cp5-3br-premium.jpg","note":"Bright Hill Drive frontage. Most road-facing of the 6 towers \u2014 sits nearest Bright Hill Drive and the Exit 2 driveway.","storeys":"3\u201321 (+02 PES)"},{"stack":"52","block":11,"type":"B3","category":"2-Bedroom","sqm":55,"sqft":592,"collection":"Classic","img":"thomson-reserve-fullplan-b3-2br.jpg","note":"Bright Hill Drive frontage. Most road-facing of the 6 towers \u2014 sits nearest Bright Hill Drive and the Exit 2 driveway.","storeys":"3\u201321 (+02 PES)"},{"stack":"53","block":11,"type":"BP8","category":"2-Bedroom Premium","sqm":63,"sqft":678,"collection":"Classic","img":"thomson-reserve-fullplan-bp8-2br-premium.jpg","note":"Bright Hill Drive frontage. Most road-facing of the 6 towers \u2014 sits nearest Bright Hill Drive and the Exit 2 driveway.","storeys":"3\u201321 (+02 PES)"},{"stack":"54","block":11,"type":"BPS1","category":"2-Bedroom Premium + Study","sqm":68,"sqft":732,"collection":"Classic","img":"thomson-reserve-fullplan-bps1-2br-premium-study.jpg","note":"Bright Hill Drive frontage. Most road-facing of the 6 towers \u2014 sits nearest Bright Hill Drive and the Exit 2 driveway.","storeys":"3\u201321 (+02 PES)"},{"stack":"55","block":11,"type":"C2","category":"3-Bedroom","sqm":88,"sqft":947,"collection":"Classic","img":"thomson-reserve-fullplan-c2-3br.jpg","note":"Bright Hill Drive frontage. Most road-facing of the 6 towers \u2014 sits nearest Bright Hill Drive and the Exit 2 driveway.","storeys":"3\u201321 (+02 PES)"}];
+
+(function(){
+  var grid = document.getElementById('sf-grid');
+  var detail = document.getElementById('sf-detail');
+  var matchN = document.getElementById('sf-match-n');
+  var collectionSel = document.getElementById('sf-collection');
+  var categorySel = document.getElementById('sf-category');
+  var blockSel = document.getElementById('sf-block');
+  var resetBtn = document.getElementById('sf-reset');
+  var shortlistList = document.getElementById('sf-shortlist-list');
+  var shortlistCount = document.getElementById('sf-shortlist-count');
+  var shortlistClear = document.getElementById('sf-shortlist-clear');
+  var shortlistFormField = document.getElementById('sf-form-shortlist');
+
+  var selectedStack = null;
+
+  var categories = [];
+  STACKS.forEach(function(s){ if (categories.indexOf(s.category) === -1) categories.push(s.category); });
+  categories.forEach(function(c){
+    var opt = document.createElement('option');
+    opt.value = c; opt.textContent = c;
+    categorySel.appendChild(opt);
+  });
+
+  var blocks = [];
+  STACKS.forEach(function(s){ if (blocks.indexOf(s.block) === -1) blocks.push(s.block); });
+  blocks.sort(function(a,b){ return a-b; });
+  blocks.forEach(function(b){
+    var opt = document.createElement('option');
+    opt.value = b; opt.textContent = 'Block ' + b;
+    blockSel.appendChild(opt);
+  });
+
+  function getShortlist(){
+    try {
+      return JSON.parse(localStorage.getItem('tr_stack_shortlist') || '[]');
+    } catch(e) { return []; }
+  }
+  function setShortlist(list){
+    try { localStorage.setItem('tr_stack_shortlist', JSON.stringify(list)); } catch(e){}
+    renderShortlist();
+  }
+
+  function matchesFilters(s){
+    if (collectionSel.value && s.collection !== collectionSel.value) return false;
+    if (categorySel.value && s.category !== categorySel.value) return false;
+    if (blockSel.value && String(s.block) !== blockSel.value) return false;
+    return true;
+  }
+
+  function render(){
+    var blockGroups = {};
+    var visibleCount = 0;
+    STACKS.forEach(function(s){
+      if (!blockGroups[s.block]) blockGroups[s.block] = [];
+      blockGroups[s.block].push(s);
+      if (matchesFilters(s)) visibleCount++;
+    });
+    matchN.textContent = visibleCount;
+
+    var html = '';
+    blocks.forEach(function(b){
+      var stacksInBlock = blockGroups[b];
+      var collection = stacksInBlock[0].collection;
+      html += '<div class="sf-block-group">';
+      html += '<div class="sf-block-header"><span class="sf-block-name">Block ' + b + '</span><span class="sf-block-tag ' + collection.toLowerCase() + '">' + collection + '</span></div>';
+      html += '<div class="sf-stack-tiles">';
+      stacksInBlock.forEach(function(s){
+        var match = matchesFilters(s);
+        var cls = 'sf-stack-tile' + (s.stack === selectedStack ? ' selected' : '') + (match ? '' : ' dimmed');
+        html += '<div class="' + cls + '" data-stack="' + s.stack + '"><span class="sf-tile-num">' + s.stack + '</span><span class="sf-tile-type">' + s.type + '</span></div>';
+      });
+      html += '</div></div>';
+    });
+    grid.innerHTML = html;
+
+    Array.prototype.forEach.call(grid.querySelectorAll('.sf-stack-tile'), function(el){
+      el.addEventListener('click', function(){
+        selectedStack = el.getAttribute('data-stack');
+        render();
+        renderDetail();
+        detail.scrollIntoView({behavior:'smooth', block:'nearest'});
+      });
+    });
+  }
+
+  function findStack(id){
+    for (var i=0;i<STACKS.length;i++) if (STACKS[i].stack === id) return STACKS[i];
+    return null;
+  }
+
+  function renderDetail(){
+    if (!selectedStack){
+      detail.innerHTML = '<div class="sf-detail-empty">Select a stack on the left to see its unit type, size and site position.</div>';
+      return;
+    }
+    var s = findStack(selectedStack);
+    var shortlist = getShortlist();
+    var inList = shortlist.indexOf(s.stack) !== -1;
+    var html = '';
+    html += '<div class="sf-detail-stack">Stack ' + s.stack + ' &middot; Block ' + s.block + ' &middot; ' + s.collection + '</div>';
+    html += '<div class="sf-detail-type">Type ' + s.type + '</div>';
+    html += '<div class="sf-detail-size">' + s.category + ' &middot; ' + s.sqm + ' sqm (' + s.sqft + ' sqft)</div>';
+    html += '<div class="sf-detail-row"><span>Floors</span><span>' + s.storeys + '</span></div>';
+    html += '<div class="sf-detail-row"><span>Collection</span><span>' + s.collection + (s.collection === 'Luxury' ? ' (Private Lift)' : '') + '</span></div>';
+    html += '<div class="sf-detail-note">' + s.note + '</div>';
+    html += '<div class="sf-detail-actions">';
+    html += '<a href="' + s.img + '" target="_blank" class="sf-btn sf-btn-gold">View Full Floor Plan</a>';
+    html += '<button type="button" class="sf-btn sf-btn-outline" id="sf-shortlist-toggle">' + (inList ? '− Remove from Shortlist' : '+ Add to Shortlist') + '</button>';
+    html += '</div>';
+    detail.innerHTML = html;
+
+    document.getElementById('sf-shortlist-toggle').addEventListener('click', function(){
+      var list = getShortlist();
+      var idx = list.indexOf(s.stack);
+      if (idx === -1) list.push(s.stack); else list.splice(idx,1);
+      setShortlist(list);
+      renderDetail();
+    });
+  }
+
+  function renderShortlist(){
+    var list = getShortlist();
+    shortlistCount.textContent = list.length;
+    if (!list.length){
+      shortlistList.innerHTML = '<div class="sf-shortlist-empty">No stacks shortlisted yet. Select a stack and click "Add to Shortlist".</div>';
+      shortlistFormField.value = '';
+      return;
+    }
+    var html = '';
+    var labels = [];
+    list.forEach(function(id){
+      var s = findStack(id);
+      if (!s) return;
+      labels.push('Stack ' + s.stack + ' (Type ' + s.type + ', Block ' + s.block + ')');
+      html += '<div class="sf-shortlist-item"><div><div class="sf-shortlist-item-main">Stack ' + s.stack + '</div><div class="sf-shortlist-item-sub">Type ' + s.type + ' &middot; Block ' + s.block + ' &middot; ' + s.sqft + ' sqft</div></div><button type="button" class="sf-shortlist-remove" data-stack="' + s.stack + '">&times;</button></div>';
+    });
+    shortlistList.innerHTML = html;
+    shortlistFormField.value = labels.join('; ');
+
+    Array.prototype.forEach.call(shortlistList.querySelectorAll('.sf-shortlist-remove'), function(btn){
+      btn.addEventListener('click', function(){
+        var id = btn.getAttribute('data-stack');
+        var list = getShortlist();
+        var idx = list.indexOf(id);
+        if (idx !== -1) list.splice(idx,1);
+        setShortlist(list);
+        if (selectedStack === id) renderDetail();
+      });
+    });
+  }
+
+  shortlistClear.addEventListener('click', function(){
+    setShortlist([]);
+    renderDetail();
+  });
+
+  collectionSel.addEventListener('change', render);
+  categorySel.addEventListener('change', render);
+  blockSel.addEventListener('change', render);
+  resetBtn.addEventListener('click', function(){
+    collectionSel.value = '';
+    categorySel.value = '';
+    blockSel.value = '';
+    render();
+  });
+
+  render();
+  renderShortlist();
+})();
+
+(function(){
+  var form = document.getElementById('reg-form');
+  if (!form) return;
+  var btn = document.getElementById('submit-btn');
+  var success = document.getElementById('form-success');
+  var error = document.getElementById('form-error');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!document.getElementById('sf-privacy').checked){
+      alert('Please agree to the Privacy Policy before submitting.');
+      return;
+    }
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+    error.style.display = 'none';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(j){
+      if (j.success){
+        form.style.display = 'none';
+        success.style.display = 'block';
+        success.scrollIntoView({behavior:'smooth', block:'center'});
+      } else { throw new Error(j.message); }
+    })
+    .catch(function(){
+      btn.textContent = 'Register Now';
+      btn.disabled = false;
+      error.style.display = 'block';
+      error.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
