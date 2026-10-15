@@ -77,6 +77,14 @@
   .data-table tbody tr:hover td{background:rgba(196,160,80,0.04);}
   .data-table tbody td{padding:14px 16px;font-size:14px;color:var(--text-mid);}
   .data-table tbody td:first-child{font-weight:500;color:var(--text-dark);}
+  .mx-table{min-width:760px;}
+  .mx-table thead th:first-child{position:sticky;left:0;background:var(--forest);}
+  .mx-table tbody td{text-align:right;white-space:nowrap;padding:12px 12px;font-size:13.5px;}
+  .mx-table tbody td:first-child{text-align:left;position:sticky;left:0;background:var(--white,#fff);white-space:normal;min-width:150px;}
+  .mx-sz{font-weight:300;font-size:12px;color:var(--text-light);}
+  .mx-lux{background:rgba(46,134,222,0.14);color:var(--text-dark);font-weight:500;}
+  .mx-na{color:var(--text-faint);}
+  .mx-key{display:inline-block;width:11px;height:11px;background:rgba(46,134,222,0.3);vertical-align:-1px;margin-right:6px;}
   .dark-table .data-table thead th{color:var(--gold);}
   .dark-table .data-table tbody tr{border-bottom-color:rgba(255,255,255,0.08);}
   .dark-table .data-table tbody td{color:rgba(255,255,255,0.75);}
@@ -466,27 +474,28 @@
     <p style="font-size:12px;color:var(--text-faint);margin-top:12px;font-style:italic;">&#9989; Includes a released show unit floor plan. &#128273; Only 3 unit types come with private lift access: 4-Bedroom Premium, 4-Bedroom Premium + Study, and 5-Bedroom Suite. Unit sizes and counts are official developer figures. Prices without "est." are the official indicative starting prices released ahead of the preview; actual pricing varies by floor, facing and stack and is subject to developer confirmation. Register to receive the full official price list.</p>
 
     <div style="margin-top:52px;">
-      <div class="section-label">Price Scenarios &middot; Agent Estimates</div>
-      <h2 class="section-h2">Thomson Reserve Price by <em>PSF Scenario</em></h2>
-      <p class="section-intro">The starting prices above are "from" figures for the lowest-priced stacks. To show how prices may climb with floor level, facing and collection, here is how each unit type prices across a wider $2,700&#8211;$3,300 psf range, based on agent estimates rather than developer figures. Not every psf tier is realistic for every unit type &#8212; smaller Classic Collection units are unlikely to reach $3,100+ psf, while Luxury Collection (private lift) types rarely dip below $2,800 psf, so implausible combinations are marked &mdash;.</p>
+      <div class="section-label">Price Estimation Matrix &middot; Agent Estimates</div>
+      <h2 class="section-h2">Thomson Reserve <em>Price Estimation Matrix</em></h2>
+      <p class="section-intro">The starting prices above are &ldquo;from&rdquo; figures for the lowest-priced stacks. To show how prices may climb with floor level, facing and collection, this matrix applies each unit type&rsquo;s official size to psf levels from $2,650 to $3,300, based on agent estimates rather than developer figures. Shaded cells are the psf levels more likely to apply to Luxury Collection higher floors. Combinations marked &mdash; are unlikely for that unit type.</p>
       <div class="table-wrap">
-      <table class="data-table">
-        <thead><tr><th>Unit Type</th><th>Entry<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">~$2,700&#8211;$2,800 psf</span></th><th>Mid-Tier<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">~$2,900&#8211;$3,000 psf</span></th><th>Premium / High-Floor<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">~$3,100&#8211;$3,300 psf</span></th></tr></thead>
+      <table class="data-table mx-table">
+        <thead><tr><th>Unit Type</th><th style="text-align:right;">$2,650<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">psf</span></th><th style="text-align:right;">$2,700<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">psf</span></th><th style="text-align:right;">$2,800<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">psf</span></th><th style="text-align:right;">$2,900<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">psf</span></th><th style="text-align:right;">$3,000<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">psf</span></th><th style="text-align:right;">$3,100<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">psf</span></th><th style="text-align:right;">$3,200<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">psf</span></th><th style="text-align:right;">$3,300<br><span style="font-weight:400;text-transform:none;letter-spacing:0;">psf</span></th></tr></thead>
         <tbody>
-          <tr><td>2-Bedroom (592 sqft)</td><td>$1.60M&#8211;$1.66M</td><td>$1.72M&#8211;$1.78M</td><td>&mdash;</td></tr>
-          <tr><td>2-Bedroom Premium (678 sqft)</td><td>$1.83M&#8211;$1.90M</td><td>$1.97M&#8211;$2.03M</td><td>From $2.10M</td></tr>
-          <tr class="highlight"><td>2-Bedroom Premium + Study (732&#8211;775 sqft)</td><td>$1.98M&#8211;$2.17M</td><td>$2.12M&#8211;$2.33M</td><td>$2.27M&#8211;$2.40M</td></tr>
-          <tr><td>3-Bedroom (947 sqft)</td><td>$2.56M&#8211;$2.65M</td><td>$2.75M&#8211;$2.84M</td><td>$2.94M&#8211;$3.03M</td></tr>
-          <tr class="highlight"><td>3-Bedroom Premium (1,055 sqft)</td><td>$2.85M&#8211;$2.95M</td><td>$3.06M&#8211;$3.17M</td><td>$3.27M&#8211;$3.38M</td></tr>
-          <tr><td>3-Bedroom Premium + Study (1,152 sqft)</td><td>$3.11M&#8211;$3.23M</td><td>$3.34M&#8211;$3.46M</td><td>&mdash;</td></tr>
-          <tr><td>4-Bedroom (1,238 sqft)</td><td>$3.34M&#8211;$3.47M</td><td>$3.59M&#8211;$3.71M</td><td>$3.84M&#8211;$4.09M</td></tr>
-          <tr class="highlight"><td>4-Bedroom Premium &#128273; (1,367 sqft)</td><td>From $3.83M</td><td>$3.96M&#8211;$4.10M</td><td>$4.24M&#8211;$4.51M</td></tr>
-          <tr><td>4-Bedroom Premium + Study &#128273; (1,485 sqft)</td><td>From $4.11M</td><td>$4.26M&#8211;$4.40M</td><td>$4.55M&#8211;$4.84M</td></tr>
-          <tr class="highlight"><td>5-Bedroom Suite &#128273; (1,808 sqft)</td><td>From $5.06M</td><td>$5.24M&#8211;$5.42M</td><td>$5.60M&#8211;$5.97M</td></tr>
+          <tr><td>2-Bedroom<br><span class="mx-sz">592 sqft</span></td><td>$1,568,800</td><td>$1,598,400</td><td>$1,657,600</td><td>$1,716,800</td><td>$1,776,000</td><td class="mx-na">&mdash;</td><td class="mx-na">&mdash;</td><td class="mx-na">&mdash;</td></tr>
+          <tr><td>2-Bedroom Premium<br><span class="mx-sz">678 sqft</span></td><td>$1,796,700</td><td>$1,830,600</td><td>$1,898,400</td><td>$1,966,200</td><td class="mx-lux">$2,034,000</td><td class="mx-lux">$2,101,800</td><td class="mx-na">&mdash;</td><td class="mx-na">&mdash;</td></tr>
+          <tr><td>2-Bedroom Premium + Study<br><span class="mx-sz">732 sqft</span></td><td>$1,939,800</td><td>$1,976,400</td><td>$2,049,600</td><td>$2,122,800</td><td class="mx-lux">$2,196,000</td><td class="mx-lux">$2,269,200</td><td class="mx-na">&mdash;</td><td class="mx-na">&mdash;</td></tr>
+          <tr><td>2-Bedroom Premium + Study<br><span class="mx-sz">775 sqft</span></td><td>$2,053,750</td><td>$2,092,500</td><td>$2,170,000</td><td>$2,247,500</td><td class="mx-lux">$2,325,000</td><td class="mx-lux">$2,402,500</td><td class="mx-na">&mdash;</td><td class="mx-na">&mdash;</td></tr>
+          <tr><td>3-Bedroom<br><span class="mx-sz">947 sqft</span></td><td>$2,509,550</td><td>$2,556,900</td><td>$2,651,600</td><td>$2,746,300</td><td>$2,841,000</td><td class="mx-lux">$2,935,700</td><td class="mx-lux">$3,030,400</td><td class="mx-na">&mdash;</td></tr>
+          <tr><td>3-Bedroom Premium<br><span class="mx-sz">1,055 sqft</span></td><td>$2,795,750</td><td>$2,848,500</td><td>$2,954,000</td><td>$3,059,500</td><td>$3,165,000</td><td class="mx-lux">$3,270,500</td><td class="mx-lux">$3,376,000</td><td class="mx-na">&mdash;</td></tr>
+          <tr><td>3-Bedroom Premium + Study<br><span class="mx-sz">1,152 sqft</span></td><td>$3,052,800</td><td>$3,110,400</td><td>$3,225,600</td><td>$3,340,800</td><td>$3,456,000</td><td class="mx-na">&mdash;</td><td class="mx-na">&mdash;</td><td class="mx-na">&mdash;</td></tr>
+          <tr><td>4-Bedroom<br><span class="mx-sz">1,238 sqft</span></td><td class="mx-na">&mdash;</td><td class="mx-na">&mdash;</td><td>$3,466,400</td><td>$3,590,200</td><td>$3,714,000</td><td class="mx-lux">$3,837,800</td><td class="mx-lux">$3,961,600</td><td class="mx-na">&mdash;</td></tr>
+          <tr><td>4-Bedroom Premium &#128273;<br><span class="mx-sz">1,367 sqft</span></td><td class="mx-na">&mdash;</td><td class="mx-na">&mdash;</td><td>$3,827,600</td><td>$3,964,300</td><td>$4,101,000</td><td>$4,237,700</td><td class="mx-lux">$4,374,400</td><td class="mx-lux">$4,511,100</td></tr>
+          <tr><td>4-Bedroom Premium + Study &#128273;<br><span class="mx-sz">1,485 sqft</span></td><td class="mx-na">&mdash;</td><td class="mx-na">&mdash;</td><td>$4,158,000</td><td>$4,306,500</td><td>$4,455,000</td><td>$4,603,500</td><td class="mx-lux">$4,752,000</td><td class="mx-lux">$4,900,500</td></tr>
+          <tr><td>5-Bedroom Suite &#128273;<br><span class="mx-sz">1,808 sqft</span></td><td class="mx-na">&mdash;</td><td class="mx-na">&mdash;</td><td>$5,062,400</td><td>$5,243,200</td><td>$5,424,000</td><td>$5,604,800</td><td class="mx-lux">$5,785,600</td><td class="mx-lux">$5,966,400</td></tr>
         </tbody>
       </table>
       </div>
-      <p style="font-size:12px;color:var(--text-faint);margin-top:12px;font-style:italic;">&mdash; indicates a psf tier unlikely to apply to that unit type. &#128273; Private lift access. Figures are sqft &times; psf agent-estimate scenarios for reference only, not a developer price list.</p>
+      <p style="font-size:12px;color:var(--text-faint);margin-top:12px;font-style:italic;"><span class="mx-key"></span> Estimated psf likely for Luxury Collection higher floors. &mdash; indicates a psf level unlikely to apply to that unit type. &#128273; Private lift access. Prices shown are purely for estimation purposes (sqft &times; psf) and do not represent official figures; the official indicative starting prices are in the table above.</p>
     </div>
 
     <div style="margin-top:32px;display:flex;gap:24px;flex-wrap:wrap;">
