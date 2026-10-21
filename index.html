@@ -457,8 +457,10 @@
   .gallery-figure img { width: 100%; height: auto; display: block; background: #000; }
   .gallery-figcaption { padding: 16px 20px; font-size: 12.5px; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.6; border-top: 1px solid rgba(196,160,80,0.12); }
   .gallery-figcaption strong { color: rgba(255,255,255,0.75); font-weight: 500; }
-  .gallery-video-row { margin-top: 24px; }
+  .gallery-video-row { margin-top: 24px; display: grid; grid-template-columns: 1fr minmax(240px, 320px); gap: 24px; align-items: start; }
   .gallery-video-row .gallery-figure iframe { width: 100%; aspect-ratio: 16/9; height: auto; border: 0; display: block; background: #000; }
+  .gallery-video-row .gallery-figure video { width: 100%; aspect-ratio: 9/16; height: auto; display: block; background: #000; }
+  @media (max-width: 860px) { .gallery-video-row { grid-template-columns: 1fr; } .gallery-video-row .gallery-figure-film { max-width: 360px; width: 100%; margin: 0 auto; } }
   .gallery-disclaimer { margin-top: 20px; font-size: 11.5px; color: rgba(255,255,255,0.3); font-style: italic; }
   @media (max-width: 768px) {
     .gallery-grid { grid-template-columns: 1fr; }
@@ -1471,6 +1473,13 @@
         <iframe src="https://www.youtube-nocookie.com/embed/zFBQQVLWHvs?rel=0" title="Thomson Reserve — Official Teaser Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <figcaption class="gallery-figcaption"><strong>Thomson Reserve</strong> — official teaser video introducing the development at Bright Hill Drive, District 20.</figcaption>
       </figure>
+      <figure class="gallery-figure gallery-figure-film">
+        <video controls playsinline preload="none" poster="thomson-reserve-official-film-poster.jpg" width="720" height="1280" aria-label="Thomson Reserve official film featuring Sheila Sim">
+          <source src="thomson-reserve-official-film.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="thomson-reserve-official-film.mp4">Download the film</a>.
+        </video>
+        <figcaption class="gallery-figcaption"><strong>Thomson Reserve</strong> — the developer's official film, featuring Sheila Sim.</figcaption>
+      </figure>
     </div>
 
     <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
@@ -1478,7 +1487,7 @@
       <a href="https://thomson-reserves.sg/virtual-tour.html" class="btn-outline">Take the 360&deg; Virtual Tour &rarr;</a>
     </div>
 
-    <p class="gallery-disclaimer">All images and video are the developer's artist's impressions for illustration purposes only. Actual finishes, fittings, landscaping and views may vary. See our <a href="https://thomson-reserves.sg/disclaimer.html" style="color:rgba(196,160,80,0.6);">Disclaimer</a> for full terms.</p>
+    <p class="gallery-disclaimer">All images and video are the developer's artist's impressions for illustration purposes only. Show unit interiors seen in the film are fitted out for display. Actual finishes, fittings, landscaping and views may vary. See our <a href="https://thomson-reserves.sg/disclaimer.html" style="color:rgba(196,160,80,0.6);">Disclaimer</a> for full terms.</p>
   </div>
 </section>
 
